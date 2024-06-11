@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://chtryju6ivdwf"]
+
+[ext_resource type="Script" path="res://scenes/barco.gd" id="1_1pxyg"]
+[ext_resource type="Texture2D" uid="uid://slw0fpwhb6cd" path="res://images/Art-removebg-preview.png" id="1_rx3mu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcm8j"]
+size = Vector2(355, 754)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_1pxyg")
+
+[node name="Pixil-frame-0(1)2" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_rx3mu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, 54)
+shape = SubResource("RectangleShape2D_wcm8j")
+
+[node name="vel_y" type="Marker2D" parent="."]
+position = Vector2(0, 440)
+
+[node name="vel_x" type="Marker2D" parent="."]
+position = Vector2(190, 0)

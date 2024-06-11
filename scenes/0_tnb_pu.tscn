@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://o4dpm441xlkf"]
+
+[ext_resource type="Script" path="res://scenes/mapa.gd" id="1_75244"]
+[ext_resource type="Texture2D" uid="uid://bsmg0mv0md1jm" path="res://images/0TNBPu.png" id="1_tw0fc"]
+[ext_resource type="Texture2D" uid="uid://yment5pcg77d" path="res://images/3065233.png" id="2_q843i"]
+[ext_resource type="Texture2D" uid="uid://dbsckyw2houm" path="res://images/vecteezy_route-icon-between-two-points-with-dotted-path-and-location-pin_22188256.png" id="3_x4q4c"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_75244")
+
+[node name="0tnbPu" type="Sprite2D" parent="."]
+position = Vector2(639, 363)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_tw0fc")
+
+[node name="banderas" type="Node2D" parent="0tnbPu"]
+scale = Vector2(1, 1)
+
+[node name="Button" type="Button" parent="0tnbPu/banderas"]
+offset_left = -444.0
+offset_top = -165.0
+offset_right = -388.0
+offset_bottom = -86.0
+
+[node name="bandera1" type="Sprite2D" parent="0tnbPu/banderas"]
+position = Vector2(-420, -125)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_q843i")
+
+[node name="bandera2" type="Sprite2D" parent="0tnbPu/banderas"]
+position = Vector2(-42.5, 148.75)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_q843i")
+
+[node name="caminos" type="Node2D" parent="0tnbPu"]
+scale = Vector2(1, 1)
+
+[node name="VecteezyRoute-icon-between-two-points-with-dotted-path-and-location-pin22188256" type="Sprite2D" parent="0tnbPu/caminos"]
+position = Vector2(-241.25, 78.75)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_x4q4c")
+region_enabled = true
+region_rect = Rect2(595.216, 2666.82, 1484.82, 1822.8)
+
+[node name="VecteezyRoute-icon-between-two-points-with-dotted-path-and-location-pin22188257" type="Sprite2D" parent="0tnbPu/caminos"]
+position = Vector2(163.75, 281.25)
+rotation = 3.14159
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_x4q4c")
+region_enabled = true
+region_rect = Rect2(1383, 2240, 2104, 1322)
+
+[connection signal="mouse_entered" from="0tnbPu/banderas/Button" to="." method="_bandera_1_mouse_entered"]
+[connection signal="mouse_exited" from="0tnbPu/banderas/Button" to="." method="_bandera_1_mouse_exited"]
+[connection signal="pressed" from="0tnbPu/banderas/Button" to="." method="_bandera_1"]
