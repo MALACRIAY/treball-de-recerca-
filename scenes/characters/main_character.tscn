@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://drqgxmq8f0sas"]
+
+[ext_resource type="Script" path="res://scenes/scripts/main_character.gd" id="1_ikcuk"]
+[ext_resource type="Texture2D" uid="uid://cy361ka5v43ee" path="res://images/pixil-frame-0 (1).png" id="2_kb3sl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vwac"]
+atlas = ExtResource("2_kb3sl")
+region = Rect2(2490, 0, 4980, 9960)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hccbd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vwac")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83sjh"]
+size = Vector2(3806, 9112)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(451, 320)
+scale = Vector2(0.01, 0.01)
+script = ExtResource("1_ikcuk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hccbd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(75, -83)
+shape = SubResource("RectangleShape2D_83sjh")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -100)
+zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true

@@ -13,7 +13,10 @@ config_version=5
 config/name="Prova 1"
 run/main_scene="res://scenes/0_tnb_pu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalScript="*res://scenes/scripts/Global_script.gd"
 
 [display]
 
