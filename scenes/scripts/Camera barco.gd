@@ -3,18 +3,17 @@ extends Camera2D
 var entered = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	for area in $"../objects".get_children():
+		area.body_entered.connect(_on_body_entered.bind(area)) # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.y = barco.position.y+100
-	if entered:
-		barco.global_position.y = move_toward(barco.global_position.y,505,barco.VELOCITY)
-		if barco.rotation <= 90:
-			barco.rotation += delta
-func _on_area_2d_body_entered(body):
-	if body == barco:
-		barco.entered = true
-		entered = true
+	pass
 	
+	
+	
+func _on_body_entered(body,area):
+	barco.get_child(0).play("spin",-1,5)
+	
+	AnimationPlayer
