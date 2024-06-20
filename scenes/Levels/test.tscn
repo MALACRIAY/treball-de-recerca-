@@ -1,0 +1,191 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcrddjcpo38op"]
+
+[ext_resource type="Texture2D" uid="uid://7xsu3m81ehqx" path="res://images/propias/Mapa_assets/Escoger_personajepng.png" id="1_n0wxp"]
+[ext_resource type="Script" path="res://scenes/scripts/Character_choosing.gd" id="1_t2qd5"]
+[ext_resource type="Texture2D" uid="uid://bi53hws3msmjg" path="res://images/propias/Personajes/Personas/Chica_morena_blanca.png" id="2_jdyl6"]
+[ext_resource type="Texture2D" uid="uid://ggbm1pxgy1eb" path="res://images/propias/Personajes/Personas/Chica_morena_negra.png" id="3_hv037"]
+[ext_resource type="Texture2D" uid="uid://c45fkkv4mhy8d" path="res://images/propias/Personajes/Personas/Chica_rubia_blanca.png" id="4_vhgc4"]
+[ext_resource type="Texture2D" uid="uid://du51jxasbphto" path="res://images/propias/Mapa_assets/guion.png" id="6_tfd0o"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_t2qd5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_n0wxp")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Puta merda" type="Node2D" parent="."]
+
+[node name="EscogerPersonajepng" type="Sprite2D" parent="Puta merda"]
+position = Vector2(131, 350.63)
+scale = Vector2(4.46154, 1)
+texture = ExtResource("1_n0wxp")
+region_enabled = true
+region_rect = Rect2(23.2997, 161.902, 52.9755, 421.983)
+
+[node name="EscogerPersonajepng2" type="Sprite2D" parent="Puta merda"]
+position = Vector2(1021, 352.63)
+scale = Vector2(4.46154, 1)
+texture = ExtResource("1_n0wxp")
+region_enabled = true
+region_rect = Rect2(23.2997, 161.902, 52.9755, 421.983)
+
+[node name="EscogerPersonajepng3" type="Sprite2D" parent="Puta merda"]
+position = Vector2(339, 607.63)
+texture = ExtResource("1_n0wxp")
+region_enabled = true
+region_rect = Rect2(23.0007, 584.942, 662.77, 93.9368)
+
+[node name="EscogerPersonajepng4" type="Sprite2D" parent="Puta merda"]
+position = Vector2(1119, 608.63)
+texture = ExtResource("1_n0wxp")
+region_enabled = true
+region_rect = Rect2(23.0007, 584.942, 662.77, 93.9368)
+
+[node name="EscogerPersonajepng5" type="Sprite2D" parent="Puta merda"]
+position = Vector2(978, 72.6303)
+texture = ExtResource("1_n0wxp")
+region_enabled = true
+region_rect = Rect2(23.7346, 14.7001, 155.366, 157.3)
+
+[node name="EscogerPersonajepng6" type="Sprite2D" parent="Puta merda"]
+position = Vector2(179, 68.1303)
+scale = Vector2(1, 1.0493)
+texture = ExtResource("1_n0wxp")
+region_enabled = true
+region_rect = Rect2(545.632, 59.9211, 139.579, 142.658)
+
+[node name="EscogerPersonajepng7" type="Sprite2D" parent="Puta merda"]
+position = Vector2(41, 72.6303)
+texture = ExtResource("1_n0wxp")
+region_enabled = true
+region_rect = Rect2(22.9002, 14.7001, 156.2, 157.3)
+
+[node name="EscogerPersonajepng8" type="Sprite2D" parent="Puta merda"]
+position = Vector2(1123, 70.6303)
+scale = Vector2(1, 1.0493)
+texture = ExtResource("1_n0wxp")
+region_enabled = true
+region_rect = Rect2(545.632, 59.9211, 139.579, 142.658)
+
+[node name="EscogerPersonajepng9" type="Sprite2D" parent="Puta merda"]
+position = Vector2(1140, 332.63)
+scale = Vector2(1, 1.0493)
+texture = ExtResource("1_n0wxp")
+region_enabled = true
+region_rect = Rect2(686.001, -0.000305176, 31.4023, 695.459)
+
+[node name="EscogerPersonajepng10" type="Sprite2D" parent="Puta merda"]
+position = Vector2(568, -3)
+rotation = 1.5708
+scale = Vector2(1, 2)
+texture = ExtResource("1_n0wxp")
+region_enabled = true
+region_rect = Rect2(686.001, -0.000305176, 31.4023, 695.459)
+
+[node name="EscogerPersonajepng12" type="Sprite2D" parent="Puta merda"]
+position = Vector2(588, 648)
+rotation = 1.5708
+scale = Vector2(1, 2)
+texture = ExtResource("1_n0wxp")
+region_enabled = true
+region_rect = Rect2(686.001, -0.000305176, 31.4023, 695.459)
+
+[node name="EscogerPersonajepng11" type="Sprite2D" parent="Puta merda"]
+position = Vector2(11, 352)
+scale = Vector2(1, 1.0493)
+texture = ExtResource("1_n0wxp")
+region_enabled = true
+region_rect = Rect2(686.001, -0.000305176, 31.4023, 695.459)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Girl_1" type="Button" parent="Node2D"]
+offset_left = 616.0
+offset_top = 213.0
+offset_right = 684.0
+offset_bottom = 281.0
+scale = Vector2(2, 2)
+icon = ExtResource("2_jdyl6")
+flat = true
+
+[node name="Girl_2" type="Button" parent="Node2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 729.0
+offset_top = 213.0
+offset_right = 797.0
+offset_bottom = 281.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+icon = ExtResource("3_hv037")
+flat = true
+icon_alignment = 1
+
+[node name="Girl_3" type="Button" parent="Node2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 614.0
+offset_top = 358.0
+offset_right = 682.0
+offset_bottom = 426.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+icon = ExtResource("4_vhgc4")
+flat = true
+icon_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="charging" type="Node2D" parent="."]
+
+[node name="Guion" type="Sprite2D" parent="charging"]
+visible = false
+position = Vector2(684, 337)
+scale = Vector2(5.5, 5.5)
+texture = ExtResource("6_tfd0o")
+region_enabled = true
+region_rect = Rect2(10, 16, 20, 8)
+
+[node name="Guion2" type="Sprite2D" parent="charging"]
+visible = false
+position = Vector2(684, 301)
+scale = Vector2(5.5, 5.5)
+texture = ExtResource("6_tfd0o")
+region_enabled = true
+region_rect = Rect2(10, 16, 20, 8)
+
+[node name="Guion3" type="Sprite2D" parent="charging"]
+visible = false
+position = Vector2(685, 266)
+scale = Vector2(5.5, 5.5)
+texture = ExtResource("6_tfd0o")
+region_enabled = true
+region_rect = Rect2(10, 16, 20, 8)
+
+[node name="Guion4" type="Sprite2D" parent="charging"]
+visible = false
+position = Vector2(683, 232)
+scale = Vector2(5.5, 5.5)
+texture = ExtResource("6_tfd0o")
+region_enabled = true
+region_rect = Rect2(10, 16, 20, 8)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]

@@ -1,10 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://drqgxmq8f0sas"]
 
 [ext_resource type="Script" path="res://scenes/scripts/main_character.gd" id="1_ikcuk"]
-[ext_resource type="Texture2D" uid="uid://cy361ka5v43ee" path="res://images/pixil-frame-0 (1).png" id="2_kb3sl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rlkuc"]
+load_path = "res://.godot/imported/pixil-frame-0 (1).png-512bcc2fb8f4421cdd600a63b9635fc1.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vwac"]
-atlas = ExtResource("2_kb3sl")
+atlas = SubResource("CompressedTexture2D_rlkuc")
 region = Rect2(2490, 0, 4980, 9960)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hccbd"]

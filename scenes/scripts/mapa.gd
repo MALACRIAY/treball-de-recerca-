@@ -3,7 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for button in $"0tnbPu/banderas".get_children():
+	for button in $banderas.get_children():
 		button.pressed.connect(_on_pressed.bind(button))
 
 func _on_pressed(button):
