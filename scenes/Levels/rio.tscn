@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://erbggyswxryi" path="res://images/propias/Tilemaps/tilemap2.png" id="1_jhy1v"]
 [ext_resource type="PackedScene" uid="uid://chtryju6ivdwf" path="res://scenes/characters/barco.tscn" id="2_cb2k7"]
 [ext_resource type="Script" path="res://scenes/scripts/Camera barco.gd" id="3_5cvqj"]
-[ext_resource type="Texture2D" uid="uid://bthytufmxegd5" path="res://images/propias/Personajes/hockey_player1.png" id="4_i8xtu"]
+[ext_resource type="Texture2D" uid="uid://bthytufmxegd5" path="res://images/propias/Personajes/Objetos/hockey_player1.png" id="4_i8xtu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sstu5"]
 texture = ExtResource("1_jhy1v")

@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=3 uid="uid://crtxjmhclrkkj"]
+
+[ext_resource type="Texture2D" uid="uid://dubfmt5fwkxv1" path="res://images/propias/Mapa_assets/Hockey/campo hockey.png" id="1_14jmy"]
+[ext_resource type="Script" path="res://scenes/scripts/Level_hockey.gd" id="1_b80qh"]
+[ext_resource type="Texture2D" uid="uid://du51jxasbphto" path="res://images/propias/Mapa_assets/Puntuacion/guion.png" id="2_swv7a"]
+[ext_resource type="Texture2D" uid="uid://bthytufmxegd5" path="res://images/propias/Personajes/Objetos/hockey_player1.png" id="4_5xvyl"]
+[ext_resource type="Texture2D" uid="uid://b1eb08v7joeoh" path="res://images/propias/Personajes/Objetos/hockey_player2.png" id="5_qabtp"]
+[ext_resource type="Texture2D" uid="uid://di5fkhajd0qbv" path="res://images/propias/Mapa_assets/Hockey/disco_quiet.png" id="6_47b7n"]
+[ext_resource type="Texture2D" uid="uid://c56k2q73i0xtt" path="res://images/propias/Mapa_assets/Hockey/disco_moviment.png" id="7_4isj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hsoe"]
+size = Vector2(44, 104)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4uy85"]
+radius = 19.0263
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3ga7"]
+radius = 26.7416
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_47kbj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_47b7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4isj2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bbm5v"]
+radius = 30.0666
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_b80qh")
+
+[node name="paredes" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="paredes"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="paredes/StaticBody2D"]
+polygon = PackedVector2Array(400, 0, 420, 0, 420, 260, -420, 260, -420, 0, -400, 0, -400, 240, 400, 240)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="paredes/StaticBody2D"]
+rotation = 3.14159
+polygon = PackedVector2Array(400, 0, 420, 0, 420, 260, -420, 260, -420, 0, -400, 0, -400, 240, 400, 240)
+
+[node name="Campo" type="Node2D" parent="."]
+
+[node name="porte_1" type="Area2D" parent="Campo"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Campo/porte_1"]
+position = Vector2(-419, -2)
+rotation = 1.5708
+scale = Vector2(10, 10)
+texture = ExtResource("2_swv7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Campo/porte_1"]
+position = Vector2(-440, -3)
+shape = SubResource("RectangleShape2D_8hsoe")
+
+[node name="porte_2" type="Area2D" parent="Campo"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Campo/porte_2"]
+position = Vector2(413, 1)
+rotation = 1.5708
+scale = Vector2(10, 10)
+texture = ExtResource("2_swv7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Campo/porte_2"]
+position = Vector2(430, 2)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8hsoe")
+
+[node name="CampoHockey" type="Sprite2D" parent="Campo"]
+position = Vector2(-9, 10)
+rotation = 1.5708
+scale = Vector2(10, 10)
+texture = ExtResource("1_14jmy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotation = 1.5708
+scale = Vector2(10, 10)
+
+[node name="Character_1" type="CharacterBody2D" parent="."]
+position = Vector2(-331, 0)
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Character_1"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_5xvyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character_1"]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_4uy85")
+
+[node name="Character_2" type="CharacterBody2D" parent="."]
+position = Vector2(326, 0)
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Character_2"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_qabtp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character_2"]
+shape = SubResource("CircleShape2D_r3ga7")
+
+[node name="countdown" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="countdown"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="countdown"]
+
+[node name="Disco" type="RigidBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Disco"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_47kbj")
+frame = 1
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Disco"]
+shape = SubResource("CircleShape2D_bbm5v")
+
+[connection signal="body_entered" from="Campo/porte_1" to="." method="_on_goal_1_body_entered"]
+[connection signal="body_entered" from="Campo/porte_2" to="." method="_on_goal_2_entered"]

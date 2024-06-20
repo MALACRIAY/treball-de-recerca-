@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7xsu3m81ehqx"
-path="res://.godot/imported/Escoger_personajepng.png-e3d9d99269c51b92b333609f7cbb4551.ctex"
+uid="uid://4qwh5rr4hrhw"
+path="res://.godot/imported/pixilart-sprite.png-08408844fbf5a8c288b94eca51bead71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/propias/Mapa_assets/Escoger_personajepng.png"
-dest_files=["res://.godot/imported/Escoger_personajepng.png-e3d9d99269c51b92b333609f7cbb4551.ctex"]
+source_file="res://images/propias/Personajes/Personas/Peque/pixilart-sprite.png"
+dest_files=["res://.godot/imported/pixilart-sprite.png-08408844fbf5a8c288b94eca51bead71.ctex"]
 
 [params]
 

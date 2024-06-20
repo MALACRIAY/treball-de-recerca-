@@ -1,41 +1,44 @@
-[gd_scene load_steps=6 format=3 uid="uid://drqgxmq8f0sas"]
+[gd_scene load_steps=7 format=3 uid="uid://drqgxmq8f0sas"]
 
 [ext_resource type="Script" path="res://scenes/scripts/main_character.gd" id="1_ikcuk"]
+[ext_resource type="Texture2D" uid="uid://4qwh5rr4hrhw" path="res://images/propias/Personajes/Personas/Peque/pixilart-sprite.png" id="2_eg6fu"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rlkuc"]
-load_path = "res://.godot/imported/pixil-frame-0 (1).png-512bcc2fb8f4421cdd600a63b9635fc1.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_swgeo"]
+atlas = ExtResource("2_eg6fu")
+region = Rect2(15, 14, 20, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2vwac"]
-atlas = SubResource("CompressedTexture2D_rlkuc")
-region = Rect2(2490, 0, 4980, 9960)
+[sub_resource type="AtlasTexture" id="AtlasTexture_851fn"]
+atlas = ExtResource("2_eg6fu")
+region = Rect2(65, 14, 20, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hccbd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2vwac")
+"texture": SubResource("AtlasTexture_swgeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_851fn")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"1",
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83sjh"]
-size = Vector2(3806, 9112)
+size = Vector2(3803, 5700)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(451, 320)
 scale = Vector2(0.01, 0.01)
 script = ExtResource("1_ikcuk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(300, 300)
 sprite_frames = SubResource("SpriteFrames_hccbd")
+animation = &"1"
+autoplay = "1"
+frame_progress = 0.29623
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(75, -83)
+position = Vector2(-1.5, -150)
 shape = SubResource("RectangleShape2D_83sjh")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -100)
-zoom = Vector2(1.2, 1.2)
-position_smoothing_enabled = true

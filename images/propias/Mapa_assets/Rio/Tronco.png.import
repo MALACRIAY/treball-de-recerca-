@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ggbm1pxgy1eb"
-path="res://.godot/imported/Chica_morena_negra.png-de489e9fc3c2be2b4ecb7a974ae51667.ctex"
+uid="uid://b82a5t1tkiaid"
+path="res://.godot/imported/Tronco.png-b6b410eb5da604d9daba9aeb6a43a6b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/propias/Personajes/Personas/Chica_morena_negra.png"
-dest_files=["res://.godot/imported/Chica_morena_negra.png-de489e9fc3c2be2b4ecb7a974ae51667.ctex"]
+source_file="res://images/propias/Mapa_assets/Rio/Tronco.png"
+dest_files=["res://.godot/imported/Tronco.png-b6b410eb5da604d9daba9aeb6a43a6b6.ctex"]
 
 [params]
 

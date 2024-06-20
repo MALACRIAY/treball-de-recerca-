@@ -13,7 +13,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(timer.time_left)
+	timer.time_left
 	
 
 func _mouse_entered(button):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://chtryju6ivdwf"]
 
 [ext_resource type="Script" path="res://scenes/scripts/barco.gd" id="1_1pxyg"]
-[ext_resource type="Texture2D" uid="uid://8xvh288eh3qi" path="res://images/propias/Personajes/barco.png" id="2_vkmwx"]
+[ext_resource type="Texture2D" uid="uid://8xvh288eh3qi" path="res://images/propias/Personajes/Objetos/barco.png" id="2_vkmwx"]
 
 [sub_resource type="Animation" id="Animation_d0q0x"]
 length = 0.001

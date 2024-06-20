@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bthytufmxegd5"
-path="res://.godot/imported/hockey_player1.png-56bbda143b729c1034ff2de227670d19.ctex"
+uid="uid://di5fkhajd0qbv"
+path="res://.godot/imported/disco_quiet.png-c0d9eb88f5aae9748f6bb899147278d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/propias/Personajes/hockey_player1.png"
-dest_files=["res://.godot/imported/hockey_player1.png-56bbda143b729c1034ff2de227670d19.ctex"]
+source_file="res://images/propias/Mapa_assets/Hockey/disco_quiet.png"
+dest_files=["res://.godot/imported/disco_quiet.png-c0d9eb88f5aae9748f6bb899147278d4.ctex"]
 
 [params]
 
