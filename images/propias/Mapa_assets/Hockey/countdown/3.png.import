@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3x1a7iwrx5u1"
-path="res://.godot/imported/Puente  inicio.png-af574ea3b0daf6b58446ea4988ce9a97.ctex"
+uid="uid://sh07qea8thiw"
+path="res://.godot/imported/3.png-f0a728cc56c43851758a5675d9b9796b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/propias/Mapa_assets/Rio/Puente  inicio.png"
-dest_files=["res://.godot/imported/Puente  inicio.png-af574ea3b0daf6b58446ea4988ce9a97.ctex"]
+source_file="res://images/propias/Mapa_assets/Hockey/countdown/3.png"
+dest_files=["res://.godot/imported/3.png-f0a728cc56c43851758a5675d9b9796b.ctex"]
 
 [params]
 

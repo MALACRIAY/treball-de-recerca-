@@ -8,5 +8,7 @@ func _process(delta):
 	pass
 		
 
-
+#Hockey_level
+var points_blue = 0
+var points_red = 0
 

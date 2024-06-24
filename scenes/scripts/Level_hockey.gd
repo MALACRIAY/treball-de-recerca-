@@ -15,7 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	Charact_1.global_position = Vector2(move_toward(Charact_1.global_position.x,get_global_mouse_position().x,3),move_toward(Charact_1.global_position.y,get_global_mouse_position().y,3))
-
+	
 
 
 func _physics_process(delta):

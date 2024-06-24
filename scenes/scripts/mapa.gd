@@ -4,11 +4,12 @@ extends Node2D
 var middle = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for button in $banderas.get_children():
-		button.pressed.connect(_on_pressed.bind(button))
+	for area in $banderas.get_children():
+		area.body_entered.connect(_body_entered.bind(area))
 
-func _on_pressed(button):
-	if button == $banderas.get_child(0):
+func _body_entered(body,area):
+	print("a")
+	if area == $banderas.get_child(0):
 		get_tree().change_scene_to_file("res://scenes/Levels/test.tscn")
 # Replace with function body.
 

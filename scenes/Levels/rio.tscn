@@ -157,7 +157,6 @@ texture_region_size = Vector2i(12, 12)
 1:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:7/0/physics_layer_0/angular_velocity = 0.0
 2:6/0 = 0
-2:6/0/terrain = 0
 2:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:6/0/physics_layer_0/angular_velocity = 0.0
 2:5/0 = 0
@@ -215,7 +214,6 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_sstu5")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2qmnm"]
-load_path = "res://.godot/imported/Art-removebg-preview.png-1c87b05725c50618407f408d1efae58d.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_885te"]
 size = Vector2(940, 231)
