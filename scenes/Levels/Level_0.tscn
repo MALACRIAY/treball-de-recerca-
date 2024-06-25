@@ -1,20 +1,20 @@
-[gd_scene load_steps=25 format=3 uid="uid://crtxjmhclrkkj"]
+[gd_scene load_steps=26 format=3 uid="uid://crtxjmhclrkkj"]
 
-[ext_resource type="Texture2D" uid="uid://dubfmt5fwkxv1" path="res://images/propias/Mapa_assets/Hockey/campo hockey.png" id="1_14jmy"]
-[ext_resource type="Script" path="res://scenes/scripts/porte.gd" id="1_k6gfr"]
-[ext_resource type="Texture2D" uid="uid://du51jxasbphto" path="res://images/propias/Mapa_assets/Puntuacion/guion.png" id="2_swv7a"]
-[ext_resource type="Script" path="res://scenes/Levels/Character_1.gd" id="3_2wg0l"]
-[ext_resource type="Texture2D" uid="uid://bthytufmxegd5" path="res://images/propias/Personajes/Objetos/hockey_player1.png" id="4_5xvyl"]
-[ext_resource type="Texture2D" uid="uid://b1eb08v7joeoh" path="res://images/propias/Personajes/Objetos/hockey_player2.png" id="5_qabtp"]
-[ext_resource type="Script" path="res://scenes/scripts/countdown_hockey.gd" id="7_57x3i"]
-[ext_resource type="Texture2D" uid="uid://sh07qea8thiw" path="res://images/propias/Mapa_assets/Hockey/countdown/3.png" id="8_j1jlb"]
-[ext_resource type="Texture2D" uid="uid://dtiulwhofawkc" path="res://images/propias/Mapa_assets/Hockey/countdown/2.png" id="9_w40u0"]
-[ext_resource type="Texture2D" uid="uid://b0t63veiekjjb" path="res://images/propias/Mapa_assets/Hockey/countdown/1.png" id="10_8v4rg"]
-[ext_resource type="Texture2D" uid="uid://da220thlqp8ty" path="res://images/propias/Mapa_assets/Hockey/countdown/0.png" id="11_twvbg"]
-[ext_resource type="Texture2D" uid="uid://wdsvllb1eymy" path="res://images/propias/Mapa_assets/Hockey/countdown/4.png" id="12_jkagq"]
-[ext_resource type="Texture2D" uid="uid://dh2d1o34y7fs2" path="res://images/propias/Mapa_assets/Hockey/countdown/5.png" id="13_2veqo"]
-[ext_resource type="Texture2D" uid="uid://15tidbgpr1nk" path="res://images/propias/Mapa_assets/Hockey/countdown/6.png" id="14_nhwgt"]
-[ext_resource type="Texture2D" uid="uid://bsxf4vcan6oij" path="res://images/propias/Mapa_assets/Hockey/countdown/7.png" id="15_nt25j"]
+[ext_resource type="Script" path="res://scenes/scripts/porte.gd" id="1_gy6rq"]
+[ext_resource type="Texture2D" uid="uid://du51jxasbphto" path="res://images/propias/Mapa_assets/Puntuacion/guion.png" id="2_iun0h"]
+[ext_resource type="Texture2D" uid="uid://dubfmt5fwkxv1" path="res://images/propias/Mapa_assets/Hockey/campo hockey.png" id="3_nvie4"]
+[ext_resource type="Script" path="res://scenes/scripts/Character_1.gd" id="4_mjq13"]
+[ext_resource type="Texture2D" uid="uid://bthytufmxegd5" path="res://images/propias/Personajes/Objetos/hockey_player1.png" id="5_ar8a7"]
+[ext_resource type="Texture2D" uid="uid://b1eb08v7joeoh" path="res://images/propias/Personajes/Objetos/hockey_player2.png" id="6_wnr45"]
+[ext_resource type="Script" path="res://scenes/scripts/countdown_hockey.gd" id="7_tmmuo"]
+[ext_resource type="Texture2D" uid="uid://sh07qea8thiw" path="res://images/propias/Mapa_assets/Hockey/countdown/3.png" id="8_018y4"]
+[ext_resource type="Texture2D" uid="uid://dtiulwhofawkc" path="res://images/propias/Mapa_assets/Hockey/countdown/2.png" id="9_7rrug"]
+[ext_resource type="Texture2D" uid="uid://b0t63veiekjjb" path="res://images/propias/Mapa_assets/Hockey/countdown/1.png" id="10_7t57t"]
+[ext_resource type="Texture2D" uid="uid://da220thlqp8ty" path="res://images/propias/Mapa_assets/Hockey/countdown/0.png" id="11_65huq"]
+[ext_resource type="Texture2D" uid="uid://wdsvllb1eymy" path="res://images/propias/Mapa_assets/Hockey/countdown/4.png" id="12_k72im"]
+[ext_resource type="Texture2D" uid="uid://dh2d1o34y7fs2" path="res://images/propias/Mapa_assets/Hockey/countdown/5.png" id="13_dnmch"]
+[ext_resource type="Texture2D" uid="uid://15tidbgpr1nk" path="res://images/propias/Mapa_assets/Hockey/countdown/6.png" id="14_rdfh4"]
+[ext_resource type="Texture2D" uid="uid://bsxf4vcan6oij" path="res://images/propias/Mapa_assets/Hockey/countdown/7.png" id="15_4gusm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hsoe"]
 size = Vector2(66, 161)
@@ -44,7 +44,24 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_gue6g"]
-resource_name = "difficulty 1"
+resource_name = "dif_1"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(326, 0), Vector2(328, -150), Vector2(326, 0), Vector2(323, 166), Vector2(326, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xm0i0"]
+resource_name = "dif_2"
 length = 3.0
 loop_mode = 2
 tracks/0/type = "value"
@@ -54,32 +71,33 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0001, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(326, 0), Vector2(328, -155), Vector2(323, 166)]
+"values": [Vector2(326, 200), Vector2(-326, 200)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_piu85"]
 _data = {
 "RESET": SubResource("Animation_rc3v4"),
-"difficulty 1": SubResource("Animation_gue6g")
+"dif_1": SubResource("Animation_gue6g"),
+"dif_2": SubResource("Animation_xm0i0")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p4wgy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_j1jlb")
+"texture": ExtResource("8_018y4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_w40u0")
+"texture": ExtResource("9_7rrug")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_8v4rg")
+"texture": ExtResource("10_7t57t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_twvbg")
+"texture": ExtResource("11_65huq")
 }, {
 "duration": 1.0,
 "texture": null
@@ -93,28 +111,28 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_twvbg")
+"texture": ExtResource("11_65huq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_8v4rg")
+"texture": ExtResource("10_7t57t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_w40u0")
+"texture": ExtResource("9_7rrug")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_j1jlb")
+"texture": ExtResource("8_018y4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_jkagq")
+"texture": ExtResource("12_k72im")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_2veqo")
+"texture": ExtResource("13_dnmch")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_nhwgt")
+"texture": ExtResource("14_rdfh4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_nt25j")
+"texture": ExtResource("15_4gusm")
 }],
 "loop": false,
 "name": &"default",
@@ -124,39 +142,37 @@ animations = [{
 [node name="Node2D" type="Node2D"]
 
 [node name="start" type="Marker2D" parent="."]
-position = Vector2(-156.19, 0)
+position = Vector2(-250, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 rotation = 1.5708
 scale = Vector2(10, 10)
 
 [node name="Campo" type="Node2D" parent="."]
-script = ExtResource("1_k6gfr")
+script = ExtResource("1_gy6rq")
 
 [node name="porte_1" type="Area2D" parent="Campo"]
+position = Vector2(-420, 0)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Campo/porte_1"]
-position = Vector2(-419, -2)
 rotation = 1.5708
 scale = Vector2(10, 10)
-texture = ExtResource("2_swv7a")
+texture = ExtResource("2_iun0h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Campo/porte_1"]
 z_index = 1
-position = Vector2(-427, 2)
 shape = SubResource("RectangleShape2D_8hsoe")
 
 [node name="porte_2" type="Area2D" parent="Campo"]
+position = Vector2(420, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Campo/porte_2"]
-position = Vector2(413, 1)
 rotation = 1.5708
 scale = Vector2(10, 10)
-texture = ExtResource("2_swv7a")
+texture = ExtResource("2_iun0h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Campo/porte_2"]
 z_index = 1
-position = Vector2(419, 8)
 shape = SubResource("RectangleShape2D_8hsoe")
 
 [node name="paredes" type="Node2D" parent="."]
@@ -164,11 +180,11 @@ shape = SubResource("RectangleShape2D_8hsoe")
 [node name="StaticBody2D" type="StaticBody2D" parent="paredes"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="paredes/StaticBody2D"]
-polygon = PackedVector2Array(400, 0, 420, 0, 420, 260, -420, 260, -420, 0, -400, 0, -400, 240, 400, 240)
+polygon = PackedVector2Array(400, 88, 420, 87, 420, 260, -420, 260, -421, 86, -399, 87, -400, 240, 400, 240)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="paredes/StaticBody2D"]
 rotation = 3.14159
-polygon = PackedVector2Array(400, 0, 420, 0, 420, 260, -420, 260, -420, 0, -400, 0, -400, 240, 400, 240)
+polygon = PackedVector2Array(400, 89.001, 421, 90.0011, 420, 260, -420, 260, -420, 85.9989, -400, 85.999, -400, 240, 400, 240)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="paredes"]
 collision_layer = 2
@@ -182,7 +198,7 @@ shape = SubResource("RectangleShape2D_0itid")
 position = Vector2(-9, 10)
 rotation = 1.5708
 scale = Vector2(10, 10)
-texture = ExtResource("1_14jmy")
+texture = ExtResource("3_nvie4")
 
 [node name="Character_1" type="CharacterBody2D" parent="."]
 position = Vector2(-331, 0)
@@ -191,11 +207,11 @@ collision_layer = 3
 collision_mask = 3
 collision_priority = 2.0
 motion_mode = 1
-script = ExtResource("3_2wg0l")
+script = ExtResource("4_mjq13")
 
 [node name="Sprite2D" type="Sprite2D" parent="Character_1"]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("4_5xvyl")
+texture = ExtResource("5_ar8a7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character_1"]
 position = Vector2(-1, 0.333341)
@@ -211,7 +227,7 @@ collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Character_2"]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("5_qabtp")
+texture = ExtResource("6_wnr45")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Character_2"]
 position = Vector2(-1, 0.333341)
@@ -219,15 +235,14 @@ rotation = 0.785398
 scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_csldk")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Character_2"]
+[node name="AnimationPlayer1" type="AnimationPlayer" parent="Character_2"]
 libraries = {
 "": SubResource("AnimationLibrary_piu85")
 }
-autoplay = "difficulty 1"
-speed_scale = 3.0
+speed_scale = 2.5
 
 [node name="countdown" type="Node2D" parent="."]
-script = ExtResource("7_57x3i")
+script = ExtResource("7_tmmuo")
 
 [node name="Timer" type="Timer" parent="countdown"]
 
@@ -253,5 +268,12 @@ position = Vector2(200, -270)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_r4b5f")
 
+[node name="Button" type="Button" parent="."]
+offset_left = 435.0
+offset_top = 225.0
+offset_right = 563.0
+offset_bottom = 309.0
+
 [connection signal="body_entered" from="Campo/porte_1" to="Campo/porte_1" method="_on_body_entered"]
 [connection signal="body_entered" from="Campo/porte_2" to="Campo/porte_1" method="_on_body_entered"]
+[connection signal="pressed" from="Button" to="Campo" method="_on_button_pressed"]

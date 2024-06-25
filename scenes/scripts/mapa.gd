@@ -6,11 +6,14 @@ var middle = 0
 func _ready():
 	for area in $banderas.get_children():
 		area.body_entered.connect(_body_entered.bind(area))
-
+	for area in $banderas.get_children():
+		if area.get_index() <= GlobalScript.level:
+			area.get_child(0)
 func _body_entered(body,area):
-	print("a")
-	if area == $banderas.get_child(0):
-		get_tree().change_scene_to_file("res://scenes/Levels/test.tscn")
+	print("res://scenes/Levels/Level_"+str(GlobalScript.level)+".tscn")
+	get_tree().change_scene_to_file("res://scenes/Levels/Level_"+str(GlobalScript.level)+".tscn")
+	#if area == $banderas.get_child(0):
+	#	get_tree().change_scene_to_file("res://scenes/Levels/Level_0.tscn")
 # Replace with function body.
 
 
