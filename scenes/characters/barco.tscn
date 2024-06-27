@@ -1,111 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://chtryju6ivdwf"]
+[gd_scene load_steps=4 format=3 uid="uid://chtryju6ivdwf"]
 
 [ext_resource type="Script" path="res://scenes/scripts/barco.gd" id="1_1pxyg"]
 [ext_resource type="Texture2D" uid="uid://8xvh288eh3qi" path="res://images/propias/Personajes/Objetos/barco.png" id="2_vkmwx"]
 
-[sub_resource type="Animation" id="Animation_d0q0x"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:skew")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.1, 0.1)]
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xs1wu"]
+size = Vector2(60, 80)
 
-[sub_resource type="Animation" id="Animation_gkcdg"]
-resource_name = "spin"
-length = 22.0
-step = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 7, 10.049, 13.005, 16.048, 19.14, 21.955, 22),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.0872665, -0.261799, -0.436332, -3.75246, -6.28319, -6.10865, -6.28319, -6.45772, -6.28419, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:skew")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 7, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.0872665, -0.261799, -0.436332, -0.187, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 2, 7, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.1, 0.1), Vector2(0.1, 0.09), Vector2(0.1, 0.09), Vector2(0.1, 0.09625), Vector2(0.1, 0.1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gc8ac"]
-_data = {
-"RESET": SubResource("Animation_d0q0x"),
-"spin": SubResource("Animation_gkcdg")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcm8j"]
-size = Vector2(3720, 6070)
-
-[node name="CharacterBody2D" type="CharacterBody2D"]
-scale = Vector2(0.1, 0.1)
+[node name="Barco" type="CharacterBody2D"]
 script = ExtResource("1_1pxyg")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_gc8ac")
-}
-speed_scale = 10.0
-
 [node name="Pixil-frame-0(1)2" type="Sprite2D" parent="."]
-rotation = 3.14159
+rotation = 1.5708
 texture = ExtResource("2_vkmwx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-20.0001, -5.00015)
-shape = SubResource("RectangleShape2D_wcm8j")
+position = Vector2(-4.76837e-06, -3.57628e-06)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_xs1wu")

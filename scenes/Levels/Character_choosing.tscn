@@ -1,10 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcrddjcpo38op"]
+[gd_scene load_steps=12 format=3 uid="uid://dcrddjcpo38op"]
 
 [ext_resource type="Script" path="res://scenes/scripts/Character_choosing.gd" id="1_h887o"]
 [ext_resource type="Texture2D" uid="uid://7xsu3m81ehqx" path="res://images/propias/Mapa_assets/Principal/Escoger_personajepng.png" id="2_j7d2p"]
 [ext_resource type="Texture2D" uid="uid://bi53hws3msmjg" path="res://images/propias/Personajes/Personas/Choose/Chica_morena_blanca.png" id="3_civ7r"]
 [ext_resource type="Texture2D" uid="uid://ggbm1pxgy1eb" path="res://images/propias/Personajes/Personas/Choose/Chica_morena_negra.png" id="4_64rtq"]
 [ext_resource type="Texture2D" uid="uid://c45fkkv4mhy8d" path="res://images/propias/Personajes/Personas/Choose/Chica_rubia_blanca.png" id="5_1gip8"]
+[ext_resource type="Texture2D" uid="uid://ee47qh0wcemw" path="res://images/propias/Mapa_assets/Principal/Cargando.png" id="6_u7piv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmydg"]
+atlas = ExtResource("6_u7piv")
+region = Rect2(768, 60, 256, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yesb8"]
+atlas = ExtResource("6_u7piv")
+region = Rect2(512, 60, 256, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cf88"]
+atlas = ExtResource("6_u7piv")
+region = Rect2(256, 60, 256, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un4jd"]
+atlas = ExtResource("6_u7piv")
+region = Rect2(0, 60, 256, 121)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_snq6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmydg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yesb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cf88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un4jd")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h887o")
@@ -152,5 +189,12 @@ flat = true
 icon_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(572, 579)
+sprite_frames = SubResource("SpriteFrames_snq6u")
+frame = 3
+frame_progress = 1.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timeout"]

@@ -2,7 +2,7 @@ extends Node2D
 var character : int
 @onready var timer = $Timer
 @onready var charging = $charging
-var wait_time = 1
+var wait_time = 5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer.wait_time = wait_time
@@ -13,7 +13,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	timer.time_left
+	$AnimatedSprite2D.frame = int(timer.time_left)
+	
 	
 
 func _mouse_entered(button):
