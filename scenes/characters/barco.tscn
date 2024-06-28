@@ -1,19 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://chtryju6ivdwf"]
+[gd_scene load_steps=4 format=3 uid="uid://3h1j8dxdcnd3"]
 
-[ext_resource type="Script" path="res://scenes/scripts/barco.gd" id="1_1pxyg"]
-[ext_resource type="Texture2D" uid="uid://8xvh288eh3qi" path="res://images/propias/Personajes/Objetos/barco.png" id="2_vkmwx"]
+[ext_resource type="Texture2D" uid="uid://8xvh288eh3qi" path="res://images/propias/Personajes/Objetos/barco.png" id="1_1y51s"]
+[ext_resource type="Script" path="res://scenes/scripts/barco.gd" id="1_270wg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xs1wu"]
-size = Vector2(60, 80)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8pcy"]
+size = Vector2(52, 71)
 
 [node name="Barco" type="CharacterBody2D"]
-script = ExtResource("1_1pxyg")
+script = ExtResource("1_270wg")
 
-[node name="Pixil-frame-0(1)2" type="Sprite2D" parent="."]
+[node name="6" type="Sprite2D" parent="."]
 rotation = 1.5708
-texture = ExtResource("2_vkmwx")
+texture = ExtResource("1_1y51s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.76837e-06, -3.57628e-06)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_xs1wu")
+shape = SubResource("RectangleShape2D_t8pcy")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Camera2D" type="Camera2D" parent="."]

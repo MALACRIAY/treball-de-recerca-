@@ -7,36 +7,36 @@
 [ext_resource type="Texture2D" uid="uid://c45fkkv4mhy8d" path="res://images/propias/Personajes/Personas/Choose/Chica_rubia_blanca.png" id="5_1gip8"]
 [ext_resource type="Texture2D" uid="uid://ee47qh0wcemw" path="res://images/propias/Mapa_assets/Principal/Cargando.png" id="6_u7piv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmydg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj3ka"]
 atlas = ExtResource("6_u7piv")
-region = Rect2(768, 60, 256, 121)
+region = Rect2(807, 0, 194, 243)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yesb8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkia4"]
 atlas = ExtResource("6_u7piv")
-region = Rect2(512, 60, 256, 121)
+region = Rect2(540, 0, 194, 243)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6cf88"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_08nv8"]
 atlas = ExtResource("6_u7piv")
-region = Rect2(256, 60, 256, 121)
+region = Rect2(291, 0, 194, 243)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_un4jd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xrm7"]
 atlas = ExtResource("6_u7piv")
-region = Rect2(0, 60, 256, 121)
+region = Rect2(25, 0, 194, 243)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_snq6u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mmydg")
+"texture": SubResource("AtlasTexture_hj3ka")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yesb8")
+"texture": SubResource("AtlasTexture_nkia4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6cf88")
+"texture": SubResource("AtlasTexture_08nv8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_un4jd")
+"texture": SubResource("AtlasTexture_2xrm7")
 }],
 "loop": false,
 "name": &"default",
@@ -194,7 +194,7 @@ wait_time = 5.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(572, 579)
 sprite_frames = SubResource("SpriteFrames_snq6u")
-frame = 3
+frame = 2
 frame_progress = 1.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timeout"]

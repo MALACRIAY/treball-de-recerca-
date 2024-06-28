@@ -7,6 +7,7 @@
 size = Vector2(107, 44)
 
 [node name="Area2D" type="Area2D"]
+position = Vector2(474, 245)
 script = ExtResource("1_roj68")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
