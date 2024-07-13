@@ -10,7 +10,6 @@ func _ready():
 		area.body_entered.connect(_body_entered.bind(area))
 
 func _body_entered(body,area):
-	print("a")
 	if body == $"../Disco":
 		disco = $"../Disco"
 		print(disco.global_position)

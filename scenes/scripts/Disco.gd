@@ -5,7 +5,7 @@ var speed = 750
 func start(_position, _direction):
 	rotation = _direction
 	position = _position
-	velocity = Vector2(speed, 0).rotated(rotation)
+	velocity = Vector2(speed, 0).rotated(rotation)/10
 
 func _physics_process(delta):
 	look_at(global_position+velocity)

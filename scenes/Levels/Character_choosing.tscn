@@ -1,46 +1,54 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcrddjcpo38op"]
+[gd_scene load_steps=14 format=3 uid="uid://dcrddjcpo38op"]
 
 [ext_resource type="Script" path="res://scenes/scripts/Character_choosing.gd" id="1_h887o"]
 [ext_resource type="Texture2D" uid="uid://7xsu3m81ehqx" path="res://images/propias/Mapa_assets/Principal/Escoger_personajepng.png" id="2_j7d2p"]
-[ext_resource type="Texture2D" uid="uid://bi53hws3msmjg" path="res://images/propias/Personajes/Personas/Choose/Chica_morena_blanca.png" id="3_civ7r"]
-[ext_resource type="Texture2D" uid="uid://ggbm1pxgy1eb" path="res://images/propias/Personajes/Personas/Choose/Chica_morena_negra.png" id="4_64rtq"]
-[ext_resource type="Texture2D" uid="uid://c45fkkv4mhy8d" path="res://images/propias/Personajes/Personas/Choose/Chica_rubia_blanca.png" id="5_1gip8"]
-[ext_resource type="Texture2D" uid="uid://ee47qh0wcemw" path="res://images/propias/Mapa_assets/Principal/Cargando.png" id="6_u7piv"]
+[ext_resource type="Texture2D" uid="uid://cb5vadhcbxxvm" path="res://images/propias/Personajes/Personas/Choose/Hombre_Blanco_M_i_R.png" id="3_o22ow"]
+[ext_resource type="Texture2D" uid="uid://iielbf0g51rf" path="res://images/propias/Personajes/Personas/Choose/Hombre_Negro_M_i_R.png" id="4_5vda4"]
+[ext_resource type="Texture2D" uid="uid://bn2eouddp3dos" path="res://images/propias/Personajes/Personas/Choose/Mujer_Morena_B_i_N.png" id="5_5rvar"]
+[ext_resource type="Texture2D" uid="uid://dsabrrhdpoq6q" path="res://images/propias/Personajes/Personas/Choose/Mujer_Rubia_B_i_N.png" id="6_nwsxd"]
+[ext_resource type="Texture2D" uid="uid://dvrf51ht5fwud" path="res://images/propias/Mapa_assets/Puntuacion/All.png" id="8_ov21i"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hj3ka"]
-atlas = ExtResource("6_u7piv")
-region = Rect2(807, 0, 194, 243)
+[sub_resource type="AtlasTexture" id="AtlasTexture_of201"]
+atlas = ExtResource("8_ov21i")
+region = Rect2(288, 211, 48, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nkia4"]
-atlas = ExtResource("6_u7piv")
-region = Rect2(540, 0, 194, 243)
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7tb3"]
+atlas = ExtResource("8_ov21i")
+region = Rect2(480, 211, 48, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_08nv8"]
-atlas = ExtResource("6_u7piv")
-region = Rect2(291, 0, 194, 243)
+[sub_resource type="AtlasTexture" id="AtlasTexture_apylx"]
+atlas = ExtResource("8_ov21i")
+region = Rect2(432, 211, 48, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2xrm7"]
-atlas = ExtResource("6_u7piv")
-region = Rect2(25, 0, 194, 243)
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2r2v"]
+atlas = ExtResource("8_ov21i")
+region = Rect2(384, 211, 48, 42)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_snq6u"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h4yf"]
+atlas = ExtResource("8_ov21i")
+region = Rect2(336, 211, 48, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1y2ow"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hj3ka")
+"texture": SubResource("AtlasTexture_of201")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nkia4")
+"texture": SubResource("AtlasTexture_d7tb3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_08nv8")
+"texture": SubResource("AtlasTexture_apylx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2xrm7")
+"texture": SubResource("AtlasTexture_d2r2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6h4yf")
 }],
 "loop": false,
-"name": &"default",
-"speed": 1.0
+"name": &"loading",
+"speed": 5.0
 }]
 
 [node name="Node2D" type="Node2D"]
@@ -147,54 +155,106 @@ texture = ExtResource("2_j7d2p")
 region_enabled = true
 region_rect = Rect2(686.001, -0.000305176, 31.4023, 695.459)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="pERSONAJES" type="Node2D" parent="."]
 
-[node name="Girl_1" type="Button" parent="Node2D"]
-offset_left = 616.0
-offset_top = 213.0
-offset_right = 684.0
-offset_bottom = 281.0
-scale = Vector2(2, 2)
-icon = ExtResource("3_civ7r")
-flat = true
+[node name="0" type="Sprite2D" parent="pERSONAJES"]
+position = Vector2(347, 280)
+scale = Vector2(0.6, 0.621)
+texture = ExtResource("3_o22ow")
+region_enabled = true
+region_rect = Rect2(0, 0, 135, 204)
 
-[node name="Girl_2" type="Button" parent="Node2D"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 729.0
-offset_top = 213.0
-offset_right = 797.0
-offset_bottom = 281.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-icon = ExtResource("4_64rtq")
-flat = true
-icon_alignment = 1
+[node name="1" type="Sprite2D" parent="pERSONAJES"]
+position = Vector2(346, 430)
+scale = Vector2(0.6, 0.621)
+texture = ExtResource("3_o22ow")
+region_enabled = true
+region_rect = Rect2(0, 204, 135, 204)
 
-[node name="Girl_3" type="Button" parent="Node2D"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 614.0
-offset_top = 358.0
-offset_right = 682.0
-offset_bottom = 426.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-icon = ExtResource("5_1gip8")
-flat = true
-icon_alignment = 1
+[node name="2" type="Sprite2D" parent="pERSONAJES"]
+position = Vector2(460, 280)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_5vda4")
+region_enabled = true
+region_rect = Rect2(0, 0, 135, 204)
+
+[node name="3" type="Sprite2D" parent="pERSONAJES"]
+position = Vector2(463, 430)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_5vda4")
+region_enabled = true
+region_rect = Rect2(0, 204, 135, 204)
+
+[node name="4" type="Sprite2D" parent="pERSONAJES"]
+position = Vector2(684, 280)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_5rvar")
+region_enabled = true
+region_rect = Rect2(0, 204, 135, 204)
+
+[node name="5" type="Sprite2D" parent="pERSONAJES"]
+position = Vector2(685, 430)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_nwsxd")
+region_enabled = true
+region_rect = Rect2(0, 0, 135, 204)
+
+[node name="6" type="Sprite2D" parent="pERSONAJES"]
+position = Vector2(798, 280)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_5rvar")
+region_enabled = true
+region_rect = Rect2(0, 0, 135, 204)
+
+[node name="7" type="Sprite2D" parent="pERSONAJES"]
+position = Vector2(799, 430)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_nwsxd")
+region_enabled = true
+region_rect = Rect2(0, 204, 135, 204)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(572, 579)
-sprite_frames = SubResource("SpriteFrames_snq6u")
-frame = 2
+position = Vector2(576, 355)
+sprite_frames = SubResource("SpriteFrames_1y2ow")
+animation = &"loading"
+frame = 3
 frame_progress = 1.0
+
+[node name="Textures" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Textures"]
+offset_right = 75.0
+offset_bottom = 120.0
+
+[node name="TextureRect2" type="TextureRect" parent="Textures"]
+offset_right = 75.0
+offset_bottom = 120.0
+
+[node name="TextureRect3" type="TextureRect" parent="Textures"]
+offset_right = 75.0
+offset_bottom = 120.0
+
+[node name="TextureRect4" type="TextureRect" parent="Textures"]
+offset_right = 75.0
+offset_bottom = 120.0
+
+[node name="TextureRect5" type="TextureRect" parent="Textures"]
+offset_right = 75.0
+offset_bottom = 120.0
+
+[node name="TextureRect6" type="TextureRect" parent="Textures"]
+offset_right = 75.0
+offset_bottom = 120.0
+
+[node name="TextureRect7" type="TextureRect" parent="Textures"]
+offset_right = 75.0
+offset_bottom = 120.0
+
+[node name="TextureRect8" type="TextureRect" parent="Textures"]
+offset_right = 75.0
+offset_bottom = 120.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timeout"]

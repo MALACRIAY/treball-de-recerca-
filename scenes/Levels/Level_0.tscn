@@ -193,6 +193,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D2"]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_0itid")
+disabled = true
 
 [node name="CampoHockey" type="Sprite2D" parent="paredes"]
 position = Vector2(-9, 10)
@@ -239,7 +240,7 @@ shape = SubResource("CircleShape2D_csldk")
 libraries = {
 "": SubResource("AnimationLibrary_piu85")
 }
-speed_scale = 2.5
+speed_scale = 0.3
 
 [node name="countdown" type="Node2D" parent="."]
 script = ExtResource("7_tmmuo")

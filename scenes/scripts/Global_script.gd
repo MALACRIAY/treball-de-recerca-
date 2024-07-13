@@ -1,7 +1,7 @@
 extends Node
 #mapa_global
 var level = 0
-
+var difficulty = 2
 #personatje
 var character_num := 0
 func _process(delta):
