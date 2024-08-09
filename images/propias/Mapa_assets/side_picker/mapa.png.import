@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wdsvllb1eymy"
-path="res://.godot/imported/4.png-a7012807a9f054ccb4ee3e380574606e.ctex"
+uid="uid://botpdj56wpbxt"
+path="res://.godot/imported/mapa.png-3ef280ecdffd83c71a2f1f708bd6e174.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/propias/Mapa_assets/Hockey/countdown/4.png"
-dest_files=["res://.godot/imported/4.png-a7012807a9f054ccb4ee3e380574606e.ctex"]
+source_file="res://images/propias/Mapa_assets/side_picker/mapa.png"
+dest_files=["res://.godot/imported/mapa.png-3ef280ecdffd83c71a2f1f708bd6e174.ctex"]
 
 [params]
 

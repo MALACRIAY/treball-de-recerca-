@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://erbggyswxryi" path="res://images/propias/Tilemaps/tilemap2.png" id="1_f1wwo"]
 [ext_resource type="Script" path="res://scenes/scripts/barco.gd" id="1_tlxt6"]
 [ext_resource type="PackedScene" uid="uid://bqm3svxohewrc" path="res://scenes/Levels/objects/Tronco.tscn" id="2_fenx2"]
-[ext_resource type="PackedScene" uid="uid://3h1j8dxdcnd3" path="res://scenes/characters/Barco.tscn" id="2_us8tc"]
+[ext_resource type="PackedScene" uid="uid://3h1j8dxdcnd3" path="res://scenes/characters/barco.tscn" id="2_us8tc"]
 [ext_resource type="Texture2D" uid="uid://c56k2q73i0xtt" path="res://images/propias/Mapa_assets/Hockey/disco_moviment.png" id="5_4ypjq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twe26"]
