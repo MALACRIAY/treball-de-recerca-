@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtiulwhofawkc"
-path="res://.godot/imported/5.png-2b8bc43bf2682bcadafa45a524a5ed88.ctex"
+uid="uid://w5j4an4e7x4a"
+path="res://.godot/imported/cesta.png-77a305bb98a1f447f0e9817e14bb31b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/propias/Mapa_assets/countdown/5.png"
-dest_files=["res://.godot/imported/5.png-2b8bc43bf2682bcadafa45a524a5ed88.ctex"]
+source_file="res://images/propias/Mapa_assets/side_picker/cesta.png"
+dest_files=["res://.godot/imported/cesta.png-77a305bb98a1f447f0e9817e14bb31b8.ctex"]
 
 [params]
 

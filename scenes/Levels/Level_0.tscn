@@ -8,11 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://b1eb08v7joeoh" path="res://images/propias/Personajes/Objetos/hockey_player2.png" id="6_wnr45"]
 [ext_resource type="Script" path="res://scenes/scripts/countdown_hockey.gd" id="7_tmmuo"]
 [ext_resource type="Texture2D" uid="uid://sh07qea8thiw" path="res://images/propias/Mapa_assets/countdown/3.png" id="8_018y4"]
-[ext_resource type="Texture2D" uid="uid://dtiulwhofawkc" path="res://images/propias/Mapa_assets/countdown/2.png" id="9_7rrug"]
+[ext_resource type="Texture2D" uid="uid://bd42lct4yhey3" path="res://images/propias/Mapa_assets/countdown/2.png" id="9_7rrug"]
 [ext_resource type="Texture2D" uid="uid://b0t63veiekjjb" path="res://images/propias/Mapa_assets/countdown/1.png" id="10_7t57t"]
 [ext_resource type="Texture2D" uid="uid://da220thlqp8ty" path="res://images/propias/Mapa_assets/countdown/0.png" id="11_65huq"]
 [ext_resource type="Texture2D" uid="uid://wdsvllb1eymy" path="res://images/propias/Mapa_assets/countdown/4.png" id="12_k72im"]
-[ext_resource type="Texture2D" uid="uid://dh2d1o34y7fs2" path="res://images/propias/Mapa_assets/countdown/5.png" id="13_dnmch"]
+[ext_resource type="Texture2D" uid="uid://dtiulwhofawkc" path="res://images/propias/Mapa_assets/countdown/5.png" id="13_dnmch"]
 [ext_resource type="Texture2D" uid="uid://15tidbgpr1nk" path="res://images/propias/Mapa_assets/countdown/6.png" id="14_rdfh4"]
 [ext_resource type="Texture2D" uid="uid://bsxf4vcan6oij" path="res://images/propias/Mapa_assets/countdown/7.png" id="15_4gusm"]
 
