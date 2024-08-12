@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da220thlqp8ty"
-path="res://.godot/imported/0.png-b4c3dd8b680ef45bcf853258ec9f716d.ctex"
+uid="uid://d24u3u5dpmyba"
+path="res://.godot/imported/skate_red.png-fd5c210a67d17805fc37df16f1313315.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/propias/Mapa_assets/countdown/0.png"
-dest_files=["res://.godot/imported/0.png-b4c3dd8b680ef45bcf853258ec9f716d.ctex"]
+source_file="res://images/propias/Mapa_assets/skate/skate_red.png"
+dest_files=["res://.godot/imported/skate_red.png-fd5c210a67d17805fc37df16f1313315.ctex"]
 
 [params]
 

@@ -7,14 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bthytufmxegd5" path="res://images/propias/Personajes/Objetos/hockey_player1.png" id="5_ar8a7"]
 [ext_resource type="Texture2D" uid="uid://b1eb08v7joeoh" path="res://images/propias/Personajes/Objetos/hockey_player2.png" id="6_wnr45"]
 [ext_resource type="Script" path="res://scenes/scripts/countdown_hockey.gd" id="7_tmmuo"]
-[ext_resource type="Texture2D" uid="uid://sh07qea8thiw" path="res://images/propias/Mapa_assets/countdown/3.png" id="8_018y4"]
-[ext_resource type="Texture2D" uid="uid://bd42lct4yhey3" path="res://images/propias/Mapa_assets/countdown/2.png" id="9_7rrug"]
-[ext_resource type="Texture2D" uid="uid://b0t63veiekjjb" path="res://images/propias/Mapa_assets/countdown/1.png" id="10_7t57t"]
-[ext_resource type="Texture2D" uid="uid://da220thlqp8ty" path="res://images/propias/Mapa_assets/countdown/0.png" id="11_65huq"]
-[ext_resource type="Texture2D" uid="uid://wdsvllb1eymy" path="res://images/propias/Mapa_assets/countdown/4.png" id="12_k72im"]
-[ext_resource type="Texture2D" uid="uid://dtiulwhofawkc" path="res://images/propias/Mapa_assets/countdown/5.png" id="13_dnmch"]
-[ext_resource type="Texture2D" uid="uid://15tidbgpr1nk" path="res://images/propias/Mapa_assets/countdown/6.png" id="14_rdfh4"]
-[ext_resource type="Texture2D" uid="uid://bsxf4vcan6oij" path="res://images/propias/Mapa_assets/countdown/7.png" id="15_4gusm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hsoe"]
 size = Vector2(66, 161)
@@ -84,20 +76,32 @@ _data = {
 "dif_2": SubResource("Animation_xm0i0")
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_53vtk"]
+load_path = "res://.godot/imported/3.png-34dafb3be9c739a485a26c688a43f653.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yp22c"]
+load_path = "res://.godot/imported/2.png-6f69e4b74e251e83f79b36ec87a50b4a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gsqy5"]
+load_path = "res://.godot/imported/1.png-de9da8d9542734f228686e77a29363e5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fe8ip"]
+load_path = "res://.godot/imported/0.png-b4c3dd8b680ef45bcf853258ec9f716d.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_p4wgy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_018y4")
+"texture": SubResource("CompressedTexture2D_53vtk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_7rrug")
+"texture": SubResource("CompressedTexture2D_yp22c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_7t57t")
+"texture": SubResource("CompressedTexture2D_gsqy5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_65huq")
+"texture": SubResource("CompressedTexture2D_fe8ip")
 }, {
 "duration": 1.0,
 "texture": null
@@ -107,32 +111,44 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5hue2"]
+load_path = "res://.godot/imported/4.png-4903329703c5356d831d6f8d4852dbf1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nq5pl"]
+load_path = "res://.godot/imported/5.png-2b8bc43bf2682bcadafa45a524a5ed88.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q3tix"]
+load_path = "res://.godot/imported/6.png-a1c223d767ce9b34c6b42f0a3f463936.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2pkpa"]
+load_path = "res://.godot/imported/7.png-7e5350fd06856bd78b11bf99240e113a.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_r4b5f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_65huq")
+"texture": SubResource("CompressedTexture2D_fe8ip")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_7t57t")
+"texture": SubResource("CompressedTexture2D_gsqy5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_7rrug")
+"texture": SubResource("CompressedTexture2D_yp22c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_018y4")
+"texture": SubResource("CompressedTexture2D_53vtk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_k72im")
+"texture": SubResource("CompressedTexture2D_5hue2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_dnmch")
+"texture": SubResource("CompressedTexture2D_nq5pl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_rdfh4")
+"texture": SubResource("CompressedTexture2D_q3tix")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_4gusm")
+"texture": SubResource("CompressedTexture2D_2pkpa")
 }],
 "loop": false,
 "name": &"default",
@@ -207,7 +223,6 @@ scale = Vector2(1.5, 1.5)
 collision_layer = 3
 collision_mask = 3
 collision_priority = 2.0
-motion_mode = 1
 script = ExtResource("4_mjq13")
 
 [node name="Sprite2D" type="Sprite2D" parent="Character_1"]
@@ -261,13 +276,35 @@ autostart = true
 position = Vector2(-200, -270)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_r4b5f")
-frame = 6
-frame_progress = 0.249831
 
 [node name="Goals_red" type="AnimatedSprite2D" parent="countdown"]
 position = Vector2(200, -270)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_r4b5f")
 
+[node name="Timer_skip" type="Timer" parent="countdown"]
+wait_time = 3.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="countdown"]
+offset_left = 412.0
+offset_top = 177.0
+offset_right = 452.0
+offset_bottom = 217.0
+scale = Vector2(3, 3)
+max_value = 3.0
+value = 3.0
+fill_mode = 4
+texture_progress = ExtResource("5_ar8a7")
+
+[node name="Label" type="Label" parent="countdown/TextureProgressBar"]
+layout_mode = 0
+offset_left = 3.99999
+offset_top = 8.33333
+offset_right = 44.0
+offset_bottom = 31.3333
+text = "SKIP"
+
 [connection signal="body_entered" from="Campo/porte_1" to="Campo/porte_1" method="_on_body_entered"]
 [connection signal="body_entered" from="Campo/porte_2" to="Campo/porte_1" method="_on_body_entered"]
+[connection signal="mouse_entered" from="countdown/TextureProgressBar" to="countdown" method="_on_texture_progress_bar_mouse_entered"]
+[connection signal="mouse_exited" from="countdown/TextureProgressBar" to="countdown" method="_on_texture_progress_bar_mouse_exited"]

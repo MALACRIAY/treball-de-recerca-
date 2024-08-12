@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wdsvllb1eymy"
-path="res://.godot/imported/4.png-4903329703c5356d831d6f8d4852dbf1.ctex"
+uid="uid://cb31d5qcqqith"
+path="res://.godot/imported/pedra_1.png-574412077ea10d176d747a79b38498c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/propias/Mapa_assets/countdown/4.png"
-dest_files=["res://.godot/imported/4.png-4903329703c5356d831d6f8d4852dbf1.ctex"]
+source_file="res://images/propias/Mapa_assets/skate/pedra_1.png"
+dest_files=["res://.godot/imported/pedra_1.png-574412077ea10d176d747a79b38498c1.ctex"]
 
 [params]
 

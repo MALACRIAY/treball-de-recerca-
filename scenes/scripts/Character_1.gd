@@ -4,10 +4,7 @@ var Bullet = preload("res://scenes/Levels/objects/Disco.tscn")
 var start = false
 var max_balls = 1
 func _ready():
-	
-	print("a")
-
-
+	pass
 func _physics_process(delta):
 	if start:
 		if max_balls:

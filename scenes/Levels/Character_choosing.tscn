@@ -214,7 +214,6 @@ region_enabled = true
 region_rect = Rect2(0, 204, 135, 204)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(576, 355)

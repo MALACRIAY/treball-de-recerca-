@@ -3,7 +3,7 @@ extends Node
 var level = 0
 var difficulty = 2
 #personatje
-var character_num := 0
+var character_num = 0
 func _process(delta):
 	pass
 		

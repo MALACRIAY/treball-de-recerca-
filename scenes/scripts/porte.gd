@@ -1,4 +1,5 @@
 extends Node2D
+@onready var timer_skip = $"../countdown/Timer_skip"
 var goal : bool
 var initial_time = .5
 var time = .5
@@ -35,3 +36,4 @@ func _process(delta):
 		goal = false 
 		time = initial_time
 		get_tree().reload_current_scene()
+

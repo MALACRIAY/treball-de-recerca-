@@ -15,11 +15,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$AnimatedSprite2D.frame = int(timer.time_left)
-
 	
-
 func _mouse_entered(texture):
-	print(texture.get_index())
+	character =texture.get_index()
 	timer.start()
 
 func _mouse_exited(texture):

@@ -43,10 +43,7 @@ func _on_zona_2_body_entered(body):
 	if body == Barco:
 		Barco.Zona = 1 # Replace with function body.
 func _process(delta):
-	print(obstacles.size())
-	print(in_wall)
 	if Barco.Zona == 2:
 		camera.global_position.y = Barco.global_position.y +100
 	elif Barco.Zona == 1: 
-		camera.global_position.y + 200
 		camera.global_position = Barco.global_position+ Vector2( -100, 100)
