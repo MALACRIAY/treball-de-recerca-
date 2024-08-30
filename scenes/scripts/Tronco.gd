@@ -8,7 +8,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 	emit_signal("obstacle_exited")
 	
 func _on_body_entered(body):
-	if body == $"../Mapa":
+	if body == $"../Mapa" or body in $"../mapa".get_children():
 		visible = false
 		$"..".in_wall = true
 		queue_free()

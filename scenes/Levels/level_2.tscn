@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://brvlc7gprp6ia"]
+[gd_scene load_steps=44 format=3 uid="uid://brvlc7gprp6ia"]
 
 [ext_resource type="Script" path="res://scenes/scripts/level_2.gd" id="1_u46bd"]
 [ext_resource type="Texture2D" uid="uid://botpdj56wpbxt" path="res://images/propias/Mapa_assets/side_picker/mapa.png" id="1_wd05n"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://iielbf0g51rf" path="res://images/propias/Personajes/Personas/Choose/Hombre_Negro_M_i_R.png" id="4_igsyh"]
 [ext_resource type="Texture2D" uid="uid://bn2eouddp3dos" path="res://images/propias/Personajes/Personas/Choose/Mujer_Morena_B_i_N.png" id="5_qjifm"]
 [ext_resource type="Texture2D" uid="uid://dsabrrhdpoq6q" path="res://images/propias/Personajes/Personas/Choose/Mujer_Rubia_B_i_N.png" id="6_bky80"]
-[ext_resource type="Texture2D" uid="uid://du51jxasbphto" path="res://images/propias/Mapa_assets/Puntuacion/guion.png" id="7_h6wl8"]
+[ext_resource type="Script" path="res://scenes/scripts/persona_image.gd" id="8_jg83r"]
+[ext_resource type="Texture2D" uid="uid://dagytrx7oqedq" path="res://images/propias/Mapa_assets/side_picker/barra.png" id="9_ar73t"]
 [ext_resource type="PackedScene" uid="uid://c28g1ir66ceby" path="res://scenes/Levels/objects/flower.tscn" id="16_xb2xd"]
 [ext_resource type="Texture2D" uid="uid://w5j4an4e7x4a" path="res://images/propias/Mapa_assets/side_picker/cesta.png" id="17_ht834"]
 [ext_resource type="Texture2D" uid="uid://nths2xqy56le" path="res://images/propias/Mapa_assets/side_picker/flowers/flor_red_1.png" id="18_wyub0"]
@@ -111,63 +112,98 @@ animations = [{
 atlas = ExtResource("3_cvvd3")
 region = Rect2(0, 0, 135, 202)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7hlga"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6p61"]
 atlas = ExtResource("3_cvvd3")
 region = Rect2(0, 202, 135, 202)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uwdpo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsuuy"]
 atlas = ExtResource("4_igsyh")
 region = Rect2(0, 0, 134, 202)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_84dhx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxyme"]
 atlas = ExtResource("4_igsyh")
 region = Rect2(0, 202, 134, 202)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xpkm7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5pey"]
 atlas = ExtResource("5_qjifm")
 region = Rect2(0, 202, 134, 202)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ibwjd"]
-atlas = ExtResource("5_qjifm")
-region = Rect2(0, 0, 134, 202)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jw122"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_whdkf"]
 atlas = ExtResource("6_bky80")
 region = Rect2(0, 0, 135, 202)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dnb2m"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ciyj"]
+atlas = ExtResource("5_qjifm")
+region = Rect2(0, 0, 134, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n687"]
 atlas = ExtResource("6_bky80")
 region = Rect2(0, 202, 135, 202)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nflwc"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mhxy3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vkjdn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7hlga")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uwdpo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_84dhx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xpkm7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ibwjd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jw122")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dnb2m")
 }],
 "loop": true,
-"name": &"default",
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6p61")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsuuy")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxyme")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5pey")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whdkf")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ciyj")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n687")
+}],
+"loop": true,
+"name": &"7",
 "speed": 5.0
 }]
 
@@ -387,8 +423,7 @@ size = Vector2(48, 55)
 
 [node name="side_picker" type="Node2D"]
 script = ExtResource("1_u46bd")
-flowers_max = 5
-flower_scene = ExtResource("16_xb2xd")
+flowers_max = 10
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -442,28 +477,24 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_doajr")
 autoplay = "default"
 
-[node name="Character_sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(574.5, 468)
-sprite_frames = SubResource("SpriteFrames_nflwc")
+[node name="persona" type="AnimatedSprite2D" parent="."]
+position = Vector2(574, 468)
+sprite_frames = SubResource("SpriteFrames_mhxy3")
+animation = &"1"
+script = ExtResource("8_jg83r")
 
 [node name="barra" type="Area2D" parent="."]
-position = Vector2(574, 462)
-rotation = -0.261799
+position = Vector2(574, 466.67)
 scale = Vector2(1.23, 1.23)
 
 [node name="Guion" type="Sprite2D" parent="barra"]
-scale = Vector2(8, 4)
-texture = ExtResource("7_h6wl8")
+position = Vector2(0.813008, -15.4472)
+scale = Vector2(6, 6)
+texture = ExtResource("9_ar73t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barra"]
 position = Vector2(9.15527e-05, -13.7044)
 shape = SubResource("RectangleShape2D_yr2db")
-
-[node name="Animaciones" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Flower")
-libraries = {
-"": SubResource("AnimationLibrary_1g1nu")
-}
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 4.0
@@ -475,6 +506,11 @@ visible = false
 
 [node name="Flower" parent="." instance=ExtResource("16_xb2xd")]
 position = Vector2(-44, 81)
+
+[node name="Animaciones" type="AnimationPlayer" parent="Flower"]
+libraries = {
+"": SubResource("AnimationLibrary_1g1nu")
+}
 
 [node name="cesta_red" type="Area2D" parent="."]
 position = Vector2(873, 549)
@@ -522,7 +558,7 @@ rotation = 0.349066
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("19_bf1th")
 
-[connection signal="animation_finished" from="Animaciones" to="." method="_on_animation_finished"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_timeout"]
+[connection signal="animation_finished" from="Flower/Animaciones" to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="cesta_red" to="." method="_on_cesta_red_body_entered"]
 [connection signal="body_entered" from="cesta_purple" to="." method="_on_cesta_purple_body_entered"]

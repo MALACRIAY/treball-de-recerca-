@@ -16,7 +16,7 @@ func _ready():
 func _process(delta):
 	if Zona == 1:
 		resolvedor_de_problemas = 0
-	elif Zona == 2:
+	elif Zona == 2 or 3:
 		resolvedor_de_problemas = 90
 	look_at(get_global_mouse_position())
 	rotation_degrees += resolvedor_de_problemas

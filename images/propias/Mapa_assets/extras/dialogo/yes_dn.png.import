@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0ptcaynf5wkg"
-path="res://.godot/imported/Tilemap_principal.png-212fd3ae46b1fe5ac9c0e41ea90a35bc.ctex"
+uid="uid://cs5gj3kesmapr"
+path="res://.godot/imported/yes_dn.png-7025f0ea7be23936b6dbb92849701085.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/propias/Tilemaps/Tilemap_principal.png"
-dest_files=["res://.godot/imported/Tilemap_principal.png-212fd3ae46b1fe5ac9c0e41ea90a35bc.ctex"]
+source_file="res://images/propias/Mapa_assets/extras/dialogo/yes_dn.png"
+dest_files=["res://.godot/imported/yes_dn.png-7025f0ea7be23936b6dbb92849701085.ctex"]
 
 [params]
 

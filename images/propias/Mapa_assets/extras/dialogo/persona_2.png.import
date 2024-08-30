@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://erbggyswxryi"
-path="res://.godot/imported/tilemap2.png-b839e1dfbc0bd9d3368bfc7f6965fe4c.ctex"
+uid="uid://yvxmel1j2p1w"
+path="res://.godot/imported/persona_2.png-926276ff7dbb7d5ffc0d7c3adb4d2e87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/propias/Tilemaps/tilemap2.png"
-dest_files=["res://.godot/imported/tilemap2.png-b839e1dfbc0bd9d3368bfc7f6965fe4c.ctex"]
+source_file="res://images/propias/Mapa_assets/extras/dialogo/persona_2.png"
+dest_files=["res://.godot/imported/persona_2.png-926276ff7dbb7d5ffc0d7c3adb4d2e87.ctex"]
 
 [params]
 

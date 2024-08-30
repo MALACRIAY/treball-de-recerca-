@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://ud1414sdm32a"]
+[gd_scene load_steps=51 format=3 uid="uid://ud1414sdm32a"]
 
 [ext_resource type="Texture2D" uid="uid://cikrpofv4s5bw" path="res://images/propias/Mapa_assets/skate/mapa.png" id="1_i6wxf"]
 [ext_resource type="Script" path="res://scenes/scripts/Skater.gd" id="2_lfsod"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://iielbf0g51rf" path="res://images/propias/Personajes/Personas/Choose/Hombre_Negro_M_i_R.png" id="10_7q6mk"]
 [ext_resource type="Texture2D" uid="uid://bn2eouddp3dos" path="res://images/propias/Personajes/Personas/Choose/Mujer_Morena_B_i_N.png" id="11_4lg1s"]
 [ext_resource type="Texture2D" uid="uid://dsabrrhdpoq6q" path="res://images/propias/Personajes/Personas/Choose/Mujer_Rubia_B_i_N.png" id="12_jcyjp"]
+[ext_resource type="Script" path="res://scenes/scripts/persona_image.gd" id="18_ie2d3"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fe8ip"]
 load_path = "res://.godot/imported/0.png-b4c3dd8b680ef45bcf853258ec9f716d.ctex"
@@ -266,26 +267,26 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("persona:position")
+tracks/2/path = NodePath("persona:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-53.1438, -33.4026), Vector2(-132.959, -41.4947), Vector2(-171.103, -36.4915), Vector2(-223.243, -31.8547), Vector2(-261.806, -10.857), Vector2(-314.782, 25.7688), Vector2(-331.405, 49.3417), Vector2(-363.813, 64.4986), Vector2(-364.127, 76.4945), Vector2(-380.122, 76.0756)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("persona:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [-0.0436332, -0.1309, -0.375246, -0.680678, -0.986111, -1.27409, -1.46608, -1.65806, -1.5708, -1.5708]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("persona:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-53.1438, -33.4026), Vector2(-132.959, -41.4947), Vector2(-171.103, -36.4915), Vector2(-223.243, -31.8547), Vector2(-261.806, -10.857), Vector2(-314.782, 25.7688), Vector2(-331.405, 49.3417), Vector2(-363.813, 64.4986), Vector2(-364.127, 76.4945), Vector2(-380.122, 76.0756)]
 }
 
 [sub_resource type="Animation" id="Animation_tshvv"]
@@ -392,31 +393,31 @@ animations = [{
 atlas = ExtResource("9_tngg2")
 region = Rect2(0, 0, 135, 202)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7hlga"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6p61"]
 atlas = ExtResource("9_tngg2")
 region = Rect2(0, 202, 135, 202)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uwdpo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsuuy"]
 atlas = ExtResource("10_7q6mk")
 region = Rect2(0, 0, 134, 202)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_84dhx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxyme"]
 atlas = ExtResource("10_7q6mk")
 region = Rect2(0, 202, 134, 202)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xpkm7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5pey"]
 atlas = ExtResource("11_4lg1s")
 region = Rect2(0, 202, 134, 202)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ibwjd"]
-atlas = ExtResource("11_4lg1s")
-region = Rect2(0, 0, 134, 202)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jw122"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_whdkf"]
 atlas = ExtResource("12_jcyjp")
 region = Rect2(0, 0, 135, 202)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dnb2m"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ciyj"]
+atlas = ExtResource("11_4lg1s")
+region = Rect2(0, 0, 134, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n687"]
 atlas = ExtResource("12_jcyjp")
 region = Rect2(0, 202, 135, 202)
 
@@ -425,30 +426,65 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vkjdn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7hlga")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uwdpo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_84dhx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xpkm7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ibwjd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jw122")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dnb2m")
 }],
 "loop": true,
-"name": &"default",
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6p61")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsuuy")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxyme")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5pey")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whdkf")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ciyj")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n687")
+}],
+"loop": true,
+"name": &"7",
 "speed": 5.0
 }]
 
@@ -591,6 +627,8 @@ frame_progress = 1.0
 [node name="persona" type="AnimatedSprite2D" parent="Skater/Area2D"]
 rotation = -0.0436332
 sprite_frames = SubResource("SpriteFrames_1h86e")
+animation = &"0"
+script = ExtResource("18_ie2d3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skater/Area2D"]
 position = Vector2(2.84131, 18.8482)

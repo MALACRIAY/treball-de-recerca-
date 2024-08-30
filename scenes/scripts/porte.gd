@@ -1,39 +1,32 @@
 extends Node2D
 @onready var timer_skip = $"../countdown/Timer_skip"
+@onready var timer = $"../Timer_goal"
+@onready var character = $"../Character_1"
 var goal : bool
-var initial_time = .5
-var time = .5
-var porte
-var disco
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready():
+	
 	for area in get_children():
 		area.body_entered.connect(_body_entered.bind(area))
 
 func _body_entered(body,area):
-	if body == $"../Disco":
-		disco = $"../Disco"
-		print(disco.global_position)
-		print("Porte: "+str(porte))
+	if body == %Disco_hockey:
 		goal = true
-		porte = area
-		print("b")
+		check_goal(area)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if GlobalScript.points_blue >= 3:
-		get_tree().change_scene_to_file("res://scenes/Levels/Principal.tscn")
-		GlobalScript.level+=1
+func check_goal(porte):
 	if goal == true:
-		disco.global_position.x = move_toward(disco.global_position.x,porte.global_position.x,10)
-		time -= delta
-	if time <= 0:
+		timer.start()
 		if porte == $porte_1:
 			GlobalScript.points_red += 1
 		elif porte==$"porte_2":
 			GlobalScript.points_blue += 1
-		
-		goal = false 
-		time = initial_time
-		get_tree().reload_current_scene()
 
+func _process(delta):
+	pass
+	
+func _on_timer_goal_timeout():
+	timer.stop()
+	goal = false
+	character.restart() # Replace with function body.

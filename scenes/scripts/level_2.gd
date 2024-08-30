@@ -1,17 +1,14 @@
 extends Node2D
 @export var flowers_max : int
 @onready var barra = $barra
-@onready var animations = $Animaciones
-@export var flower_scene: PackedScene
-@export var spawn_interval : int
-@onready var spawn_timer : Timer = $SpawnTimer
+@onready var animations = $Flower/Animaciones
 @onready var flower = $Flower
 @onready var point_marker = $countdown/Points
 var side : int
 var points = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	animations.speed_scale = GlobalScript.difficulty
 	
 func _process(delta):
 	side = sign(get_global_mouse_position().x - barra.global_position.x )
@@ -29,13 +26,7 @@ func spawn_flower():
 			animations.play("top_left")
 		else:
 			animations.play("top_right")
-"	var flower = flower_scene.instantiate()
-	flower.global_position = Vector2(1500,0)
-	add_child(flower)
-	
-	flower.set_name(Flower)
-	print(flower.name)
-	add_child(flower)"
+
 
 func _on_cesta_red_body_entered(body):
 	if body ==  flower:
