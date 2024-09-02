@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqm3svxohewrc"]
+[gd_scene load_steps=10 format=3 uid="uid://bqm3svxohewrc"]
 
 [ext_resource type="Script" path="res://scenes/scripts/Tronco.gd" id="1_roj68"]
 [ext_resource type="Texture2D" uid="uid://b82a5t1tkiaid" path="res://images/propias/Mapa_assets/Rio/Tronco.png" id="2_ixpgl"]
+[ext_resource type="Texture2D" uid="uid://dvrf51ht5fwud" path="res://images/propias/Mapa_assets/Puntuacion/All.png" id="2_kf6lv"]
 
 [sub_resource type="Animation" id="Animation_6tcdj"]
 resource_name = "Disapear"
@@ -88,6 +89,21 @@ _data = {
 "RESET": SubResource("Animation_fillm")
 }
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s4v81"]
+lifetime_randomness = 0.2
+particle_flag_rotate_y = true
+emission_shape = 3
+emission_box_extents = Vector3(80, 20, 1)
+angle_min = -673.4
+angle_max = 697.1
+gravity = Vector3(0, 98, 0)
+turbulence_enabled = true
+turbulence_influence_max = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnxds"]
+atlas = ExtResource("2_kf6lv")
+region = Rect2(288, 102, 7, 10)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5vke"]
 size = Vector2(107, 44)
 
@@ -101,6 +117,10 @@ libraries = {
 "": SubResource("AnimationLibrary_fdp0o")
 }
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_s4v81")
+texture = SubResource("AtlasTexture_tnxds")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ixpgl")
 region_enabled = true
@@ -109,6 +129,15 @@ region_rect = Rect2(30, 91, 127, 56)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-6.5, 21)
 shape = SubResource("RectangleShape2D_b5vke")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 20
+emission_shape = 1
+emission_sphere_radius = 65.0
+direction = Vector2(19, 19)
+spread = 99.22
+gravity = Vector2(0, 0)
+color = Color(0, 0, 1, 1)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

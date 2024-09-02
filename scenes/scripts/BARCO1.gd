@@ -14,6 +14,10 @@ func _ready():
 	main = $".."
 
 func _process(delta):
+	if Zona != 4:
+		movement(delta)
+
+func movement(delta):
 	if Zona == 1:
 		resolvedor_de_problemas = 0
 	elif Zona == 2 or 3:
@@ -36,4 +40,4 @@ func _process(delta):
 func _on_Barco_body_entered(body):
 	if body in main.obstacles:
 		body.get_child(0).play("Disapear",-1,4.0)
-		speed -= speed/2 
+		speed -= speed/(4-GlobalScript.difficulty)

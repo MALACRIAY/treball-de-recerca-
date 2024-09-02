@@ -14,28 +14,20 @@
 [ext_resource type="Texture2D" uid="uid://cewhcupmw6dhu" path="res://images/propias/Mapa_assets/side_picker/flowers/flor_lila_1.png" id="19_bf1th"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fe8ip"]
-load_path = "res://.godot/imported/0.png-b4c3dd8b680ef45bcf853258ec9f716d.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gsqy5"]
-load_path = "res://.godot/imported/1.png-de9da8d9542734f228686e77a29363e5.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yp22c"]
-load_path = "res://.godot/imported/2.png-6f69e4b74e251e83f79b36ec87a50b4a.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_53vtk"]
-load_path = "res://.godot/imported/3.png-34dafb3be9c739a485a26c688a43f653.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5hue2"]
-load_path = "res://.godot/imported/4.png-4903329703c5356d831d6f8d4852dbf1.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nq5pl"]
-load_path = "res://.godot/imported/5.png-2b8bc43bf2682bcadafa45a524a5ed88.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q3tix"]
-load_path = "res://.godot/imported/6.png-a1c223d767ce9b34c6b42f0a3f463936.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2pkpa"]
-load_path = "res://.godot/imported/7.png-7e5350fd06856bd78b11bf99240e113a.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_diddx"]
 animations = [{

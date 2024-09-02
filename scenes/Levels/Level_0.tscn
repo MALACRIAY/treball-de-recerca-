@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b7jtkjuj8mc1v"]
+[gd_scene load_steps=34 format=3 uid="uid://b7jtkjuj8mc1v"]
 
 [ext_resource type="Script" path="res://scenes/scripts/porte.gd" id="1_gy6rq"]
 [ext_resource type="Texture2D" uid="uid://du51jxasbphto" path="res://images/propias/Mapa_assets/Puntuacion/guion.png" id="2_iun0h"]
@@ -9,13 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://b1eb08v7joeoh" path="res://images/propias/Personajes/Objetos/hockey_player2.png" id="6_wnr45"]
 [ext_resource type="Script" path="res://scenes/scripts/countdown_hockey.gd" id="7_tmmuo"]
 [ext_resource type="Texture2D" uid="uid://cpywsdbbpvwqg" path="res://images/propias/Mapa_assets/extras/dialogo/cuadro_0.png" id="8_fxg47"]
+[ext_resource type="Texture2D" uid="uid://by74nf2tlcses" path="res://images/propias/Mapa_assets/Puntuacion/3.png" id="9_1jhwb"]
 [ext_resource type="Script" path="res://scenes/scripts/Dialogo_hockey.gd" id="9_gwjqp"]
 [ext_resource type="Texture2D" uid="uid://bsosdjsm6u21j" path="res://images/propias/Mapa_assets/extras/dialogo/persona_0.png" id="10_e0uug"]
+[ext_resource type="Texture2D" uid="uid://hclkgxsvyfao" path="res://images/propias/Mapa_assets/Puntuacion/2.png" id="10_h3grm"]
+[ext_resource type="Texture2D" uid="uid://d2jk6yh0sdt6v" path="res://images/propias/Mapa_assets/Puntuacion/1.png" id="11_1jggn"]
 [ext_resource type="Texture2D" uid="uid://b0qvuok20fv1s" path="res://images/propias/Mapa_assets/extras/dialogo/yes_up.png" id="12_1hjh8"]
+[ext_resource type="Texture2D" uid="uid://by87d6idxb3kt" path="res://images/propias/Mapa_assets/Puntuacion/0.png" id="12_ihshw"]
 [ext_resource type="Texture2D" uid="uid://cs5gj3kesmapr" path="res://images/propias/Mapa_assets/extras/dialogo/yes_dn.png" id="13_41fl5"]
+[ext_resource type="Texture2D" uid="uid://cxkxyunjgexrv" path="res://images/propias/Mapa_assets/Puntuacion/4.png" id="13_eo8o2"]
 [ext_resource type="Texture2D" uid="uid://de4hfn5c8slyq" path="res://images/propias/Mapa_assets/extras/dialogo/no_up.png" id="14_4bmad"]
 [ext_resource type="Texture2D" uid="uid://cu416ev74wdm" path="res://images/propias/Mapa_assets/extras/dialogo/no_dn.png" id="15_vyk14"]
-[ext_resource type="Texture2D" uid="uid://ee47qh0wcemw" path="res://images/propias/Mapa_assets/Principal/Cargando.png" id="16_63j8l"]
+[ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="16_e114l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iooyf"]
 size = Vector2(66, 161)
@@ -103,116 +108,54 @@ _data = {
 "dif_3": SubResource("Animation_xm0i0")
 }
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_53vtk"]
-load_path = "res://.godot/imported/3.png-34dafb3be9c739a485a26c688a43f653.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yp22c"]
-load_path = "res://.godot/imported/2.png-6f69e4b74e251e83f79b36ec87a50b4a.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gsqy5"]
-load_path = "res://.godot/imported/1.png-de9da8d9542734f228686e77a29363e5.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fe8ip"]
-load_path = "res://.godot/imported/0.png-b4c3dd8b680ef45bcf853258ec9f716d.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfl3e"]
+atlas = ExtResource("12_ihshw")
+region = Rect2(0, 0, 80, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jj7ki"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_53vtk")
+"texture": ExtResource("9_1jhwb")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_yp22c")
+"texture": ExtResource("10_h3grm")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_gsqy5")
+"texture": ExtResource("11_1jggn")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_fe8ip")
+"texture": SubResource("AtlasTexture_pfl3e")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": false,
 "name": &"count",
 "speed": 1.0
 }]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5hue2"]
-load_path = "res://.godot/imported/4.png-4903329703c5356d831d6f8d4852dbf1.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nq5pl"]
-load_path = "res://.godot/imported/5.png-2b8bc43bf2682bcadafa45a524a5ed88.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q3tix"]
-load_path = "res://.godot/imported/6.png-a1c223d767ce9b34c6b42f0a3f463936.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2pkpa"]
-load_path = "res://.godot/imported/7.png-7e5350fd06856bd78b11bf99240e113a.ctex"
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_2f6hq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_fe8ip")
+"texture": ExtResource("12_ihshw")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_gsqy5")
+"texture": ExtResource("11_1jggn")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_yp22c")
+"texture": ExtResource("10_h3grm")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_53vtk")
+"texture": ExtResource("9_1jhwb")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_5hue2")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_nq5pl")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_q3tix")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_2pkpa")
+"texture": ExtResource("13_eo8o2")
 }],
 "loop": false,
 "name": &"default",
 "speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k7id7"]
-atlas = ExtResource("16_63j8l")
-region = Rect2(25, 90, 194, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tc3tj"]
-atlas = ExtResource("16_63j8l")
-region = Rect2(291, 90, 194, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gvngn"]
-atlas = ExtResource("16_63j8l")
-region = Rect2(540, 90, 194, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gbq0g"]
-atlas = ExtResource("16_63j8l")
-region = Rect2(807, 90, 194, 60)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_sp1r1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k7id7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tc3tj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gvngn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gbq0g")
-}],
-"loop": false,
-"name": &"chrg",
-"speed": 1.5
 }]
 
 [node name="Node2D" type="Node2D"]
@@ -330,63 +273,73 @@ script = ExtResource("7_tmmuo")
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_jj7ki")
 animation = &"count"
+frame = 4
+frame_progress = 1.0
 
 [node name="Goals_blue" type="AnimatedSprite2D" parent="countdown"]
-position = Vector2(-200, -270)
-scale = Vector2(3, 3)
+position = Vector2(-211, -290)
 sprite_frames = SubResource("SpriteFrames_2f6hq")
 
 [node name="Goals_red" type="AnimatedSprite2D" parent="countdown"]
-position = Vector2(200, -270)
-scale = Vector2(3, 3)
+position = Vector2(197, -283)
 sprite_frames = SubResource("SpriteFrames_2f6hq")
 
 [node name="Control" type="Control" parent="."]
-z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -147.0
+offset_top = 308.0
+offset_right = -147.0
+offset_bottom = 308.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(4, 4)
+scale = Vector2(3.5, 3.5)
 script = ExtResource("9_gwjqp")
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 texture_repeat = 2
 layout_mode = 0
-offset_left = -263.5
-offset_top = -106.25
-offset_right = 315.5
-offset_bottom = 188.75
-color = Color(0.313726, 0.313726, 0.313726, 1)
+offset_left = -257.429
+offset_top = -237.429
+offset_right = 321.571
+offset_bottom = 57.5714
+color = Color(0.580392, 1, 1, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -133.0
-offset_top = -49.0
-offset_right = 121.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="Control"]
 layout_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer"]
-layout_mode = 2
+offset_left = 139.143
+offset_top = -156.286
+offset_right = 189.143
+offset_bottom = -106.286
 size_flags_horizontal = 0
 texture = ExtResource("10_e0uug")
-flip_h = true
 
-[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = -74.2857
+offset_top = -110.0
+offset_right = 129.714
+offset_bottom = -5.99999
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 texture = ExtResource("8_fxg47")
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 11.25
+offset_right = 521.0
+offset_bottom = 128.25
+scale = Vector2(0.3, 0.3)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+visible_characters = 0
 
 [node name="si_o_no" type="HBoxContainer" parent="Control/VBoxContainer"]
 layout_mode = 2
@@ -403,33 +356,15 @@ layout_mode = 2
 texture_normal = ExtResource("14_4bmad")
 texture_hover = ExtResource("15_vyk14")
 
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = -51.0
-offset_top = -68.0
-offset_right = 450.0
-offset_bottom = 49.0
-scale = Vector2(0.3, 0.3)
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-visible_characters = 0
-
-[node name="Timer" type="Timer" parent="Control"]
-wait_time = 3.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(0.5, 47.5)
-scale = Vector2(0.54, 0.54)
-sprite_frames = SubResource("SpriteFrames_sp1r1")
-animation = &"chrg"
+[node name="Control2" parent="Control" instance=ExtResource("16_e114l")]
+layout_mode = 1
+offset_left = -114.857
+offset_top = -181.714
+offset_right = -114.857
+offset_bottom = -181.714
+scale = Vector2(0.33, 0.33)
 
 [connection signal="body_entered" from="Campo/porte_1" to="Campo/porte_1" method="_on_body_entered"]
 [connection signal="body_entered" from="Campo/porte_2" to="Campo/porte_1" method="_on_body_entered"]
 [connection signal="timeout" from="Timer_goal" to="Campo" method="_on_timer_goal_timeout"]
 [connection signal="animation_finished" from="countdown/AnimatedSprite2D" to="Character_1" method="_on_countdown_animation_finished"]
-[connection signal="mouse_entered" from="Control/VBoxContainer/si_o_no/si" to="Control" method="_on_si_mouse_entered"]
-[connection signal="mouse_exited" from="Control/VBoxContainer/si_o_no/si" to="Control" method="_on_si_mouse_exited"]
-[connection signal="mouse_entered" from="Control/VBoxContainer/si_o_no/no" to="Control" method="_on_no_mouse_entered"]
-[connection signal="mouse_exited" from="Control/VBoxContainer/si_o_no/no" to="Control" method="_on_no_mouse_exited"]
-[connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]

@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://cxtr4d8pejepf"]
+
+[ext_resource type="Script" path="res://scenes/scripts/fuxibol.gd" id="1_eya0c"]
+[ext_resource type="Texture2D" uid="uid://6ow0exjhu8hx" path="res://images/propias/Mapa_assets/fuxibol/porte.png" id="2_e803p"]
+[ext_resource type="Texture2D" uid="uid://kub28jqik4u7" path="res://images/propias/Mapa_assets/fuxibol/guants_bola.png" id="4_v8wjv"]
+[ext_resource type="Texture2D" uid="uid://b3gvxapyhurk1" path="res://images/propias/Mapa_assets/fuxibol/guants_solo.png" id="5_5wc15"]
+[ext_resource type="PackedScene" uid="uid://btdsvxqjp7jlh" path="res://scenes/characters/ball.tscn" id="5_uvtix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usfpm"]
+size = Vector2(493, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_777x4"]
+atlas = ExtResource("5_5wc15")
+region = Rect2(50, 50, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srkrw"]
+atlas = ExtResource("4_v8wjv")
+region = Rect2(50, 50, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5nfy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_777x4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srkrw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qamtg"]
+size = Vector2(59, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5si67"]
+radius = 19.0263
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_eya0c")
+
+[node name="Goal" type="Area2D" parent="."]
+position = Vector2(583, 311)
+
+[node name="Porte" type="Sprite2D" parent="Goal"]
+scale = Vector2(12, 8)
+texture = ExtResource("2_e803p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+position = Vector2(5.5, -11)
+shape = SubResource("RectangleShape2D_usfpm")
+
+[node name="Keeper" type="Area2D" parent="."]
+position = Vector2(578, 326)
+scale = Vector2(1.5, 1.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Keeper"]
+sprite_frames = SubResource("SpriteFrames_b5nfy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keeper"]
+position = Vector2(2.5, -12.5)
+shape = SubResource("RectangleShape2D_qamtg")
+
+[node name="Area2D" type="Area2D" parent="Keeper"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keeper/Area2D"]
+position = Vector2(-1, -10)
+shape = SubResource("CircleShape2D_5si67")
+
+[node name="Ball" parent="." instance=ExtResource("5_uvtix")]
+position = Vector2(590, 574)
+
+[connection signal="shot" from="Ball" to="." method="_on_ball_shot"]

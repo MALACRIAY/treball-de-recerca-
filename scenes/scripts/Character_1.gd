@@ -8,7 +8,7 @@ extends CharacterBody2D
 var speed : float
 var Bullet = preload("res://scenes/Levels/objects/Disco.tscn")
 var start = false
-
+	
 
 func _ready():
 	pass

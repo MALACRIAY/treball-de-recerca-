@@ -537,13 +537,24 @@ position = Vector2(-1.5, 11)
 shape = SubResource("CapsuleShape2D_1h1fa")
 
 [node name="Area2D4" type="Area2D" parent="banderas"]
-position = Vector2(-1382, 1266)
+position = Vector2(-1025, 1108)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="banderas/Area2D4"]
 texture = ExtResource("2_wjo60")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="banderas/Area2D4"]
+position = Vector2(-1.5, 11)
+shape = SubResource("CapsuleShape2D_1h1fa")
+
+[node name="Area2D5" type="Area2D" parent="banderas"]
+position = Vector2(-1735, 1532)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="banderas/Area2D5"]
+texture = ExtResource("2_wjo60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="banderas/Area2D5"]
 position = Vector2(-1.5, 11)
 shape = SubResource("CapsuleShape2D_1h1fa")
 

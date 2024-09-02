@@ -1,0 +1,330 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuptijuendvki"]
+
+[ext_resource type="Texture2D" uid="uid://b8ius0xrg2lg7" path="res://images/propias/Tests/Tilemaps/memory.png" id="1_160yv"]
+[ext_resource type="Script" path="res://images/propias/Tests/Menu.gd" id="2_p20j4"]
+[ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="3_qx4vg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xt18h"]
+texture = ExtResource("1_160yv")
+separation = Vector2i(0, 8)
+texture_region_size = Vector2i(33, 31)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/next_alternative_id = 2
+1:1/0 = 0
+1:1/1 = 1
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/next_alternative_id = 2
+5:2/0 = 0
+6:2/next_alternative_id = 4
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wjcns"]
+tile_size = Vector2i(36, 35)
+sources/0 = SubResource("TileSetAtlasSource_xt18h")
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 323)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(403, 35)
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_wjcns")
+format = 2
+layer_0/name = "Revealed"
+layer_0/z_index = 5
+layer_1/name = "Hidden"
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array()
+script = ExtResource("2_p20j4")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(347, -23)
+scale = Vector2(4, 4)
+
+[node name="Button" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button4" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button5" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button6" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button7" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button8" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button9" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button10" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button11" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button12" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button13" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button14" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button15" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button16" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button2" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="Button3" type="Button" parent="Node2D" groups=["hover_click"]]
+offset_left = -37.25
+offset_top = -112.75
+offset_right = -4.25
+offset_bottom = -80.75
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="score_label" type="Label" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -834.0
+offset_top = 85.0
+offset_right = -487.0
+offset_bottom = 236.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+vertical_alignment = 1
+
+[node name="turns_label" type="Label" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1105.0
+offset_top = 129.0
+offset_right = -758.0
+offset_bottom = 280.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+vertical_alignment = 1
+
+[node name="Control" parent="." instance=ExtResource("3_qx4vg")]
+offset_left = 83.0
+offset_top = 36.0
+offset_right = 83.0
+offset_bottom = 36.0
+
+[connection signal="pressed" from="Node2D/Button" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button4" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button5" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button6" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button7" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button8" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button9" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button10" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button11" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button12" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button13" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button14" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button15" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button16" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button2" to="TileMap" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/Button3" to="TileMap" method="_on_button_pressed"]

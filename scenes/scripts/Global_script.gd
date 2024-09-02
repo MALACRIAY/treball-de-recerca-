@@ -1,16 +1,19 @@
 extends Node
 #mapa_global
-var level = 3
-var difficulty = 8
+var level = 1
+var difficulty = 1
 #personatje
 var character_num = 0
 func _process(delta):
-	#hockey
+
+	hockey()
+#Hockey_level
+func hockey():
 	if points_blue >= 3:
 		guanyat = true
 	else:
 		guanyat = false
-#Hockey_level
-var points_blue = 2
-var points_red = 5
+
+var points_blue = 1
+var points_red = 1
 var guanyat = false
