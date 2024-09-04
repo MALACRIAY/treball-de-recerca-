@@ -3,6 +3,7 @@ extends Node2D
 @onready var ball = $Ball
 @onready var keeper = $Keeper
 @onready var goalie = $Goal
+@onready var animation = $Animation
 
 var in_keeper : bool
 var in_goal : bool
@@ -18,18 +19,17 @@ func _ready():
 func _process(delta):
 	pass
 
-
-
-
 func _on_ball_shot():
 	check_goal() # Replace with function body.
 
 func check_goal():
 	if in_goal and not in_keeper:
 		result = 1
+		animation.play("end")
+		print("goal")
 	else:
 		result = 0
-	print("goal")
+	
 	
 func _body_entered(body,area):
 	if body == ball:
@@ -47,3 +47,7 @@ func _body_exited(body,area):
 		elif area == goalie:
 			print("out_goal")
 			in_goal = false
+
+
+func _on_animation_finished():
+	ball.start = true

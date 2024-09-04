@@ -285,6 +285,7 @@ position = Vector2(197, -283)
 sprite_frames = SubResource("SpriteFrames_2f6hq")
 
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
