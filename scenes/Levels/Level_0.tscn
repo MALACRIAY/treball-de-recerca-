@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b7jtkjuj8mc1v"]
+[gd_scene load_steps=35 format=3 uid="uid://b7jtkjuj8mc1v"]
 
 [ext_resource type="Script" path="res://scenes/scripts/porte.gd" id="1_gy6rq"]
 [ext_resource type="Texture2D" uid="uid://du51jxasbphto" path="res://images/propias/Mapa_assets/Puntuacion/guion.png" id="2_iun0h"]
@@ -19,11 +19,12 @@
 [ext_resource type="Texture2D" uid="uid://cs5gj3kesmapr" path="res://images/propias/Mapa_assets/extras/dialogo/yes_dn.png" id="13_41fl5"]
 [ext_resource type="Texture2D" uid="uid://cxkxyunjgexrv" path="res://images/propias/Mapa_assets/Puntuacion/4.png" id="13_eo8o2"]
 [ext_resource type="Texture2D" uid="uid://de4hfn5c8slyq" path="res://images/propias/Mapa_assets/extras/dialogo/no_up.png" id="14_4bmad"]
+[ext_resource type="Texture2D" uid="uid://p7qtrqo1nnyh" path="res://images/propias/Mapa_assets/extras/dialogo/bakground.png" id="15_oifvu"]
 [ext_resource type="Texture2D" uid="uid://cu416ev74wdm" path="res://images/propias/Mapa_assets/extras/dialogo/no_dn.png" id="15_vyk14"]
 [ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="16_e114l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iooyf"]
-size = Vector2(66, 161)
+size = Vector2(53, 123)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ck6di"]
 size = Vector2(37, 535)
@@ -160,6 +161,13 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -731.0
+offset_top = -923.0
+offset_right = 810.0
+offset_bottom = 374.0
+texture = ExtResource("15_oifvu")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 5
 
@@ -175,6 +183,7 @@ scale = Vector2(10, 10)
 texture = ExtResource("2_iun0h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Campo/porte_1"]
+position = Vector2(-6.5, 0.5)
 shape = SubResource("RectangleShape2D_iooyf")
 
 [node name="porte_2" type="Area2D" parent="Campo"]
@@ -242,29 +251,26 @@ rotation = 0.785398
 scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_2w4dl")
 
-[node name="Character_2" type="CharacterBody2D" parent="."]
+[node name="Character_2" type="AnimatableBody2D" parent="."]
 position = Vector2(326, 0)
-scale = Vector2(1.5, 1.5)
-collision_layer = 3
-collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Character_2"]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2.25, 2.25)
 texture = ExtResource("6_wnr45")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Character_2"]
-position = Vector2(-1, 0.333341)
 rotation = 0.785398
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2.25, 2.25)
 shape = SubResource("CircleShape2D_8843n")
 
 [node name="AnimationPlayer1" type="AnimationPlayer" parent="Character_2"]
+process_physics_priority = 1
 libraries = {
 "": SubResource("AnimationLibrary_piu85")
 }
 
 [node name="starter_disco" type="Marker2D" parent="."]
-position = Vector2(-100, 0)
+position = Vector2(-101, 1)
 
 [node name="countdown" type="Node2D" parent="."]
 script = ExtResource("7_tmmuo")
@@ -285,7 +291,6 @@ position = Vector2(197, -283)
 sprite_frames = SubResource("SpriteFrames_2f6hq")
 
 [node name="Control" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -299,30 +304,20 @@ grow_vertical = 2
 scale = Vector2(3.5, 3.5)
 script = ExtResource("9_gwjqp")
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-texture_repeat = 2
+[node name="TextureRect3" type="TextureRect" parent="Control"]
 layout_mode = 0
-offset_left = -257.429
-offset_top = -237.429
-offset_right = 321.571
-offset_bottom = 57.5714
-color = Color(0.580392, 1, 1, 1)
-
-[node name="TextureRect2" type="TextureRect" parent="Control"]
-layout_mode = 2
-offset_left = 139.143
-offset_top = -156.286
-offset_right = 189.143
-offset_bottom = -106.286
-size_flags_horizontal = 0
-texture = ExtResource("10_e0uug")
+offset_left = -167.0
+offset_top = -352.0
+offset_right = 273.0
+offset_bottom = 19.0
+texture = ExtResource("15_oifvu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 0
-offset_left = -74.2857
-offset_top = -110.0
-offset_right = 129.714
-offset_bottom = -5.99999
+offset_left = -28.8571
+offset_top = -109.429
+offset_right = 175.143
+offset_bottom = -5.42857
 
 [node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer"]
 layout_mode = 2
@@ -333,9 +328,9 @@ texture = ExtResource("8_fxg47")
 [node name="Label" type="Label" parent="Control/VBoxContainer/TextureRect"]
 layout_mode = 0
 offset_left = 20.0
-offset_top = 11.25
-offset_right = 521.0
-offset_bottom = 128.25
+offset_top = 11.0
+offset_right = 423.0
+offset_bottom = 111.0
 scale = Vector2(0.3, 0.3)
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -357,6 +352,16 @@ layout_mode = 2
 texture_normal = ExtResource("14_4bmad")
 texture_hover = ExtResource("15_vyk14")
 
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 2
+offset_left = 122.0
+offset_top = -103.429
+offset_right = 172.0
+offset_bottom = -53.4286
+scale = Vector2(0.75, 0.75)
+size_flags_horizontal = 0
+texture = ExtResource("10_e0uug")
+
 [node name="Control2" parent="Control" instance=ExtResource("16_e114l")]
 layout_mode = 1
 offset_left = -114.857
@@ -365,7 +370,5 @@ offset_right = -114.857
 offset_bottom = -181.714
 scale = Vector2(0.33, 0.33)
 
-[connection signal="body_entered" from="Campo/porte_1" to="Campo/porte_1" method="_on_body_entered"]
-[connection signal="body_entered" from="Campo/porte_2" to="Campo/porte_1" method="_on_body_entered"]
 [connection signal="timeout" from="Timer_goal" to="Campo" method="_on_timer_goal_timeout"]
 [connection signal="animation_finished" from="countdown/AnimatedSprite2D" to="Character_1" method="_on_countdown_animation_finished"]

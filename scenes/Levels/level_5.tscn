@@ -95,21 +95,6 @@ tracks/1/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_puw4i"]
-resource_name = "end"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Keeper:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(578, 326)]
-}
-
 [sub_resource type="Animation" id="Animation_iygbv"]
 resource_name = "dif_0"
 length = 9.0
@@ -125,6 +110,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(578, 326), Vector2(490, 276), Vector2(419, 288), Vector2(431, 361), Vector2(543, 365), Vector2(678, 370), Vector2(760, 333), Vector2(707, 273), Vector2(611, 282), Vector2(578, 326)]
+}
+
+[sub_resource type="Animation" id="Animation_puw4i"]
+resource_name = "end"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Keeper:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(578, 326)]
 }
 
 [sub_resource type="Animation" id="Animation_weyij"]

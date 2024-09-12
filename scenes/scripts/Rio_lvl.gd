@@ -9,7 +9,6 @@ var resuelve_prblemas = 0
 @onready var zona_2 = $"Zona 2"
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var spawn_position: Marker2D = $SpawnPosition
-var obstacles: Array = []
 @onready var Barco = $Barco
 @onready var camera = $Camera2D
 @onready var barco_camera = $Barco/camera
@@ -36,18 +35,18 @@ func spawn_obstacle():
 		new_obstacle.rotation += 9
 	new_obstacle.global_position = spawn_position.global_position + Vector2(random_x, 0).rotated((2-Barco.Zona)*-90)
 	add_child(new_obstacle)
-	obstacles.append(new_obstacle)
+	new_obstacle.add_to_group("obstacles")
 	new_obstacle.tree_exited.connect(self._on_Obstacle_tree_exited)
 	
 func _on_Obstacle_tree_exited(obstacle: Node):
-	obstacles.erase(obstacle)
+	obstacle.remove_from_group("obstacles")
 
 func _process(delta):
 	if not Barco.Zona == 4:
 		positions()
 	else:
 		camera.global_position = Vector2(-4200,barco_camera.global_position.y)
-		Barco.global_position = Vector2(move_toward(Barco.global_position.x,-4290,10),move_toward(Barco.global_position.y,5049,10))
+		spawn_position.global_position = Vector2(0,0)
 func positions():
 	if Barco.Zona == 2:
 		spawn_position.global_position.y = Barco.global_position.y + 800
@@ -78,3 +77,7 @@ func _on_zona_4_body_entered(body):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "animation":
 		print("asd") 
+
+
+func _on_zona_5_body_entered(body):
+	Animator.play("animation")

@@ -8,8 +8,7 @@ var side : int
 var points = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	animations.speed_scale = GlobalScript.difficulty
-	
+	animations.speed_scale = (GlobalScript.difficulty)
 func _process(delta):
 	side = sign(get_global_mouse_position().x - barra.global_position.x )
 	barra.rotation_degrees = move_toward(barra.rotation_degrees,15 * side,1) 

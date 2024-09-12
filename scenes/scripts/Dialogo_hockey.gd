@@ -16,8 +16,8 @@ func _ready():
 	boton_no.disabled = false
 	
 	if first_time:
-		text = "Hola em dic Joan i et proposo una partida d'Hoquei de gel.
-																														
+		text = "Hola em dic Joan,
+		 et proposo una partida d'Hoquei de gel.
 		Acceptes? "
 		first_time = false
 	else:

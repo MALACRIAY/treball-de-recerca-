@@ -15,8 +15,12 @@ var button_number = 0
 func _ready() -> void:
 	
 	if GlobalScript.difficulty >= 2:
+		
 		board_size = 4
-	
+	else:
+		scale = Vector2(8,8)
+		$"../buttons".scale = Vector2(8,8)
+		$"../buttons".position = Vector2(269,-100)
 	setup_board()
 	update_text()
 	pass # Replace with function body.
@@ -36,7 +40,6 @@ func setup_board():
 	var cards_to_use = get_tiles_to_use()
 	for y in range(board_size):
 		for x in range(board_size):
-			
 			var current_spot = Vector2(x, y)
 			place_single_face_down_card(current_spot)
 			var card_atlas_coords = cards_to_use.pop_back()
@@ -44,7 +47,7 @@ func setup_board():
 			self.set_cell(Layers.revealed, current_spot, 
 						SOURCE_NUM, card_atlas_coords)
 			var posicion = map_to_local(current_spot)
-			var botones = $"../Node2D"
+			var botones = $"../buttons"
 			botones.get_child(button_number).position = posicion
 			button_number += 1
 			
@@ -64,10 +67,7 @@ func when_two_cards_revealed():
 	update_text()
 
 func update_text():
-	$"../CanvasLayer/score_label".text = "Score: %d" % score
-	$"../CanvasLayer/turns_label".text = "Turns Taken: %d" % turns_taken
-
-
+	check_win()
 
 func put_back_cards_with_delay():
 	await self.get_tree().create_timer(1.5).timeout
@@ -89,3 +89,9 @@ func _on_button_pressed():
 		revealed_spots.append(pos_clicked)
 		if revealed_spots.size() == 2:
 			when_two_cards_revealed()
+
+func check_win():
+	if score == board_size:
+		await self.get_tree().create_timer(1.5).timeout
+		$"../fondo".z_index = 10
+		$"../fondo".play("default")

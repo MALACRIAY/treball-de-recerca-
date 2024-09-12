@@ -6,7 +6,7 @@ extends Control
 
 var act = true
 var hover_time := 0.0  # Temps que el ratolí ha estat a sobre de l'objecte
-var hover_threshold = GlobalScript.difficulty*2 +1 # Temps necessari per simular el clic
+var hover_threshold = (3-GlobalScript.difficulty)*2 +1 # Temps necessari per simular el clic
 var mouse_in : bool
 	
 func _ready():
@@ -27,7 +27,7 @@ func _process(delta):
 		if hover_time >= hover_threshold:
 			_simulate_click_on_all_nodes()
 			hover_time = 0.0  # Reiniciem el temporitzador
-	if hover_time > 0.1 and hover_time < .5:
+	if hover_time > 0 and hover_time < .2:
 		fake_light.visible = true
 	else: 
 		fake_light.visible = false

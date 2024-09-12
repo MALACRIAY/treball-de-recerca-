@@ -503,6 +503,7 @@ position = Vector2(-44, 81)
 libraries = {
 "": SubResource("AnimationLibrary_1g1nu")
 }
+speed_scale = 0.5
 
 [node name="cesta_red" type="Area2D" parent="."]
 position = Vector2(873, 549)

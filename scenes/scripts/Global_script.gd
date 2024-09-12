@@ -1,11 +1,10 @@
 extends Node
 #mapa_global
-var level = 1
-var difficulty = 1
+var level = 3
+var difficulty = 2
 #personatje
 var character_num = 0
 func _process(delta):
-
 	hockey()
 #Hockey_level
 func hockey():

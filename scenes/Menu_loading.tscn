@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cm8csa5qts82j" path="res://images/propias/Mapa_assets/extras/loading_2.png" id="4_v0ibt"]
 
 [node name="Control" type="Control"]
+z_index = 1
 layout_mode = 3
 anchor_right = 0.204861
 anchor_bottom = 0.351852
