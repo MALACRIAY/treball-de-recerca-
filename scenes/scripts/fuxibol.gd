@@ -27,10 +27,13 @@ func check_goal():
 		result = 1
 		animation.play("end")
 		print("goal")
-	else:
+	elif in_keeper:
 		result = 0
-	
-	
+		print("parada")
+	elif not in_goal:
+		result = 0
+		print("out")
+
 func _body_entered(body,area):
 	if body == ball:
 		if area == keeper:

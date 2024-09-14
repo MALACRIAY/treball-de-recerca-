@@ -199,6 +199,7 @@ shape = SubResource("RectangleShape2D_iooyf")
 
 [node name="Timer_goal" type="Timer" parent="."]
 wait_time = 0.5
+one_shot = true
 
 [node name="paredes" type="Node2D" parent="."]
 
@@ -291,6 +292,7 @@ position = Vector2(197, -283)
 sprite_frames = SubResource("SpriteFrames_2f6hq")
 
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -30,7 +30,7 @@ func _process(delta):
 	label.text = text
 	solver += delta * red_spd
 	label.visible_characters = solver
-	if GlobalScript.guanyat:
+	if GlobalScript.hockey_won:
 		end()
 func add_to_hover():
 	boton_si.add_to_group("hover_click")

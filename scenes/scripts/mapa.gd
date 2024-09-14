@@ -11,13 +11,15 @@ var zone_m2 = Vector2(-2000,-1001)
 func _ready():
 	for area in $banderas.get_children():
 		area.body_entered.connect(_body_entered.bind(area))
+	await self.get_tree().create_timer(2).timeout
+	character.process_mode = Node.PROCESS_MODE_INHERIT
 func _body_entered(body,area):
 	if body == $Main_character:
 		get_tree().change_scene_to_file("res://scenes/Levels/Level_"+str(area.get_index())+".tscn")
 
 func _process(delta):
-	camera.global_position.y = character.global_position.y
-	camera.global_position.x = 500 * zona_character(character)
+	camera.global_position = character.global_position
+
 func zona_character(person):
 	var pos = person.global_position
 	return int(pos.x/500)

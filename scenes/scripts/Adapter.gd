@@ -40,7 +40,8 @@ func _simulate_click_on_all_nodes():
 func _simulate_click(node: Node):
 	if node is Button or node is TextureButton:
 		node.emit_signal("pressed")
-
+	if node is HSlider or node is VSlider:
+		node.emit_signal("drag_started")
 func _on_button_pressed():
 	print("aaaa") # Replace with function body.
 

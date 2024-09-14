@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://ud1414sdm32a"]
+[gd_scene load_steps=49 format=3 uid="uid://ud1414sdm32a"]
 
 [ext_resource type="Texture2D" uid="uid://cikrpofv4s5bw" path="res://images/propias/Mapa_assets/skate/mapa.png" id="1_i6wxf"]
 [ext_resource type="Script" path="res://scenes/scripts/Skater.gd" id="2_lfsod"]
@@ -19,54 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://bn2eouddp3dos" path="res://images/propias/Personajes/Personas/Choose/Mujer_Morena_B_i_N.png" id="11_4lg1s"]
 [ext_resource type="Texture2D" uid="uid://dsabrrhdpoq6q" path="res://images/propias/Personajes/Personas/Choose/Mujer_Rubia_B_i_N.png" id="12_jcyjp"]
 [ext_resource type="Script" path="res://scenes/scripts/persona_image.gd" id="18_ie2d3"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fe8ip"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gsqy5"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yp22c"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_53vtk"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5hue2"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nq5pl"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q3tix"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2pkpa"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7bbb1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_fe8ip")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_gsqy5")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_yp22c")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_53vtk")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_5hue2")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_nq5pl")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_q3tix")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_2pkpa")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://by87d6idxb3kt" path="res://images/propias/Mapa_assets/Puntuacion/0.png" id="20_n5x2u"]
+[ext_resource type="Texture2D" uid="uid://d2jk6yh0sdt6v" path="res://images/propias/Mapa_assets/Puntuacion/1.png" id="21_855hv"]
+[ext_resource type="Texture2D" uid="uid://hclkgxsvyfao" path="res://images/propias/Mapa_assets/Puntuacion/2.png" id="22_8ssab"]
+[ext_resource type="Texture2D" uid="uid://by74nf2tlcses" path="res://images/propias/Mapa_assets/Puntuacion/3.png" id="23_tslkr"]
+[ext_resource type="Texture2D" uid="uid://cxkxyunjgexrv" path="res://images/propias/Mapa_assets/Puntuacion/4.png" id="24_8hw3m"]
 
 [sub_resource type="Animation" id="Animation_v7beh"]
 resource_name = "1to2"
@@ -484,13 +441,30 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwdn0"]
 size = Vector2(78, 104)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7bbb1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_n5x2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_855hv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8ssab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_tslkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8hw3m")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Node2D" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -520,14 +494,6 @@ offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.819608, 0.960784, 1)
-
-[node name="coin" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("7_ng0om")]
-position = Vector2(636, 35)
-scale = Vector2(1, 1)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(594, 35)
-sprite_frames = SubResource("SpriteFrames_7bbb1")
 
 [node name="Tierra" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-67, 161)
@@ -627,6 +593,13 @@ script = ExtResource("18_ie2d3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skater/Area2D"]
 position = Vector2(2.84131, 18.8482)
 shape = SubResource("RectangleShape2D_iwdn0")
+
+[node name="coin" parent="Skater" instance=ExtResource("7_ng0om")]
+position = Vector2(848, -124)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skater"]
+position = Vector2(774, -122)
+sprite_frames = SubResource("SpriteFrames_7bbb1")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

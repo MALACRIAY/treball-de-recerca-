@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var skater = $Area2D
 @onready var skate_color = $skate
 @onready var animations = $"../AnimationPlayer"
-@onready var coins_count = $"../ParallaxBackground/ParallaxLayer/AnimatedSprite2D"
+@onready var coins_count = $AnimatedSprite2D
 @export var scene_pedra :PackedScene
 @export var scene_coin : PackedScene
 
@@ -40,8 +40,6 @@ func _physics_process(delta):
 		get_tree().change_scene_to_file("res://scenes/Levels/level_2.tscn")
 	if not animations.is_playing():
 		set_zones()
-		print(zona)
-		print(skater.global_position.y)
 		animations.play(str(zona)+"to"+str(mouse_zona))
 	move_and_slide()
 
@@ -76,14 +74,3 @@ func _pedra_area_entered(body):
 func _on_animation_finished(anim_name):
 	if anim_name == "Dead":
 		get_tree().change_scene_to_file("res://scenes/Levels/level_2.tscn") # Replace with function body.
-
-
-"1 i 1
-1 i 2
-2 i 3
-3 i 1 
-
-
-
-
-"

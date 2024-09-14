@@ -34,6 +34,5 @@ func _process(delta):
 		disco.global_position.x = move_toward(disco.global_position.x,porte.global_position.x,100)
 	
 func _on_timer_goal_timeout():
-	timer.stop()
 	goal = false
 	character.restart() # Replace with function body.

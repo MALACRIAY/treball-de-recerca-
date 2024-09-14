@@ -562,13 +562,9 @@ texture = ExtResource("2_wjo60")
 position = Vector2(-1.5, 11)
 shape = SubResource("CapsuleShape2D_1h1fa")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-19, 46)
-position_smoothing_enabled = true
-position_smoothing_speed = 1.0
-
 [node name="Main_character" type="CharacterBody2D" parent="."]
-position = Vector2(602, 448)
+process_mode = 4
+position = Vector2(224, -204)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("5_emuf0")
 
@@ -632,6 +628,27 @@ rotation = 2.6355
 scale = Vector2(1.62456, 2.04475)
 skew = -0.567232
 texture = ExtResource("12_n28ok")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-19, 46)
+position_smoothing_enabled = true
+
+[node name="starting_points" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="starting_points"]
+position = Vector2(801, 475)
+
+[node name="Marker2D3" type="Marker2D" parent="starting_points"]
+position = Vector2(300, 2234)
+
+[node name="Marker2D2" type="Marker2D" parent="starting_points"]
+position = Vector2(237, 1251)
+
+[node name="Marker2D4" type="Marker2D" parent="starting_points"]
+position = Vector2(-658, 2073)
+
+[node name="Marker2D5" type="Marker2D" parent="starting_points"]
+position = Vector2(-897, 1296)
 
 [connection signal="body_entered" from="Zonas_3i4/ZONA_3" to="." method="_on_zonas_3_body_entered"]
 [connection signal="body_entered" from="Zonas_3i4/Zona_4" to="." method="_on_zona_4_body_entered"]

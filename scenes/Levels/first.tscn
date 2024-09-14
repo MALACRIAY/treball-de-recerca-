@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://ex2i4skqjmum"]
+[gd_scene load_steps=10 format=3 uid="uid://ex2i4skqjmum"]
 
 [ext_resource type="Script" path="res://scenes/scripts/Main.gd" id="1_w1086"]
 [ext_resource type="Texture2D" uid="uid://27bibltwtem2" path="res://images/propias/Mapa_assets/extras/degre_extras/fondo principal.png" id="2_j303s"]
+[ext_resource type="Texture2D" uid="uid://ddift00hww1yu" path="res://images/propias/Mapa_assets/first/easy.png" id="3_i4lrb"]
 [ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="3_slaca"]
+[ext_resource type="Texture2D" uid="uid://bvv688uunk3jw" path="res://images/propias/Mapa_assets/extras/meta.png" id="4_k6tcj"]
+[ext_resource type="Texture2D" uid="uid://capw3hgiy4i3y" path="res://images/propias/Mapa_assets/first/normal.png" id="4_skpd1"]
+[ext_resource type="Texture2D" uid="uid://c6njx7lf0747g" path="res://images/propias/Mapa_assets/first/hard.png" id="5_a6ht4"]
+[ext_resource type="Texture2D" uid="uid://dbnqfntyc0jft" path="res://images/propias/Mapa_assets/first/XhardX.png" id="6_lgwac"]
+[ext_resource type="Texture2D" uid="uid://cryi7brjqg5ea" path="res://images/propias/Mapa_assets/first/impossibly_hard.png" id="7_dcgmu"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -13,19 +19,106 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w1086")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1152.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 texture = ExtResource("2_j303s")
 
-[node name="Control" parent="." instance=ExtResource("3_slaca")]
-visible = false
-layout_mode = 1
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_j303s")
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/TextureRect2"]
+layout_mode = 2
+offset_left = 290.0
+offset_right = 862.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="HBoxContainer/TextureRect2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/TextureRect2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/TextureRect2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_i4lrb")
+stretch_mode = 4
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer/TextureRect2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("4_skpd1")
+stretch_mode = 4
+
+[node name="TextureButton3" type="TextureButton" parent="HBoxContainer/TextureRect2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("5_a6ht4")
+stretch_mode = 4
+
+[node name="TextureButton4" type="TextureButton" parent="HBoxContainer/TextureRect2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_lgwac")
+stretch_mode = 4
+
+[node name="Control3" type="Control" parent="HBoxContainer/TextureRect2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Imp_hard" type="TextureButton" parent="HBoxContainer/TextureRect2"]
+z_index = -1
+layout_mode = 0
+offset_left = 822.0
+offset_top = 128.0
+offset_right = 1110.0
+offset_bottom = 210.0
+texture_normal = ExtResource("7_dcgmu")
+stretch_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[node name="Control" parent="Camera2D" instance=ExtResource("3_slaca")]
 offset_left = 1.0
 offset_top = -1.0
 offset_right = 1.0
 offset_bottom = -1.0
+
+[node name="TextureButton" type="TextureButton" parent="." groups=["hover_click"]]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 386.0
+offset_right = 530.0
+offset_bottom = 426.0
+texture_normal = ExtResource("4_k6tcj")
+
+[node name="Brightness" type="CanvasModulate" parent="."]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_start"]
