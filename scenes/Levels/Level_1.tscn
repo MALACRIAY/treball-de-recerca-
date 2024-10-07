@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bpdpngyrvx7wk"]
+[gd_scene load_steps=63 format=3 uid="uid://bpdpngyrvx7wk"]
 
 [ext_resource type="Texture2D" uid="uid://erbggyswxryi" path="res://images/propias/Tests/Tilemaps/tilemap2.png" id="1_f1wwo"]
 [ext_resource type="Script" path="res://scenes/scripts/Rio_lvl.gd" id="1_tlxt6"]
@@ -8,12 +8,22 @@
 [ext_resource type="Texture2D" uid="uid://1hp38hor852k" path="res://images/propias/Mapa_assets/extras/fletxa_down_valla.png" id="5_2qe71"]
 [ext_resource type="Texture2D" uid="uid://bvv688uunk3jw" path="res://images/propias/Mapa_assets/extras/meta.png" id="6_ik30c"]
 [ext_resource type="Texture2D" uid="uid://dyw2fka5738yx" path="res://images/propias/Mapa_assets/Rio/dog.png" id="7_7f1cw"]
+[ext_resource type="Texture2D" uid="uid://bo36ql8q2n0td" path="res://images/propias/Mapa_assets/Rio/frog.png" id="8_avuol"]
 [ext_resource type="Texture2D" uid="uid://bilinbn03baho" path="res://images/propias/Mapa_assets/Rio/muelle.png" id="9_pk3yw"]
 [ext_resource type="Script" path="res://scenes/scripts/main_character.gd" id="10_wmd8f"]
 [ext_resource type="Texture2D" uid="uid://d0qo6ca7q2fgq" path="res://images/propias/Personajes/Personas/Peque/Hombre_Blanco_M_i_R.png" id="11_3w6ek"]
 [ext_resource type="Texture2D" uid="uid://l6v7gogsw5hm" path="res://images/propias/Personajes/Personas/Peque/Hombre_Negro_M_i_R.png" id="12_o8k3w"]
 [ext_resource type="Texture2D" uid="uid://6pf2flra744h" path="res://images/propias/Personajes/Personas/Peque/Mujer_Blanco_M_i_R.png" id="13_8b1cl"]
 [ext_resource type="Texture2D" uid="uid://b8psibur24wvf" path="res://images/propias/Personajes/Personas/Peque/Mujer_Negro_M_i_R.png" id="14_pu5gw"]
+[ext_resource type="Script" path="res://scenes/scripts/barco_dialogo.gd" id="15_dpyt3"]
+[ext_resource type="Texture2D" uid="uid://p7qtrqo1nnyh" path="res://images/propias/Mapa_assets/extras/dialogo/bakground.png" id="16_agk8h"]
+[ext_resource type="Texture2D" uid="uid://cpywsdbbpvwqg" path="res://images/propias/Mapa_assets/extras/dialogo/cuadro_0.png" id="17_csq7v"]
+[ext_resource type="Texture2D" uid="uid://bsosdjsm6u21j" path="res://images/propias/Mapa_assets/extras/dialogo/persona_0.png" id="18_ihf48"]
+[ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="19_rn6lw"]
+[ext_resource type="Texture2D" uid="uid://by74nf2tlcses" path="res://images/propias/Mapa_assets/Puntuacion/3.png" id="20_8s4o0"]
+[ext_resource type="Texture2D" uid="uid://hclkgxsvyfao" path="res://images/propias/Mapa_assets/Puntuacion/2.png" id="21_6vy0j"]
+[ext_resource type="Texture2D" uid="uid://d2jk6yh0sdt6v" path="res://images/propias/Mapa_assets/Puntuacion/1.png" id="22_i85uk"]
+[ext_resource type="Texture2D" uid="uid://by87d6idxb3kt" path="res://images/propias/Mapa_assets/Puntuacion/0.png" id="23_wefuq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twe26"]
 texture = ExtResource("1_f1wwo")
@@ -555,11 +565,47 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqm1e"]
+atlas = ExtResource("8_avuol")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6llkn"]
+atlas = ExtResource("8_avuol")
+region = Rect2(60, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5bkl"]
+atlas = ExtResource("8_avuol")
+region = Rect2(120, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnsf8"]
+atlas = ExtResource("8_avuol")
+region = Rect2(180, 0, 60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cww3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqm1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6llkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5bkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnsf8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_beixr"]
 size = Vector2(771, 666)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnk7l"]
-size = Vector2(669.313, 491.75)
+size = Vector2(740.656, 491.75)
 
 [sub_resource type="Animation" id="Animation_gnr5a"]
 length = 0.001
@@ -791,6 +837,57 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6u8fa"]
 size = Vector2(260, 410)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf52x"]
+atlas = ExtResource("20_8s4o0")
+region = Rect2(4, 5, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nksif"]
+atlas = ExtResource("21_6vy0j")
+region = Rect2(5, 8, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfgey"]
+atlas = ExtResource("22_i85uk")
+region = Rect2(5, 5, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv2do"]
+atlas = ExtResource("23_wefuq")
+region = Rect2(5, 5, 30, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3qgb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf52x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf52x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nksif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nksif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfgey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfgey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv2do")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv2do")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"count",
+"speed": 2.0
+}]
 
 [node name="main_barco" type="Node2D"]
 position = Vector2(48, -361)
@@ -1083,17 +1180,24 @@ texture = ExtResource("6_ik30c")
 position = Vector2(-3959, 4362)
 texture = ExtResource("6_ik30c")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="mapa"]
+[node name="dog" type="AnimatedSprite2D" parent="mapa"]
 position = Vector2(-613, 2284)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_udppo")
 autoplay = "default"
 frame_progress = 0.0794125
 
+[node name="frog" type="AnimatedSprite2D" parent="mapa"]
+position = Vector2(-3923, 3018)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_cww3v")
+autoplay = "default"
+frame_progress = 0.475997
+
 [node name="Barco" parent="." instance=ExtResource("2_us8tc")]
 z_index = 1
-position = Vector2(-35.9995, 376)
-rotation = 1.56864
+position = Vector2(-46, 367)
+rotation = 3.14159
 
 [node name="camera" type="Node2D" parent="Barco"]
 position = Vector2(-5.99955, -178)
@@ -1119,18 +1223,17 @@ shape = SubResource("RectangleShape2D_xnk7l")
 position = Vector2(-4285, 5007)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zona 4"]
-position = Vector2(-60, -826)
+position = Vector2(-44.6719, -806)
 shape = SubResource("RectangleShape2D_xnk7l")
 
 [node name="Zona 5" type="Area2D" parent="."]
 position = Vector2(-4182, 6237)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zona 5"]
-position = Vector2(-60, -826)
+position = Vector2(-103, -713)
 shape = SubResource("RectangleShape2D_xnk7l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-48, 367)
 position_smoothing_enabled = true
 position_smoothing_speed = 1.0
 rotation_smoothing_enabled = true
@@ -1151,9 +1254,8 @@ position = Vector2(-4319, 6509)
 texture = ExtResource("9_pk3yw")
 
 [node name="Main_character" type="CharacterBody2D" parent="."]
-visible = false
 z_index = 1
-position = Vector2(0, 153)
+position = Vector2(-4234, 6548)
 scale = Vector2(0.05, 0.05)
 script = ExtResource("10_wmd8f")
 
@@ -1168,9 +1270,88 @@ flip_h = true
 position = Vector2(-50, -100)
 shape = SubResource("RectangleShape2D_6u8fa")
 
+[node name="countdown" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(-36, 385)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_k3qgb")
+animation = &"count"
+
+[node name="Dialogo" type="Control" parent="."]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -147.0
+offset_top = 308.0
+offset_right = -147.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.5, 3.5)
+script = ExtResource("15_dpyt3")
+
+[node name="TextureRect3" type="TextureRect" parent="Dialogo"]
+layout_mode = 0
+offset_left = -167.0
+offset_top = -352.0
+offset_right = 273.0
+offset_bottom = 19.0
+texture = ExtResource("16_agk8h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialogo"]
+layout_mode = 0
+offset_left = -28.8571
+offset_top = -109.429
+offset_right = 175.143
+offset_bottom = -5.42857
+
+[node name="TextureRect" type="TextureRect" parent="Dialogo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("17_csq7v")
+
+[node name="Label" type="Label" parent="Dialogo/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 11.0
+offset_right = 423.0
+offset_bottom = 111.0
+scale = Vector2(0.3, 0.3)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+visible_characters = 0
+
+[node name="OK" type="Button" parent="Dialogo/VBoxContainer"]
+layout_mode = 2
+text = "OK"
+
+[node name="TextureRect2" type="TextureRect" parent="Dialogo"]
+layout_mode = 2
+offset_left = 122.0
+offset_top = -103.429
+offset_right = 172.0
+offset_bottom = -53.4286
+scale = Vector2(0.75, 0.75)
+size_flags_horizontal = 0
+texture = ExtResource("18_ihf48")
+
+[node name="Control2" parent="Dialogo" instance=ExtResource("19_rn6lw")]
+layout_mode = 1
+offset_left = -114.857
+offset_top = -181.714
+offset_right = -114.857
+offset_bottom = -181.714
+scale = Vector2(0.33, 0.33)
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 [connection signal="body_entered" from="Zona 2" to="." method="_on_zona_2_body_entered"]
 [connection signal="body_entered" from="Zona 3" to="." method="_on_zona_3_body_entered"]
 [connection signal="body_entered" from="Zona 4" to="." method="_on_zona_4_body_entered"]
 [connection signal="body_entered" from="Zona 5" to="." method="_on_zona_5_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="countdown" to="." method="_on_countdown_finished"]

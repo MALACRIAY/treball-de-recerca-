@@ -1,25 +1,27 @@
 extends CharacterBody2D
-
+ 
 @export var acceleration: float = 40.0
 @export var max_speed : float = 80.0 * GlobalScript.difficulty
 @export var min_angle := 130
 @export var max_angle := 230
-
+ 
 var speed : float
 var animations : Array
 var Zona = 2
 var resolvedor_de_problemas = 90
 var health = 6
-var lost = false
+var lost := false
+var start : bool
 
 func _ready():
 	for box in $boxes.get_children():
 		animations.append(box.get_child(0))
-
+ 
 func _process(delta):
-	if Zona != 4:
-		movement(delta)
-
+	if start:
+		if Zona != 4:
+			movement(delta)
+ 
 func movement(delta):
 	if Zona == 1:
 		resolvedor_de_problemas = 0
@@ -39,13 +41,11 @@ func movement(delta):
 	#print("ROTACION"+ str(rotation_degrees))
 	velocity = Vector2(speed, 0).rotated(deg_to_rad(rotation_degrees-90))
 	move_and_slide()
-
+ 
 func lost_health():
 	health -= 1
-	if health == 0:
-		lost = true
 	animations[health].play(str(health))
-
+ 
 func _on_Barco_body_entered(body):
 	if body.is_in_group("obstacles"):
 		lost_health()

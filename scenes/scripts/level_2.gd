@@ -1,14 +1,19 @@
 extends Node2D
-@export var flowers_max : int
+
 @onready var barra = $barra
 @onready var animations = $Flower/Animaciones
 @onready var flower = $Flower
 @onready var point_marker = $countdown/Points
+
+var flowers_max : int
 var side : int
 var points = 0
+var flowers_left : int
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	animations.speed_scale = (GlobalScript.difficulty)
+	animations.speed_scale = (GlobalScript.difficulty)-.5
+	flowers_max = GlobalScript.difficulty * 3
+	flowers_left = flowers_max
 func _process(delta):
 	side = sign(get_global_mouse_position().x - barra.global_position.x )
 	barra.rotation_degrees = move_toward(barra.rotation_degrees,15 * side,1) 
@@ -31,13 +36,13 @@ func _on_cesta_red_body_entered(body):
 	if body ==  flower:
 		if flower.get_child(2).frame != 0:
 			points += 1
-
+			$cesta_red/red.play("default")
 
 func _on_cesta_purple_body_entered(body):
 	if body ==  flower:
 		if flower.get_child(1).frame != 0:
 			points +=1
-
+			$cesta_purple/purple.play("default")
 
 func _on_animation_finished(anim_name):
 	if anim_name == "top_left" or anim_name == "top_right":
@@ -46,12 +51,20 @@ func _on_animation_finished(anim_name):
 		else:
 			animations.play("bot_left")
 	else:
-		if flowers_max > 0:
+		if flowers_left > 0:
 			#reset flower
 			flower.get_child(1).frame = 0
 			flower.get_child(2).frame = 0
-			flowers_max -= 1
-			print(flowers_max)
+			flowers_left -= 1
 			spawn_flower() 
-func _on_timeout():
+
+func _on_countdown_animation_finished():
 	spawn_flower()
+
+
+func _on_points_animation_changed():
+	print(point_marker.frame)
+	print(flowers_max)
+	if point_marker.frame == flowers_max:
+		$Dialogo.won = true
+		print("sad")

@@ -1,124 +1,155 @@
-[gd_scene load_steps=10 format=3 uid="uid://ex2i4skqjmum"]
+[gd_scene load_steps=15 format=3 uid="uid://ex2i4skqjmum"]
 
 [ext_resource type="Script" path="res://scenes/scripts/Main.gd" id="1_w1086"]
 [ext_resource type="Texture2D" uid="uid://27bibltwtem2" path="res://images/propias/Mapa_assets/extras/degre_extras/fondo principal.png" id="2_j303s"]
 [ext_resource type="Texture2D" uid="uid://ddift00hww1yu" path="res://images/propias/Mapa_assets/first/easy.png" id="3_i4lrb"]
-[ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="3_slaca"]
-[ext_resource type="Texture2D" uid="uid://bvv688uunk3jw" path="res://images/propias/Mapa_assets/extras/meta.png" id="4_k6tcj"]
 [ext_resource type="Texture2D" uid="uid://capw3hgiy4i3y" path="res://images/propias/Mapa_assets/first/normal.png" id="4_skpd1"]
 [ext_resource type="Texture2D" uid="uid://c6njx7lf0747g" path="res://images/propias/Mapa_assets/first/hard.png" id="5_a6ht4"]
-[ext_resource type="Texture2D" uid="uid://dbnqfntyc0jft" path="res://images/propias/Mapa_assets/first/XhardX.png" id="6_lgwac"]
-[ext_resource type="Texture2D" uid="uid://cryi7brjqg5ea" path="res://images/propias/Mapa_assets/first/impossibly_hard.png" id="7_dcgmu"]
+[ext_resource type="Texture2D" uid="uid://d1bmygxf1jbxu" path="res://images/propias/Mapa_assets/first/jugar.png" id="7_wt7al"]
+[ext_resource type="PackedScene" uid="uid://dmdrcox7q000" path="res://scenes/ball/area_2d.tscn" id="8_4pl6s"]
+[ext_resource type="Texture2D" uid="uid://deuko8okek331" path="res://images/propias/Mapa_assets/extras/degre_extras/barrra 3 punts.png" id="9_q7okp"]
 
-[node name="Main" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="AtlasTexture" id="AtlasTexture_j73e6"]
+atlas = ExtResource("9_q7okp")
+region = Rect2(5, 14, 45, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrmjt"]
+atlas = ExtResource("9_q7okp")
+region = Rect2(55, 14, 45, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n3of"]
+atlas = ExtResource("9_q7okp")
+region = Rect2(105, 14, 45, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_43j7r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j73e6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j73e6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrmjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n3of")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.2
+}]
+
+[sub_resource type="Gradient" id="Gradient_hmxkw"]
+colors = PackedColorArray(0.189745, 0.189745, 0.189745, 1, 0.194805, 0.194805, 0.194805, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l1vts"]
+gradient = SubResource("Gradient_hmxkw")
+
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_w1086")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1152.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
-alignment = 1
+[node name="Background" type="Node2D" parent="."]
+z_index = -1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Fondo" type="Sprite2D" parent="Background"]
+scale = Vector2(20, 20)
 texture = ExtResource("2_j303s")
+centered = false
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Fondo2" type="Sprite2D" parent="Background"]
+position = Vector2(1199, 0)
+scale = Vector2(20, 20)
 texture = ExtResource("2_j303s")
+centered = false
 flip_h = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/TextureRect2"]
-layout_mode = 2
-offset_left = 290.0
-offset_right = 862.0
-offset_bottom = 648.0
-size_flags_horizontal = 3
+[node name="Foreground" type="Node2D" parent="."]
 
-[node name="Control" type="Control" parent="HBoxContainer/TextureRect2/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
+[node name="Start" type="Sprite2D" parent="Foreground"]
+position = Vector2(552, 411)
+scale = Vector2(5, 5)
+texture = ExtResource("7_wt7al")
+region_enabled = true
+region_rect = Rect2(44, 27, 56, 22)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/TextureRect2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.1
+[node name="Difficulties" type="CanvasGroup" parent="Foreground"]
+position = Vector2(1761, 309)
+scale = Vector2(10, 10)
 
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer/TextureRect2/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("3_i4lrb")
-stretch_mode = 4
+[node name="Loading_diff" type="AnimatedSprite2D" parent="Foreground/Difficulties"]
+position = Vector2(0, 20)
+scale = Vector2(2.2, 2.2)
+sprite_frames = SubResource("SpriteFrames_43j7r")
+autoplay = "default"
 
-[node name="TextureButton2" type="TextureButton" parent="HBoxContainer/TextureRect2/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("4_skpd1")
-stretch_mode = 4
+[node name="Easy" type="Sprite2D" parent="Foreground/Difficulties"]
+position = Vector2(-40, 0)
+texture = ExtResource("3_i4lrb")
+region_enabled = true
+region_rect = Rect2(12, 17, 26, 13)
 
-[node name="TextureButton3" type="TextureButton" parent="HBoxContainer/TextureRect2/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("5_a6ht4")
-stretch_mode = 4
+[node name="Normal" type="Sprite2D" parent="Foreground/Difficulties"]
+texture = ExtResource("4_skpd1")
+region_enabled = true
+region_rect = Rect2(6, 17, 36, 13)
 
-[node name="TextureButton4" type="TextureButton" parent="HBoxContainer/TextureRect2/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("6_lgwac")
-stretch_mode = 4
+[node name="Hard" type="Sprite2D" parent="Foreground/Difficulties"]
+position = Vector2(40, 0)
+texture = ExtResource("5_a6ht4")
+region_enabled = true
+region_rect = Rect2(13, 17, 25, 13)
 
-[node name="Control3" type="Control" parent="HBoxContainer/TextureRect2/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
+[node name="clock_light" type="Node2D" parent="."]
+visible = false
+position = Vector2(-7, 2)
 
-[node name="Imp_hard" type="TextureButton" parent="HBoxContainer/TextureRect2"]
-z_index = -1
-layout_mode = 0
-offset_left = 822.0
-offset_top = 128.0
-offset_right = 1110.0
-offset_bottom = 210.0
-texture_normal = ExtResource("7_dcgmu")
-stretch_mode = 4
+[node name="PointLight2D" type="PointLight2D" parent="clock_light"]
+position = Vector2(135, 180)
+scale = Vector2(1, 346.625)
+texture = SubResource("GradientTexture1D_l1vts")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Label" type="Label" parent="clock_light"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 36.0
+offset_top = 244.0
+offset_right = 233.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 30
+text = "ESPERA A QUE CARGUE"
+autowrap_mode = 2
+
+[node name="start_light" type="Node2D" parent="."]
+visible = false
+position = Vector2(425, 258)
+
+[node name="PointLight2D" type="PointLight2D" parent="start_light"]
+position = Vector2(128, 95.875)
+scale = Vector2(1.34375, 276.25)
+texture = SubResource("GradientTexture1D_l1vts")
+
+[node name="Label" type="Label" parent="start_light"]
+modulate = Color(1, 0, 0, 1)
+offset_left = -19.0
+offset_top = -21.0
+offset_right = 293.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 30
+text = "MANTEN LA PELOTA EN EL BOTON"
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="ball" parent="." instance=ExtResource("8_4pl6s")]
+
+[node name="Camera2D" type="Camera2D" parent="ball"]
+position = Vector2(-3, -8)
 anchor_mode = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
-[node name="Control" parent="Camera2D" instance=ExtResource("3_slaca")]
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 1.0
-offset_bottom = -1.0
-
-[node name="TextureButton" type="TextureButton" parent="." groups=["hover_click"]]
-layout_mode = 0
-offset_left = 490.0
-offset_top = 386.0
-offset_right = 530.0
-offset_bottom = 426.0
-texture_normal = ExtResource("4_k6tcj")
-
-[node name="Brightness" type="CanvasModulate" parent="."]
-unique_name_in_owner = true
-
-[connection signal="pressed" from="TextureButton" to="." method="_on_start"]
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]

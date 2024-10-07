@@ -1,9 +1,13 @@
-[gd_scene load_steps=36 format=3 uid="uid://btdihye1bp5d0"]
+[gd_scene load_steps=40 format=3 uid="uid://btdihye1bp5d0"]
 
 [ext_resource type="Texture2D" uid="uid://b8ius0xrg2lg7" path="res://images/propias/Tests/Tilemaps/memory.png" id="1_0ywig"]
 [ext_resource type="Script" path="res://images/propias/Tests/Menu.gd" id="2_udspk"]
 [ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="3_kxchr"]
 [ext_resource type="Texture2D" uid="uid://clu32d0t2i0k4" path="res://images/propias/Mapa_assets/extras/degre_extras/fondo_negre.png" id="4_bomnu"]
+[ext_resource type="Script" path="res://scenes/scripts/memory_dialogo.gd" id="5_ujcnv"]
+[ext_resource type="Texture2D" uid="uid://p7qtrqo1nnyh" path="res://images/propias/Mapa_assets/extras/dialogo/bakground.png" id="6_h2r4e"]
+[ext_resource type="Texture2D" uid="uid://cpywsdbbpvwqg" path="res://images/propias/Mapa_assets/extras/dialogo/cuadro_0.png" id="7_o3gis"]
+[ext_resource type="Texture2D" uid="uid://bsosdjsm6u21j" path="res://images/propias/Mapa_assets/extras/dialogo/persona_0.png" id="8_vutqo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xt18h"]
 texture = ExtResource("1_0ywig")
@@ -489,6 +493,77 @@ offset_bottom = 36.0
 position = Vector2(575.5, 319)
 scale = Vector2(23.14, 20)
 sprite_frames = SubResource("SpriteFrames_fmiwm")
+
+[node name="Dialogo" type="Control" parent="."]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 418.0
+offset_top = 629.0
+offset_right = 418.0
+offset_bottom = 629.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.5, 3.5)
+script = ExtResource("5_ujcnv")
+
+[node name="TextureRect3" type="TextureRect" parent="Dialogo"]
+layout_mode = 0
+offset_left = -167.0
+offset_top = -352.0
+offset_right = 273.0
+offset_bottom = 19.0
+texture = ExtResource("6_h2r4e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialogo"]
+layout_mode = 0
+offset_left = -28.8571
+offset_top = -109.429
+offset_right = 175.143
+offset_bottom = -5.42857
+
+[node name="TextureRect" type="TextureRect" parent="Dialogo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("7_o3gis")
+
+[node name="Label" type="Label" parent="Dialogo/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 11.0
+offset_right = 423.0
+offset_bottom = 111.0
+scale = Vector2(0.3, 0.3)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+visible_characters = 0
+
+[node name="OK" type="Button" parent="Dialogo/VBoxContainer"]
+layout_mode = 2
+text = "OK"
+
+[node name="TextureRect2" type="TextureRect" parent="Dialogo"]
+layout_mode = 2
+offset_left = 122.0
+offset_top = -103.429
+offset_right = 172.0
+offset_bottom = -53.4286
+scale = Vector2(0.75, 0.75)
+size_flags_horizontal = 0
+texture = ExtResource("8_vutqo")
+
+[node name="Control2" parent="Dialogo" instance=ExtResource("3_kxchr")]
+layout_mode = 1
+offset_left = -114.857
+offset_top = -181.714
+offset_right = -114.857
+offset_bottom = -181.714
+scale = Vector2(0.33, 0.33)
 
 [connection signal="pressed" from="buttons/Button" to="TileMap" method="_on_button_pressed"]
 [connection signal="pressed" from="buttons/Button4" to="TileMap" method="_on_button_pressed"]

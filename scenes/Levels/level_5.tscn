@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b0by0qjfuaxkv"]
+[gd_scene load_steps=30 format=3 uid="uid://b0by0qjfuaxkv"]
 
 [ext_resource type="Script" path="res://scenes/scripts/fuxibol.gd" id="1_0de4u"]
 [ext_resource type="Texture2D" uid="uid://6ow0exjhu8hx" path="res://images/propias/Mapa_assets/fuxibol/porte.png" id="2_icphk"]
@@ -9,6 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://hclkgxsvyfao" path="res://images/propias/Mapa_assets/Puntuacion/2.png" id="7_vqgn3"]
 [ext_resource type="Texture2D" uid="uid://d2jk6yh0sdt6v" path="res://images/propias/Mapa_assets/Puntuacion/1.png" id="8_hv40i"]
 [ext_resource type="Texture2D" uid="uid://by87d6idxb3kt" path="res://images/propias/Mapa_assets/Puntuacion/0.png" id="9_degh6"]
+[ext_resource type="Script" path="res://scenes/scripts/futbol_dialogo.gd" id="10_f5kp3"]
+[ext_resource type="Texture2D" uid="uid://p7qtrqo1nnyh" path="res://images/propias/Mapa_assets/extras/dialogo/bakground.png" id="11_qu3cr"]
+[ext_resource type="Texture2D" uid="uid://cpywsdbbpvwqg" path="res://images/propias/Mapa_assets/extras/dialogo/cuadro_0.png" id="12_3jd22"]
+[ext_resource type="Texture2D" uid="uid://bsosdjsm6u21j" path="res://images/propias/Mapa_assets/extras/dialogo/persona_0.png" id="13_djjq0"]
+[ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="14_wk0ks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usfpm"]
 size = Vector2(493, 204)
@@ -96,7 +101,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_iygbv"]
-resource_name = "dif_0"
+resource_name = "dif_1"
 length = 9.0
 loop_mode = 1
 tracks/0/type = "value"
@@ -110,6 +115,40 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(578, 326), Vector2(490, 276), Vector2(419, 288), Vector2(431, 361), Vector2(543, 365), Vector2(678, 370), Vector2(760, 333), Vector2(707, 273), Vector2(611, 282), Vector2(578, 326)]
+}
+
+[sub_resource type="Animation" id="Animation_a5qtr"]
+resource_name = "dif_2"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Keeper:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.3, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(578, 326), Vector2(443, 256), Vector2(752, 274), Vector2(402, 370), Vector2(767, 378), Vector2(578, 326)]
+}
+
+[sub_resource type="Animation" id="Animation_xj0go"]
+resource_name = "dif_3"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Keeper:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(579, 320), Vector2(493.25, 372), Vector2(409, 337), Vector2(471, 254), Vector2(566, 361), Vector2(683, 269), Vector2(733, 365), Vector2(780, 260), Vector2(579, 320)]
 }
 
 [sub_resource type="Animation" id="Animation_puw4i"]
@@ -158,7 +197,9 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3y2x4"]
 _data = {
 "RESET": SubResource("Animation_ruly8"),
-"dif_0": SubResource("Animation_iygbv"),
+"dif_1": SubResource("Animation_iygbv"),
+"dif_2": SubResource("Animation_a5qtr"),
+"dif_3": SubResource("Animation_xj0go"),
 "end": SubResource("Animation_puw4i"),
 "left": SubResource("Animation_weyij")
 }
@@ -174,6 +215,7 @@ scale = Vector2(12, 8)
 texture = ExtResource("2_icphk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+visible = false
 position = Vector2(5.5, -11)
 shape = SubResource("RectangleShape2D_usfpm")
 
@@ -198,7 +240,7 @@ shape = SubResource("CircleShape2D_5si67")
 position = Vector2(590, 574)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(595, 310)
+position = Vector2(576, 326)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_4kepy")
 animation = &"count"
@@ -208,7 +250,79 @@ autoplay = "count"
 libraries = {
 "": SubResource("AnimationLibrary_3y2x4")
 }
-autoplay = "dif_0"
+
+[node name="Dialogo" type="Control" parent="."]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 418.0
+offset_top = 629.0
+offset_right = 418.0
+offset_bottom = 629.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.5, 3.5)
+script = ExtResource("10_f5kp3")
+
+[node name="TextureRect3" type="TextureRect" parent="Dialogo"]
+layout_mode = 0
+offset_left = -167.0
+offset_top = -352.0
+offset_right = 273.0
+offset_bottom = 19.0
+texture = ExtResource("11_qu3cr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialogo"]
+layout_mode = 0
+offset_left = -28.8571
+offset_top = -109.429
+offset_right = 175.143
+offset_bottom = -5.42857
+
+[node name="TextureRect" type="TextureRect" parent="Dialogo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("12_3jd22")
+
+[node name="Label" type="Label" parent="Dialogo/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 11.0
+offset_right = 423.0
+offset_bottom = 111.0
+scale = Vector2(0.3, 0.3)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+visible_characters = 0
+
+[node name="OK" type="Button" parent="Dialogo/VBoxContainer"]
+layout_mode = 2
+text = "OK"
+
+[node name="TextureRect2" type="TextureRect" parent="Dialogo"]
+layout_mode = 2
+offset_left = 122.0
+offset_top = -103.429
+offset_right = 172.0
+offset_bottom = -53.4286
+scale = Vector2(0.75, 0.75)
+size_flags_horizontal = 0
+texture = ExtResource("13_djjq0")
+
+[node name="Control2" parent="Dialogo" instance=ExtResource("14_wk0ks")]
+layout_mode = 1
+offset_left = -114.857
+offset_top = -181.714
+offset_right = -114.857
+offset_bottom = -181.714
+scale = Vector2(0.33, 0.33)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 325)
 
 [connection signal="shot" from="Ball" to="." method="_on_ball_shot"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]

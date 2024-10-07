@@ -11,14 +11,14 @@ var decrease_speed = 5
 var start :=  false
 
 func _ready():
-	speed = GlobalScript.difficulty + 1
-	decrease_speed = (GlobalScript.difficulty +1) *5
+	speed = GlobalScript.difficulty 
+	decrease_speed = (4-GlobalScript.difficulty) *5
 	
 func _physics_process(delta):
 	if start:
 		particles.visible = true
 		particles.look_at(global_position-velocity)
-		velocity = (get_global_mouse_position()-global_position)* 5 / speed
+		velocity = (get_global_mouse_position()-global_position)*5 / speed
 		if image.scale >= min_size:
 			image.scale -= Vector2(delta/decrease_speed,delta/decrease_speed)
 		else:

@@ -10,6 +10,7 @@ var in_goal : bool
 var result : int
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	keeper.scale = Vector2(GlobalScript.difficulty,GlobalScript.difficulty)
 	for body in get_children():
 		if body is Area2D:
 			body.body_entered.connect(_body_entered.bind(body))
@@ -51,6 +52,9 @@ func _body_exited(body,area):
 			print("out_goal")
 			in_goal = false
 
+func goal():
+	pass
 
 func _on_animation_finished():
+	animation.play("dif_"+str(randi_range(1,GlobalScript.difficulty)))
 	ball.start = true

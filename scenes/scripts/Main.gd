@@ -1,29 +1,41 @@
-extends Control
-
-@onready var difficulties = $HBoxContainer/TextureRect2/VBoxContainer/HBoxContainer.get_children()
-@onready var clicker = $Camera2D/Control
-@onready var camera = $Camera2D
-
-@onready var secret = $HBoxContainer/TextureRect2/Imp_hard
-
+extends Node2D
+ 
+@onready var difficulties : Array = $Foreground/Difficulties.get_children()
+@onready var start : Object = $Foreground/Start
+@onready var clicker : Object  = $ball
+@onready var start_light : Object  = $start_light
+@onready var clock_light : Object  = $clock_light
+@onready var diff_slider : Object = $Foreground/Difficulties/Loading_diff
+var first_time : bool = true
+ 
 func _ready():
-	clicker.visible = true # Replace with function body.
-	for button in difficulties:
-		button.add_to_group("hover_click")
-		button.pressed.connect(_pressed.bind(button.get_index()))
-	secret.add_to_group("hover_click")
-	secret.pressed.connect(_pressed.bind(4))
+	_tutorial()
+	_set_hover_click()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	
+	if clicker.nodes_in:
+		if clicker.nodes_in[0].get_parent() in difficulties:
+			diff_slider.frame = difficulties.find(clicker.nodes_in[0].get_parent())
 
-func _pressed(difficulty):
-	GlobalScript.difficulty = difficulty
-	if difficulty > 3:
-		secret.z_index = 0
-	await self.get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://scenes/Levels/Character_choosing.tscn")
+ 
+func _set_hover_click():
+	for button in difficulties:
+		Signal(button,"_pressed")
+		button.add_to_group("hover_click")
+		button.item_rect_changed.connect(self._clicked.bind(button))
+	start.add_to_group("hover_click")
+	start.item_rect_changed.connect(self._clicked.bind(start))
 
-func _on_start():
-	camera.global_position.x += 1150
+func _clicked(button):
+	if button in difficulties:
+		GlobalScript.difficulty = difficulties.find(button)
+		get_tree().change_scene_to_file("res://scenes/Levels/Character_choosing.tscn")
+	else:
+		clicker.global_position.x += 1200
 
+func _tutorial():
+	await self.get_tree().create_timer(10).timeout
+	start_light.visible = true
+	await self.get_tree().create_timer(10).timeout
+	clock_light.visible = true

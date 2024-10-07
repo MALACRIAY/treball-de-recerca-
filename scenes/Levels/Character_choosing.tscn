@@ -1,50 +1,55 @@
-[gd_scene load_steps=18 format=3 uid="uid://dcrddjcpo38op"]
+[gd_scene load_steps=13 format=3 uid="uid://dcrddjcpo38op"]
 
 [ext_resource type="Script" path="res://scenes/scripts/Character_choosing.gd" id="1_h887o"]
 [ext_resource type="Texture2D" uid="uid://7xsu3m81ehqx" path="res://images/propias/Mapa_assets/Principal/Escoger_personajepng.png" id="2_j7d2p"]
-[ext_resource type="Texture2D" uid="uid://cb5vadhcbxxvm" path="res://images/propias/Personajes/Personas/Choose/Hombre_Blanco_M_i_R.png" id="3_o22ow"]
-[ext_resource type="Texture2D" uid="uid://iielbf0g51rf" path="res://images/propias/Personajes/Personas/Choose/Hombre_Negro_M_i_R.png" id="4_5vda4"]
-[ext_resource type="Texture2D" uid="uid://bn2eouddp3dos" path="res://images/propias/Personajes/Personas/Choose/Mujer_Morena_B_i_N.png" id="5_5rvar"]
-[ext_resource type="Texture2D" uid="uid://dsabrrhdpoq6q" path="res://images/propias/Personajes/Personas/Choose/Mujer_Rubia_B_i_N.png" id="6_nwsxd"]
-[ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="8_6qg3x"]
+[ext_resource type="Shader" path="res://resources/character_shader.gdshader" id="3_kx137"]
+[ext_resource type="Texture2D" uid="uid://d0p0mn2cg3lms" path="res://images/propias/Mapa_assets/extras/2/tio_rgb.png" id="4_dccvh"]
+[ext_resource type="Texture2D" uid="uid://cg2n01qw56efs" path="res://images/propias/Mapa_assets/extras/2/tick.png" id="7_boptu"]
+[ext_resource type="PackedScene" uid="uid://dmdrcox7q000" path="res://scenes/ball/area_2d.tscn" id="7_w5kna"]
+[ext_resource type="Texture2D" uid="uid://k0glmjhh2h4q" path="res://images/propias/Mapa_assets/extras/2/white_color.png" id="8_g3d4k"]
+[ext_resource type="Texture2D" uid="uid://tci8k655uckt" path="res://images/propias/Mapa_assets/extras/2/panel_colors.png" id="8_sfuj2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ljs53"]
-atlas = ExtResource("3_o22ow")
-region = Rect2(0, 0, 135, 202)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_isgd1"]
+shader = ExtResource("3_kx137")
+shader_parameter/Face_color = Color(0.706, 0.322, 0.227, 1)
+shader_parameter/Body_color = Color(0.878, 0.804, 0.663, 1)
+shader_parameter/Hair_color = Color(0.545, 0.369, 0.235, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y28s7"]
-atlas = ExtResource("4_5vda4")
-region = Rect2(0, 0, 135, 202)
+[sub_resource type="Animation" id="Animation_hj54r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelColors:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(370, 600)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_enkms"]
-region = Rect2(0, 0, 127.365, 100)
+[sub_resource type="Animation" id="Animation_6amg7"]
+resource_name = "back_and_forth"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelColors:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(370, 600), Vector2(-340, 600), Vector2(370, 600)]
+}
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0rs74"]
-load_path = "res://.godot/imported/Hombre_Blanco_M_i_R.png-77863bec755353e9a35554bc6b99c10f.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x1yk1"]
-atlas = SubResource("CompressedTexture2D_0rs74")
-region = Rect2(0, 202, 135, 202)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ak6l"]
-atlas = ExtResource("4_5vda4")
-region = Rect2(0, 202, 135, 202)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uahh1"]
-atlas = ExtResource("6_nwsxd")
-region = Rect2(0, 0, 135, 202)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jjtar"]
-atlas = ExtResource("6_nwsxd")
-region = Rect2(0, 202, 135, 202)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jam85"]
-atlas = ExtResource("5_5rvar")
-region = Rect2(0, 202, 135, 202)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vians"]
-atlas = ExtResource("5_5rvar")
-region = Rect2(0, 0, 135, 202)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0mdmo"]
+_data = {
+"RESET": SubResource("Animation_hj54r"),
+"back_and_forth": SubResource("Animation_6amg7")
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h887o")
@@ -52,173 +57,103 @@ script = ExtResource("1_h887o")
 [node name="Puta merda" type="Node2D" parent="."]
 scale = Vector2(1.6, 1.6)
 
-[node name="TextureRect" type="TextureRect" parent="Puta merda"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 577.0
-offset_top = 327.0
-offset_right = 577.0
-offset_bottom = 327.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Sprite2D" type="Sprite2D" parent="Puta merda"]
+scale = Vector2(1.71237, 1.5)
 texture = ExtResource("2_j7d2p")
-expand_mode = 1
-stretch_mode = 3
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 17, 661, 177)
 
-[node name="EscogerPersonajepng" type="Sprite2D" parent="Puta merda"]
-position = Vector2(131, 350.63)
-scale = Vector2(4.46154, 1)
+[node name="Sprite2D3" type="Sprite2D" parent="Puta merda"]
+position = Vector2(575.863, 342.188)
+scale = Vector2(1.71969, 2.95898)
 texture = ExtResource("2_j7d2p")
 region_enabled = true
-region_rect = Rect2(23.2997, 161.902, 52.9755, 421.983)
+region_rect = Rect2(25, 516, 659, 64)
 
-[node name="EscogerPersonajepng2" type="Sprite2D" parent="Puta merda"]
-position = Vector2(1021, 352.63)
-scale = Vector2(4.46154, 1)
+[node name="Sprite2D2" type="Sprite2D" parent="Puta merda"]
+position = Vector2(577.5, 520.625)
+scale = Vector2(1.7, 1.5)
 texture = ExtResource("2_j7d2p")
 region_enabled = true
-region_rect = Rect2(23.2997, 161.902, 52.9755, 421.983)
-
-[node name="EscogerPersonajepng3" type="Sprite2D" parent="Puta merda"]
-position = Vector2(339, 607.63)
-texture = ExtResource("2_j7d2p")
-region_enabled = true
-region_rect = Rect2(23.0007, 584.942, 662.77, 93.9368)
-
-[node name="EscogerPersonajepng4" type="Sprite2D" parent="Puta merda"]
-position = Vector2(1119, 608.63)
-texture = ExtResource("2_j7d2p")
-region_enabled = true
-region_rect = Rect2(23.0007, 584.942, 662.77, 93.9368)
-
-[node name="EscogerPersonajepng5" type="Sprite2D" parent="Puta merda"]
-position = Vector2(978, 72.6303)
-texture = ExtResource("2_j7d2p")
-region_enabled = true
-region_rect = Rect2(23.7346, 14.7001, 155.366, 157.3)
-
-[node name="EscogerPersonajepng6" type="Sprite2D" parent="Puta merda"]
-position = Vector2(179, 68.1303)
-scale = Vector2(1, 1.0493)
-texture = ExtResource("2_j7d2p")
-region_enabled = true
-region_rect = Rect2(545.632, 59.9211, 139.579, 142.658)
-
-[node name="EscogerPersonajepng7" type="Sprite2D" parent="Puta merda"]
-position = Vector2(41, 72.6303)
-texture = ExtResource("2_j7d2p")
-region_enabled = true
-region_rect = Rect2(22.9002, 14.7001, 156.2, 157.3)
-
-[node name="EscogerPersonajepng8" type="Sprite2D" parent="Puta merda"]
-position = Vector2(1123, 70.6303)
-scale = Vector2(1, 1.0493)
-texture = ExtResource("2_j7d2p")
-region_enabled = true
-region_rect = Rect2(545.632, 59.9211, 139.579, 142.658)
-
-[node name="EscogerPersonajepng9" type="Sprite2D" parent="Puta merda"]
-position = Vector2(1140, 332.63)
-scale = Vector2(1, 1.0493)
-texture = ExtResource("2_j7d2p")
-region_enabled = true
-region_rect = Rect2(686.001, -0.000305176, 31.4023, 695.459)
-
-[node name="EscogerPersonajepng10" type="Sprite2D" parent="Puta merda"]
-position = Vector2(568, -3)
-rotation = 1.5708
-scale = Vector2(1, 2)
-texture = ExtResource("2_j7d2p")
-region_enabled = true
-region_rect = Rect2(686.001, -0.000305176, 31.4023, 695.459)
-
-[node name="EscogerPersonajepng12" type="Sprite2D" parent="Puta merda"]
-position = Vector2(588, 648)
-rotation = 1.5708
-scale = Vector2(1, 2)
-texture = ExtResource("2_j7d2p")
-region_enabled = true
-region_rect = Rect2(686.001, -0.000305176, 31.4023, 695.459)
-
-[node name="EscogerPersonajepng11" type="Sprite2D" parent="Puta merda"]
-position = Vector2(11, 352)
-scale = Vector2(1, 1.0493)
-texture = ExtResource("2_j7d2p")
-region_enabled = true
-region_rect = Rect2(686.001, -0.000305176, 31.4023, 695.459)
+region_rect = Rect2(24, 516, 660, 162)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(917, 509)
 zoom = Vector2(0.65, 0.65)
 
-[node name="Control" parent="." instance=ExtResource("8_6qg3x")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 137.0
-offset_top = 76.0
-offset_right = 137.0
-offset_bottom = 76.0
-grow_horizontal = 1
-grow_vertical = 1
-size_flags_horizontal = 0
-size_flags_vertical = 0
+[node name="Character" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_isgd1")
+position = Vector2(1421, 691)
+scale = Vector2(10, 10)
+texture = ExtResource("4_dccvh")
+flip_h = true
 
-[node name="GridContainer" type="GridContainer" parent="Control"]
-layout_mode = 0
-offset_left = 352.0
-offset_top = 283.0
-offset_right = 1215.0
-offset_bottom = 712.0
-theme_override_constants/h_separation = 49
-theme_override_constants/v_separation = 25
-columns = 5
+[node name="ColorPickerButton" type="ColorPickerButton" parent="."]
+offset_left = 10.0
+offset_top = 891.0
+offset_right = 18.0
+offset_bottom = 899.0
+color = Color(0.811765, 0.588235, 0.419608, 1)
 
-[node name="0" type="TextureButton" parent="Control/GridContainer"]
-texture_filter = 1
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_ljs53")
+[node name="Tick" type="Sprite2D" parent="." groups=["hover_click"]]
+position = Vector2(897, 647)
+scale = Vector2(4, 4)
+texture = ExtResource("7_boptu")
 
-[node name="2" type="TextureButton" parent="Control/GridContainer"]
-texture_filter = 1
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_y28s7")
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(-576, 617)
+rotation = -0.270465
 
-[node name="TextureRect" type="TextureRect" parent="Control/GridContainer"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_enkms")
+[node name="PanelColors" type="Sprite2D" parent="."]
+position = Vector2(370, 600)
+scale = Vector2(8, 8)
+texture = ExtResource("8_sfuj2")
 
-[node name="1" type="TextureButton" parent="Control/GridContainer"]
-texture_filter = 1
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_x1yk1")
+[node name="Colors" type="CanvasGroup" parent="PanelColors"]
+position = Vector2(5, 10.375)
+scale = Vector2(0.5, 0.5)
 
-[node name="3" type="TextureButton" parent="Control/GridContainer"]
-texture_filter = 1
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_0ak6l")
+[node name="WhiteColor" type="Sprite2D" parent="PanelColors/Colors"]
+texture = ExtResource("8_g3d4k")
 
-[node name="6" type="TextureButton" parent="Control/GridContainer"]
-texture_filter = 1
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_uahh1")
+[node name="WhiteColor2" type="Sprite2D" parent="PanelColors/Colors"]
+texture = ExtResource("8_g3d4k")
 
-[node name="7" type="TextureButton" parent="Control/GridContainer"]
-texture_filter = 1
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_jjtar")
+[node name="WhiteColor3" type="Sprite2D" parent="PanelColors/Colors"]
+texture = ExtResource("8_g3d4k")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/GridContainer"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_enkms")
+[node name="WhiteColor4" type="Sprite2D" parent="PanelColors/Colors"]
+texture = ExtResource("8_g3d4k")
 
-[node name="4" type="TextureButton" parent="Control/GridContainer"]
-texture_filter = 1
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_jam85")
+[node name="WhiteColor5" type="Sprite2D" parent="PanelColors/Colors"]
+texture = ExtResource("8_g3d4k")
 
-[node name="5" type="TextureButton" parent="Control/GridContainer"]
-texture_filter = 1
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_vians")
+[node name="WhiteColor6" type="Sprite2D" parent="PanelColors/Colors"]
+texture = ExtResource("8_g3d4k")
+
+[node name="WhiteColor7" type="Sprite2D" parent="PanelColors/Colors"]
+texture = ExtResource("8_g3d4k")
+
+[node name="WhiteColor8" type="Sprite2D" parent="PanelColors/Colors"]
+texture = ExtResource("8_g3d4k")
+
+[node name="WhiteColor9" type="Sprite2D" parent="PanelColors/Colors"]
+texture = ExtResource("8_g3d4k")
+
+[node name="Label" type="Label" parent="PanelColors"]
+offset_left = -12.5
+offset_top = -47.125
+offset_right = 29.5
+offset_bottom = 7.875
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 40
+text = "CARA"
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0mdmo")
+}
+
+[node name="Node2D" parent="." instance=ExtResource("7_w5kna")]

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://qdpil85v6of3"]
+
+[ext_resource type="Shader" uid="uid://h4hgwt63wenp" path="res://ch.tres" id="1_vw8xa"]
+
+[resource]
+shader = ExtResource("1_vw8xa")
+shader_parameter/colorpicked = Color(0.446452, 0.30549, 0.189032, 1)
+shader_parameter/colorpicked2 = Color(0.446452, 0.30549, 0.189032, 1)
+shader_parameter/colorpicked3 = Color(0.446452, 0.30549, 0.189032, 1)

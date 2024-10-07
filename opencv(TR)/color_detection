@@ -1,0 +1,36 @@
+import numpy as np
+import cv2
+
+cap = cv2.VideoCapture('first_try/IMG_2042.MOV')
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+    # Define lower and upper ranges for red color
+    lower_red_1 = np.array([0, 100, 100])
+    upper_red_1 = np.array([10, 255, 255])
+    lower_red_2 = np.array([170, 100, 100])
+    upper_red_2 = np.array([180, 255, 255])
+
+    # Create masks for the red color in both ranges
+    mask1 = cv2.inRange(hsv, lower_red_1, upper_red_1)
+    mask2 = cv2.inRange(hsv, lower_red_2, upper_red_2)
+
+    # Combine the masks
+    mask = cv2.bitwise_or(mask1, mask2)
+
+    # Apply the mask to get the result
+    result = cv2.bitwise_and(frame, frame, mask=mask)
+
+    # Display the result and the mask
+    cv2.imshow('Red Apple Detection', result)
+    cv2.imshow('Mask', mask)
+
+    if cv2.waitKey(1) == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
