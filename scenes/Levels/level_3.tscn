@@ -36,7 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://bsosdjsm6u21j" path="res://images/propias/Mapa_assets/extras/dialogo/persona_0.png" id="28_d7fj2"]
 [ext_resource type="Texture2D" uid="uid://xeudk2u38dcv" path="res://images/propias/Mapa_assets/Puntuacion/9.png" id="28_lm8c1"]
 [ext_resource type="Texture2D" uid="uid://dhxa727nt6pf4" path="res://images/propias/Mapa_assets/Puntuacion/10.png" id="29_bys8h"]
-[ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="29_xgek2"]
+[ext_resource type="PackedScene" uid="uid://qrvw3iek8ul6" path="res://scenes/Menu_loading.tscn" id="29_xgek2"]
 [ext_resource type="Texture2D" uid="uid://b4t7tf4fjll0s" path="res://images/propias/Mapa_assets/Puntuacion/11.png" id="30_ugpf3"]
 [ext_resource type="Texture2D" uid="uid://4vqvbxhi4v34" path="res://images/propias/Mapa_assets/Puntuacion/12.png" id="31_nf35a"]
 [ext_resource type="Texture2D" uid="uid://crhtgilm8bvh3" path="res://images/propias/Mapa_assets/Puntuacion/13.png" id="32_mvmq7"]
@@ -1114,11 +1114,6 @@ size_flags_horizontal = 0
 texture = ExtResource("28_d7fj2")
 
 [node name="Control2" parent="Dialogo" instance=ExtResource("29_xgek2")]
-layout_mode = 1
-offset_left = -114.857
-offset_top = -181.714
-offset_right = -114.857
-offset_bottom = -181.714
 scale = Vector2(0.33, 0.33)
 
 [node name="SkatePark" type="Sprite2D" parent="."]

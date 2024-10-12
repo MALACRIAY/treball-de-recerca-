@@ -37,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://bsosdjsm6u21j" path="res://images/propias/Mapa_assets/extras/dialogo/persona_0.png" id="21_j5jfx"]
 [ext_resource type="Texture2D" uid="uid://cmbjflrs3uwkm" path="res://images/propias/Mapa_assets/Puntuacion/14.png" id="21_ofton"]
 [ext_resource type="Texture2D" uid="uid://ddm7pxagju8sd" path="res://images/propias/Mapa_assets/Puntuacion/15.png" id="22_354ju"]
-[ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="22_ktgdr"]
+[ext_resource type="PackedScene" uid="uid://qrvw3iek8ul6" path="res://scenes/Menu_loading.tscn" id="22_ktgdr"]
 [ext_resource type="Texture2D" uid="uid://bwta7raakdunt" path="res://images/propias/Mapa_assets/Puntuacion/16.png" id="23_a4wo1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bf52x"]
@@ -789,11 +789,6 @@ size_flags_horizontal = 0
 texture = ExtResource("21_j5jfx")
 
 [node name="Control2" parent="Dialogo" instance=ExtResource("22_ktgdr")]
-layout_mode = 1
-offset_left = -114.857
-offset_top = -181.714
-offset_right = -114.857
-offset_bottom = -181.714
 scale = Vector2(0.33, 0.33)
 
 [node name="Camera2D" type="Camera2D" parent="."]

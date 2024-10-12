@@ -57,7 +57,7 @@ animations = [{
 script = ExtResource("1_c058r")
 
 [node name="Background" type="CanvasGroup" parent="."]
-position = Vector2(537, 427)
+position = Vector2(-13.9999, 97)
 scale = Vector2(5, 5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
@@ -67,10 +67,9 @@ region_enabled = true
 region_rect = Rect2(0, 20, 32, 25)
 
 [node name="Foreground" type="CanvasGroup" parent="."]
-position = Vector2(651, 481)
 
 [node name="squares" type="AnimatedSprite2D" parent="Foreground"]
-position = Vector2(-65, -131)
+position = Vector2(30, 0)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_gvsng")
 
@@ -87,18 +86,21 @@ text = "Hola bon dia"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="faces" type="AnimatedSprite2D" parent="Foreground"]
-position = Vector2(385, -131)
+position = Vector2(420, 0)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_855ik")
 
 [node name="OK" type="Sprite2D" parent="Foreground"]
-position = Vector2(-131, 65)
+position = Vector2(0, 220)
 scale = Vector2(2, 2)
 texture = ExtResource("11_o1n8x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-551, -330)
 anchor_mode = 0
 
 [node name="Node2D" parent="." instance=ExtResource("12_y46s3")]
+position = Vector2(-551, -330)

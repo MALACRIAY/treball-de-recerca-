@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://b7jtkjuj8mc1v"]
+[gd_scene load_steps=64 format=3 uid="uid://b7jtkjuj8mc1v"]
 
 [ext_resource type="Script" path="res://scenes/scripts/porte.gd" id="1_gy6rq"]
 [ext_resource type="Texture2D" uid="uid://du51jxasbphto" path="res://images/propias/Mapa_assets/Puntuacion/guion.png" id="2_iun0h"]
@@ -8,10 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bthytufmxegd5" path="res://images/propias/Personajes/Objetos/hockey_player1.png" id="5_ar8a7"]
 [ext_resource type="Texture2D" uid="uid://b1eb08v7joeoh" path="res://images/propias/Personajes/Objetos/hockey_player2.png" id="6_wnr45"]
 [ext_resource type="Script" path="res://scenes/scripts/countdown_hockey.gd" id="7_tmmuo"]
-[ext_resource type="Texture2D" uid="uid://cpywsdbbpvwqg" path="res://images/propias/Mapa_assets/extras/dialogo/cuadro_0.png" id="8_fxg47"]
 [ext_resource type="Texture2D" uid="uid://by74nf2tlcses" path="res://images/propias/Mapa_assets/Puntuacion/3.png" id="9_1jhwb"]
-[ext_resource type="Script" path="res://scenes/scripts/Dialogo_hockey.gd" id="9_gwjqp"]
-[ext_resource type="Texture2D" uid="uid://bsosdjsm6u21j" path="res://images/propias/Mapa_assets/extras/dialogo/persona_0.png" id="10_e0uug"]
 [ext_resource type="Texture2D" uid="uid://hclkgxsvyfao" path="res://images/propias/Mapa_assets/Puntuacion/2.png" id="10_h3grm"]
 [ext_resource type="Texture2D" uid="uid://dmqh18q0qj2y0" path="res://images/propias/Mapa_assets/Puntuacion/0(1).png" id="10_ti68u"]
 [ext_resource type="Texture2D" uid="uid://bf85f3sjahhkd" path="res://images/propias/Mapa_assets/Puntuacion/2(1).png" id="10_yhv6y"]
@@ -23,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://cxkxyunjgexrv" path="res://images/propias/Mapa_assets/Puntuacion/4.png" id="13_eo8o2"]
 [ext_resource type="Texture2D" uid="uid://d05f1km8wxs48" path="res://images/propias/Mapa_assets/Puntuacion/6.png" id="14_sjein"]
 [ext_resource type="Texture2D" uid="uid://p7qtrqo1nnyh" path="res://images/propias/Mapa_assets/extras/dialogo/bakground.png" id="15_oifvu"]
-[ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="16_e114l"]
 [ext_resource type="Texture2D" uid="uid://d2oykjcwovx28" path="res://images/propias/Mapa_assets/Puntuacion/7.png" id="17_fitnu"]
 [ext_resource type="Texture2D" uid="uid://be3frcljko0xd" path="res://images/propias/Mapa_assets/Puntuacion/8.png" id="18_idq6l"]
 [ext_resource type="Texture2D" uid="uid://xeudk2u38dcv" path="res://images/propias/Mapa_assets/Puntuacion/9.png" id="19_ca2xl"]
@@ -34,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://cmbjflrs3uwkm" path="res://images/propias/Mapa_assets/Puntuacion/14.png" id="24_j4cax"]
 [ext_resource type="Texture2D" uid="uid://ddm7pxagju8sd" path="res://images/propias/Mapa_assets/Puntuacion/15.png" id="25_xjdjh"]
 [ext_resource type="Texture2D" uid="uid://bwta7raakdunt" path="res://images/propias/Mapa_assets/Puntuacion/16.png" id="26_r2sda"]
+[ext_resource type="PackedScene" uid="uid://bknpkx4kc6hnm" path="res://scenes/dialogo.tscn" id="31_hdqah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iooyf"]
 size = Vector2(53, 123)
@@ -427,81 +424,11 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2f6hq")
 
 [node name="countdown" type="AnimatedSprite2D" parent="countdown"]
-z_index = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_q61uo")
 animation = &"count"
 
-[node name="Dialogo" type="Control" parent="."]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -147.0
-offset_top = 308.0
-offset_right = -147.0
-offset_bottom = 308.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3.5, 3.5)
-script = ExtResource("9_gwjqp")
-
-[node name="TextureRect3" type="TextureRect" parent="Dialogo"]
-layout_mode = 0
-offset_left = -167.0
-offset_top = -352.0
-offset_right = 273.0
-offset_bottom = 19.0
-texture = ExtResource("15_oifvu")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Dialogo"]
-layout_mode = 0
-offset_left = -28.8571
-offset_top = -109.429
-offset_right = 175.143
-offset_bottom = -5.42857
-
-[node name="TextureRect" type="TextureRect" parent="Dialogo/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-texture = ExtResource("8_fxg47")
-
-[node name="Label" type="Label" parent="Dialogo/VBoxContainer/TextureRect"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 11.0
-offset_right = 423.0
-offset_bottom = 111.0
-scale = Vector2(0.3, 0.3)
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-visible_characters = 0
-
-[node name="OK" type="Button" parent="Dialogo/VBoxContainer"]
-layout_mode = 2
-text = "OK"
-
-[node name="TextureRect2" type="TextureRect" parent="Dialogo"]
-layout_mode = 2
-offset_left = 122.0
-offset_top = -103.429
-offset_right = 172.0
-offset_bottom = -53.4286
-scale = Vector2(0.75, 0.75)
-size_flags_horizontal = 0
-texture = ExtResource("10_e0uug")
-
-[node name="Control2" parent="Dialogo" instance=ExtResource("16_e114l")]
-layout_mode = 1
-offset_left = -114.857
-offset_top = -181.714
-offset_right = -114.857
-offset_bottom = -181.714
-scale = Vector2(0.33, 0.33)
+[node name="Dialogo" parent="." instance=ExtResource("31_hdqah")]
 
 [connection signal="timeout" from="Timer_goal" to="Campo" method="_on_timer_goal_timeout"]
 [connection signal="animation_finished" from="countdown/countdown" to="Character_1" method="_on_countdown_animation_finished"]

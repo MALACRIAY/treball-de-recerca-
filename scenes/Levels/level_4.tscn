@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b8ius0xrg2lg7" path="res://images/propias/Tests/Tilemaps/memory.png" id="1_0ywig"]
 [ext_resource type="Script" path="res://images/propias/Tests/Menu.gd" id="2_udspk"]
-[ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="3_kxchr"]
+[ext_resource type="PackedScene" uid="uid://qrvw3iek8ul6" path="res://scenes/Menu_loading.tscn" id="3_kxchr"]
 [ext_resource type="Texture2D" uid="uid://clu32d0t2i0k4" path="res://images/propias/Mapa_assets/extras/degre_extras/fondo_negre.png" id="4_bomnu"]
 [ext_resource type="Script" path="res://scenes/scripts/memory_dialogo.gd" id="5_ujcnv"]
 [ext_resource type="Texture2D" uid="uid://p7qtrqo1nnyh" path="res://images/propias/Mapa_assets/extras/dialogo/bakground.png" id="6_h2r4e"]
@@ -484,10 +484,6 @@ offset_right = -4.25
 offset_bottom = -80.75
 
 [node name="Control" parent="." instance=ExtResource("3_kxchr")]
-offset_left = 83.0
-offset_top = 36.0
-offset_right = 83.0
-offset_bottom = 36.0
 
 [node name="fondo" type="AnimatedSprite2D" parent="."]
 position = Vector2(575.5, 319)
@@ -558,11 +554,6 @@ size_flags_horizontal = 0
 texture = ExtResource("8_vutqo")
 
 [node name="Control2" parent="Dialogo" instance=ExtResource("3_kxchr")]
-layout_mode = 1
-offset_left = -114.857
-offset_top = -181.714
-offset_right = -114.857
-offset_bottom = -181.714
 scale = Vector2(0.33, 0.33)
 
 [connection signal="pressed" from="buttons/Button" to="TileMap" method="_on_button_pressed"]

@@ -26,10 +26,11 @@ func _set_texts():
 	pass
  
 func _process(delta):
-	if current_text < len(texts_level_1):
-		text_label.text = texts_level_1[current_text]
+	var current_level_texts = GlobalScript.texts_all[GlobalScript.level]
+	if current_text < len(current_level_texts):
+		text_label.text = current_level_texts[current_text]
 	else:
-		print(current_text)
+		visible = false
 
 func _clicked():
 	_set_texts()
