@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://p7qtrqo1nnyh" path="res://images/propias/Mapa_assets/extras/dialogo/bakground.png" id="11_qu3cr"]
 [ext_resource type="Texture2D" uid="uid://cpywsdbbpvwqg" path="res://images/propias/Mapa_assets/extras/dialogo/cuadro_0.png" id="12_3jd22"]
 [ext_resource type="Texture2D" uid="uid://bsosdjsm6u21j" path="res://images/propias/Mapa_assets/extras/dialogo/persona_0.png" id="13_djjq0"]
-[ext_resource type="PackedScene" uid="uid://ds70kcu4m75i7" path="res://scenes/Menu_loading.tscn" id="14_wk0ks"]
+[ext_resource type="PackedScene" uid="uid://qrvw3iek8ul6" path="res://scenes/Menu_loading.tscn" id="14_wk0ks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usfpm"]
 size = Vector2(493, 204)
@@ -314,11 +314,6 @@ size_flags_horizontal = 0
 texture = ExtResource("13_djjq0")
 
 [node name="Control2" parent="Dialogo" instance=ExtResource("14_wk0ks")]
-layout_mode = 1
-offset_left = -114.857
-offset_top = -181.714
-offset_right = -114.857
-offset_bottom = -181.714
 scale = Vector2(0.33, 0.33)
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://cmbjflrs3uwkm" path="res://images/propias/Mapa_assets/Puntuacion/14.png" id="24_j4cax"]
 [ext_resource type="Texture2D" uid="uid://ddm7pxagju8sd" path="res://images/propias/Mapa_assets/Puntuacion/15.png" id="25_xjdjh"]
 [ext_resource type="Texture2D" uid="uid://bwta7raakdunt" path="res://images/propias/Mapa_assets/Puntuacion/16.png" id="26_r2sda"]
-[ext_resource type="PackedScene" uid="uid://bknpkx4kc6hnm" path="res://scenes/dialogo.tscn" id="31_hdqah"]
+[ext_resource type="PackedScene" uid="uid://dj0atrm2o2f7f" path="res://scenes/Global_Scene.tscn" id="32_bqao5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iooyf"]
 size = Vector2(53, 123)
@@ -428,7 +428,7 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_q61uo")
 animation = &"count"
 
-[node name="Dialogo" parent="." instance=ExtResource("31_hdqah")]
+[node name="Camera" parent="." instance=ExtResource("32_bqao5")]
 
 [connection signal="timeout" from="Timer_goal" to="Campo" method="_on_timer_goal_timeout"]
 [connection signal="animation_finished" from="countdown/countdown" to="Character_1" method="_on_countdown_animation_finished"]

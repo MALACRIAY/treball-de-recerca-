@@ -8,10 +8,12 @@ func _on_VisibilityNotifier2D_screen_exited():
 	emit_signal("obstacle_exited")
 	
 func _on_body_entered(body):
+	print(body)
 	if body == $"../Mapa":
 		visible = false
-		if $"../Barco".Zona != 3:
-			print($"../Barco".Zona)
-			$"..".in_wall = true
-			queue_free()
-			emit_signal("obstacle_exited")
+		$"..".in_wall = true
+	if body == $"../Barco":
+		print(body)
+		await self.get_tree().create_timer(1) .timeout
+		emit_signal("obstacle_exited")
+		queue_free()

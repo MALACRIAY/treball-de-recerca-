@@ -37,9 +37,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ejvtf")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
-"speed": 1.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hr1m"]
@@ -72,10 +72,10 @@ script = ExtResource("1_nkab6")
 shape = SubResource("RectangleShape2D_oqr70")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ball"]
-scale = Vector2(10, 10)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_8ecf5")
-frame = 3
-frame_progress = 1.0
+autoplay = "default"
+frame_progress = 0.810973
 offset = Vector2(1, -1)
 
 [node name="Area2D" type="Area2D" parent="."]

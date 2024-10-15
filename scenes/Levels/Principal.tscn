@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://o4dpm441xlkf"]
+[gd_scene load_steps=27 format=3 uid="uid://o4dpm441xlkf"]
 
 [ext_resource type="Script" path="res://scenes/scripts/mapa.gd" id="1_eyk7i"]
 [ext_resource type="Texture2D" uid="uid://80ebwpxktnpd" path="res://images/propias/Mapa_assets/Principal/tilemap final.png" id="2_2eioc"]
@@ -9,6 +9,8 @@
 [ext_resource type="Shader" path="res://resources/character_shader.gdshader" id="7_gdq7m"]
 [ext_resource type="Texture2D" uid="uid://t0vjey0d1lbf" path="res://images/propias/Mapa_assets/extras/2/tio_camina_rgb.png" id="8_n6opn"]
 [ext_resource type="Texture2D" uid="uid://dc4i5bi71jr34" path="res://images/propias/Tests/tilemap balla.png" id="10_d1dn2"]
+[ext_resource type="PackedScene" uid="uid://dj0atrm2o2f7f" path="res://scenes/Global_Scene.tscn" id="11_axue8"]
+[ext_resource type="PackedScene" uid="uid://bknpkx4kc6hnm" path="res://scenes/dialogo.tscn" id="12_85ux0"]
 [ext_resource type="Texture2D" uid="uid://bilinbn03baho" path="res://images/propias/Mapa_assets/Rio/muelle.png" id="12_n28ok"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j38y0"]
@@ -407,8 +409,7 @@ position = Vector2(-1.5, 11)
 shape = SubResource("CapsuleShape2D_1h1fa")
 
 [node name="Main_character" type="CharacterBody2D" parent="."]
-process_mode = 4
-position = Vector2(206, 1370)
+position = Vector2(182, -176)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("5_emuf0")
 
@@ -474,10 +475,6 @@ scale = Vector2(1.62456, 2.04475)
 skew = -0.567232
 texture = ExtResource("12_n28ok")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-19, 46)
-position_smoothing_enabled = true
-
 [node name="starting_points" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="starting_points"]
@@ -494,6 +491,12 @@ position = Vector2(-658, 2073)
 
 [node name="Marker2D5" type="Marker2D" parent="starting_points"]
 position = Vector2(-897, 1296)
+
+[node name="Dialogo" parent="." instance=ExtResource("12_85ux0")]
+visible = false
+
+[node name="Camera" parent="." instance=ExtResource("11_axue8")]
+position = Vector2(187, -177)
 
 [connection signal="body_entered" from="Zonas_3i4/ZONA_3" to="." method="_on_zonas_3_body_entered"]
 [connection signal="body_entered" from="Zonas_3i4/Zona_4" to="." method="_on_zona_4_body_entered"]

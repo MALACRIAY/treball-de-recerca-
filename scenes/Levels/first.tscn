@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://capw3hgiy4i3y" path="res://images/propias/Mapa_assets/first/normal.png" id="4_skpd1"]
 [ext_resource type="Texture2D" uid="uid://c6njx7lf0747g" path="res://images/propias/Mapa_assets/first/hard.png" id="5_a6ht4"]
 [ext_resource type="Texture2D" uid="uid://d1bmygxf1jbxu" path="res://images/propias/Mapa_assets/first/jugar.png" id="7_wt7al"]
-[ext_resource type="PackedScene" uid="uid://dmdrcox7q000" path="res://scenes/ball/area_2d.tscn" id="8_4pl6s"]
+[ext_resource type="PackedScene" uid="uid://dj0atrm2o2f7f" path="res://scenes/Global_Scene.tscn" id="8_3f5dk"]
 [ext_resource type="Texture2D" uid="uid://deuko8okek331" path="res://images/propias/Mapa_assets/extras/degre_extras/barrra 3 punts.png" id="9_q7okp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j73e6"]
@@ -41,11 +41,11 @@ animations = [{
 "speed": 0.2
 }]
 
-[sub_resource type="Gradient" id="Gradient_hmxkw"]
+[sub_resource type="Gradient" id="Gradient_vwl7o"]
 colors = PackedColorArray(0.189745, 0.189745, 0.189745, 1, 0.194805, 0.194805, 0.194805, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_l1vts"]
-gradient = SubResource("Gradient_hmxkw")
+gradient = SubResource("Gradient_vwl7o")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_w1086")
@@ -54,13 +54,13 @@ script = ExtResource("1_w1086")
 z_index = -1
 
 [node name="Fondo" type="Sprite2D" parent="Background"]
-scale = Vector2(20, 20)
+scale = Vector2(20, 20.25)
 texture = ExtResource("2_j303s")
 centered = false
 
 [node name="Fondo2" type="Sprite2D" parent="Background"]
 position = Vector2(1199, 0)
-scale = Vector2(20, 20)
+scale = Vector2(20, 20.25)
 texture = ExtResource("2_j303s")
 centered = false
 flip_h = true
@@ -101,55 +101,89 @@ texture = ExtResource("5_a6ht4")
 region_enabled = true
 region_rect = Rect2(13, 17, 25, 13)
 
-[node name="clock_light" type="Node2D" parent="."]
-visible = false
-position = Vector2(-7, 2)
-
-[node name="PointLight2D" type="PointLight2D" parent="clock_light"]
-position = Vector2(135, 180)
-scale = Vector2(1, 346.625)
-texture = SubResource("GradientTexture1D_l1vts")
-
-[node name="Label" type="Label" parent="clock_light"]
-modulate = Color(1, 0, 0, 1)
-offset_left = 36.0
-offset_top = 244.0
-offset_right = 233.0
-offset_bottom = 332.0
-theme_override_font_sizes/font_size = 30
-text = "ESPERA A QUE CARGUE"
-autowrap_mode = 2
-
-[node name="start_light" type="Node2D" parent="."]
-visible = false
-position = Vector2(425, 258)
-
-[node name="PointLight2D" type="PointLight2D" parent="start_light"]
-position = Vector2(128, 95.875)
-scale = Vector2(1.34375, 276.25)
-texture = SubResource("GradientTexture1D_l1vts")
-
-[node name="Label" type="Label" parent="start_light"]
-modulate = Color(1, 0, 0, 1)
-offset_left = -19.0
-offset_top = -21.0
-offset_right = 293.0
-offset_bottom = 67.0
-theme_override_font_sizes/font_size = 30
-text = "MANTEN LA PELOTA EN EL BOTON"
-autowrap_mode = 2
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
 autostart = true
 
-[node name="ball" parent="." instance=ExtResource("8_4pl6s")]
+[node name="Camera" parent="." instance=ExtResource("8_3f5dk")]
+position = Vector2(573, 324)
 
-[node name="Camera2D" type="Camera2D" parent="ball"]
-position = Vector2(-3, -8)
-anchor_mode = 0
-position_smoothing_enabled = true
-position_smoothing_speed = 2.0
+[node name="Tutorial" type="Node2D" parent="."]
+
+[node name="start_light" type="Node2D" parent="Tutorial"]
+visible = false
+position = Vector2(425, 258)
+
+[node name="PointLight2D" type="PointLight2D" parent="Tutorial/start_light"]
+position = Vector2(126.5, 95.875)
+scale = Vector2(1.64453, 276.25)
+texture = SubResource("GradientTexture1D_l1vts")
+
+[node name="Label2" type="Label" parent="Tutorial/start_light"]
+offset_left = -58.0
+offset_top = -105.0
+offset_right = 2509.0
+offset_bottom = 1652.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.345098, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 256
+text = "MANTEN LA PELOTA EN EL BOTON"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="clock_light" type="Node2D" parent="Tutorial"]
+visible = false
+position = Vector2(-7, 2)
+
+[node name="PointLight2D" type="PointLight2D" parent="Tutorial/clock_light"]
+position = Vector2(137, 215)
+scale = Vector2(1, 419.312)
+texture = SubResource("GradientTexture1D_l1vts")
+
+[node name="Label2" type="Label" parent="Tutorial/clock_light"]
+offset_left = 25.0
+offset_top = 235.0
+offset_right = 1409.0
+offset_bottom = 1288.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.345098, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 256
+text = "ESPERA A QUE CARGUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Difficulty_light" type="Node2D" parent="Tutorial"]
+visible = false
+position = Vector2(1209, 45)
+
+[node name="PointLight2D" type="PointLight2D" parent="Tutorial/Difficulty_light"]
+position = Vector2(551, 180)
+scale = Vector2(4.25, 346.625)
+texture = SubResource("GradientTexture1D_l1vts")
+
+[node name="Label2" type="Label" parent="Tutorial/Difficulty_light"]
+offset_left = 370.0
+offset_top = -33.0
+offset_right = 2124.0
+offset_bottom = 1372.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.345098, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 256
+text = "ESCOGE UNA DIFICULTAD"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.803922, 0.803922, 0.803922, 1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timeout"]

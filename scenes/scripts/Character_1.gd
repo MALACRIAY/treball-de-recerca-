@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var anim_enemy = $"../Character_2/AnimationPlayer1"
 @onready var disco = %Disco_hockey
 @onready var diff = GlobalScript.difficulty
+
 var speed : float
 var Bullet = preload("res://scenes/Levels/objects/Disco.tscn")
 var start = false

@@ -1,28 +1,33 @@
 extends Node2D
+
 @onready var character = $Main_character
-@onready var camera = $Camera2D
+@onready var camera = %Camera
 @onready var zonas_3i4 = $Zonas_3i4
 @onready var animations = $AnimationPlayer
-var middle = 0
-var zone_1 = Vector2(1,1000)
-var zone_m1 = Vector2(-1000,0)
-var zone_m2 = Vector2(-2000,-1001)
+@onready var dialogo = $Dialogo
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_set_flags()
+	camera.clock.visible = false
+	await self.get_tree().create_timer(2).timeout
+	character.move = true
+	
+
+func _set_flags():
 	for area in $banderas.get_children():
 		area.body_entered.connect(_body_entered.bind(area))
-	await self.get_tree().create_timer(2).timeout
-	character.process_mode = Node.PROCESS_MODE_INHERIT
+
 func _body_entered(body,area):
-	if body == $Main_character:
-		get_tree().change_scene_to_file("res://scenes/Levels/Level_"+str(area.get_index())+".tscn")
+	if body == character:
+		dialogo.visible = true
+		dialogo.global_position = camera.global_position
+		dialogo.flag_num = area.get_index()
+		character.move = false
+		camera.clock.visible = true
 
 func _process(delta):
-	camera.global_position = character.global_position
-
-func zona_character(person):
-	var pos = person.global_position
-	return int(pos.x/500)
+	pass
 
 func _on_zonas_3_body_entered(body):
 	if body == character and GlobalScript.level >= 2:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bknpkx4kc6hnm"]
+[gd_scene load_steps=14 format=3 uid="uid://bknpkx4kc6hnm"]
 
 [ext_resource type="Script" path="res://scenes/scripts/barco_dialogo.gd" id="1_c058r"]
 [ext_resource type="Texture2D" uid="uid://p7qtrqo1nnyh" path="res://images/propias/Mapa_assets/extras/dialogo/bakground.png" id="2_fllr6"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://yvxmel1j2p1w" path="res://images/propias/Mapa_assets/extras/dialogo/persona_2.png" id="9_yoh53"]
 [ext_resource type="Texture2D" uid="uid://52y4j5osmca2" path="res://images/propias/Mapa_assets/extras/dialogo/persona_3.png" id="10_4g2lf"]
 [ext_resource type="Texture2D" uid="uid://cg2n01qw56efs" path="res://images/propias/Mapa_assets/extras/2/tick.png" id="11_o1n8x"]
-[ext_resource type="PackedScene" uid="uid://dmdrcox7q000" path="res://scenes/ball/area_2d.tscn" id="12_y46s3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gvsng"]
 animations = [{
@@ -30,7 +29,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_855ik"]
@@ -40,17 +39,17 @@ animations = [{
 "texture": ExtResource("7_1bs7p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_w3its")
-}, {
-"duration": 1.0,
 "texture": ExtResource("9_yoh53")
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_4g2lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w3its")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [node name="Dialogo" type="Node2D"]
@@ -69,26 +68,28 @@ region_rect = Rect2(0, 20, 32, 25)
 [node name="Foreground" type="CanvasGroup" parent="."]
 
 [node name="squares" type="AnimatedSprite2D" parent="Foreground"]
-position = Vector2(30, 0)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_gvsng")
 
 [node name="Label" type="Label" parent="Foreground/squares"]
-texture_filter = 1
-offset_left = -84.0
-offset_top = -12.0
-offset_right = 3470.0
-offset_bottom = 617.0
-scale = Vector2(0.04, 0.04)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 128
-text = "Hola bon dia"
+offset_left = -84.1667
+offset_top = -19.8333
+offset_right = 4437.83
+offset_bottom = 1325.17
+scale = Vector2(0.03, 0.03)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 164
+text = "Sabias que los discos de hockey no pesan ni 200 gramos, aunque con la velocidad que alcanzan cuando se disparan a portería son muy veloces."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="faces" type="AnimatedSprite2D" parent="Foreground"]
+texture_filter = 1
 position = Vector2(420, 0)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_855ik")
@@ -97,10 +98,3 @@ sprite_frames = SubResource("SpriteFrames_855ik")
 position = Vector2(0, 220)
 scale = Vector2(2, 2)
 texture = ExtResource("11_o1n8x")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-551, -330)
-anchor_mode = 0
-
-[node name="Node2D" parent="." instance=ExtResource("12_y46s3")]
-position = Vector2(-551, -330)

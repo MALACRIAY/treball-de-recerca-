@@ -21,12 +21,9 @@ func _body_entered(body,area):
 func check_goal(porte,disco):
 	if goal == true:
 		timer.start()
-		
 		if porte == $porte_1:
-			
 			GlobalScript.points_red += 1
 		elif porte==$"porte_2":
-			
 			GlobalScript.points_blue += 1
 
 func _process(delta):

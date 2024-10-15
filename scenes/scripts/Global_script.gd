@@ -1,7 +1,10 @@
 extends Node
 #mapa_global
 var level = 0
-var difficulty := 2
+var difficulty := 1
+#Global_Scene
+var Global_Scene_black : bool = false
+var Scene_to : String
 #personatje
 var character_colors = [
 	Color(0.706, 0.322, 0.227, 1.0),  # Face

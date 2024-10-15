@@ -1,12 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcrddjcpo38op"]
+[gd_scene load_steps=18 format=3 uid="uid://dcrddjcpo38op"]
 
 [ext_resource type="Script" path="res://scenes/scripts/Character_choosing.gd" id="1_h887o"]
 [ext_resource type="Texture2D" uid="uid://7xsu3m81ehqx" path="res://images/propias/Mapa_assets/Principal/Escoger_personajepng.png" id="2_j7d2p"]
 [ext_resource type="Shader" path="res://resources/character_shader.gdshader" id="3_kx137"]
 [ext_resource type="Texture2D" uid="uid://d0p0mn2cg3lms" path="res://images/propias/Mapa_assets/extras/2/tio_rgb.png" id="4_dccvh"]
 [ext_resource type="Texture2D" uid="uid://cg2n01qw56efs" path="res://images/propias/Mapa_assets/extras/2/tick.png" id="7_boptu"]
-[ext_resource type="PackedScene" uid="uid://dmdrcox7q000" path="res://scenes/ball/area_2d.tscn" id="7_w5kna"]
 [ext_resource type="Texture2D" uid="uid://k0glmjhh2h4q" path="res://images/propias/Mapa_assets/extras/2/white_color.png" id="8_g3d4k"]
+[ext_resource type="PackedScene" uid="uid://dj0atrm2o2f7f" path="res://scenes/Global_Scene.tscn" id="8_qrwyd"]
 [ext_resource type="Texture2D" uid="uid://tci8k655uckt" path="res://images/propias/Mapa_assets/extras/2/panel_colors.png" id="8_sfuj2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_isgd1"]
@@ -51,6 +51,21 @@ _data = {
 "back_and_forth": SubResource("Animation_6amg7")
 }
 
+[sub_resource type="Gradient" id="Gradient_gk64c"]
+colors = PackedColorArray(0.249787, 0.249787, 0.249787, 1, 0.25, 0.25, 0.25, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_206yl"]
+gradient = SubResource("Gradient_gk64c")
+
+[sub_resource type="Gradient" id="Gradient_hmxkw"]
+offsets = PackedFloat32Array(0, 0.905797)
+colors = PackedColorArray(0.189745, 0.189745, 0.189745, 1, 0.194805, 0.194805, 0.194805, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gbihj"]
+gradient = SubResource("Gradient_hmxkw")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uhvjm"]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h887o")
 
@@ -65,22 +80,18 @@ region_enabled = true
 region_rect = Rect2(24, 17, 661, 177)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Puta merda"]
-position = Vector2(575.863, 342.188)
-scale = Vector2(1.71969, 2.95898)
+position = Vector2(570, 342.188)
+scale = Vector2(1.73748, 2.95898)
 texture = ExtResource("2_j7d2p")
 region_enabled = true
 region_rect = Rect2(25, 516, 659, 64)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Puta merda"]
-position = Vector2(577.5, 520.625)
-scale = Vector2(1.7, 1.5)
+position = Vector2(567.688, 520.625)
+scale = Vector2(1.72973, 1.5)
 texture = ExtResource("2_j7d2p")
 region_enabled = true
 region_rect = Rect2(24, 516, 660, 162)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(917, 509)
-zoom = Vector2(0.65, 0.65)
 
 [node name="Character" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_isgd1")
@@ -97,7 +108,7 @@ offset_bottom = 899.0
 color = Color(0.811765, 0.588235, 0.419608, 1)
 
 [node name="Tick" type="Sprite2D" parent="." groups=["hover_click"]]
-position = Vector2(897, 647)
+position = Vector2(1011, 785)
 scale = Vector2(4, 4)
 texture = ExtResource("7_boptu")
 
@@ -141,19 +152,77 @@ texture = ExtResource("8_g3d4k")
 [node name="WhiteColor9" type="Sprite2D" parent="PanelColors/Colors"]
 texture = ExtResource("8_g3d4k")
 
-[node name="Label" type="Label" parent="PanelColors"]
-offset_left = -12.5
-offset_top = -47.125
-offset_right = 29.5
-offset_bottom = 7.875
-scale = Vector2(0.2, 0.2)
-theme_override_font_sizes/font_size = 40
-text = "CARA"
-autowrap_mode = 2
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_0mdmo")
 }
 
-[node name="Node2D" parent="." instance=ExtResource("7_w5kna")]
+[node name="Camera" parent="." instance=ExtResource("8_qrwyd")]
+position = Vector2(900, 500)
+
+[node name="Tutorial_lights" type="Node2D" parent="."]
+
+[node name="start_light" type="Node2D" parent="Tutorial_lights"]
+visible = false
+position = Vector2(111, 394)
+
+[node name="PointLight2D" type="PointLight2D" parent="Tutorial_lights/start_light"]
+position = Vector2(291, 285)
+scale = Vector2(2.25781, 526)
+texture = SubResource("GradientTexture1D_206yl")
+
+[node name="Label2" type="Label" parent="Tutorial_lights/start_light"]
+offset_left = 736.0
+offset_top = 17.0
+offset_right = 2098.0
+offset_bottom = 718.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.345098, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 256
+text = "ESCOGE UN COLOR"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="PointLight2D2" type="PointLight2D" parent="Tutorial_lights/start_light"]
+position = Vector2(1072, 189)
+scale = Vector2(2.80469, 303)
+texture = SubResource("GradientTexture1D_gbihj")
+
+[node name="start_light2" type="Node2D" parent="Tutorial_lights"]
+visible = false
+position = Vector2(111, 394)
+
+[node name="PointLight2D" type="PointLight2D" parent="Tutorial_lights/start_light2"]
+position = Vector2(903.5, 390.5)
+scale = Vector2(1.04297, 257)
+texture = SubResource("GradientTexture1D_206yl")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Tutorial_lights/start_light2"]
+position = Vector2(1085, 239.75)
+scale = Vector2(3.23437, 684.5)
+texture = SubResource("GradientTexture1D_gbihj")
+
+[node name="Label2" type="Label" parent="Tutorial_lights/start_light2"]
+offset_left = 670.0
+offset_top = -57.0
+offset_right = 1934.0
+offset_bottom = 644.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.345098, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 256
+text = "ACEPTA EL COLOR"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.803922, 0.803922, 0.803922, 1)
+
+[node name="Border" type="Sprite2D" parent="."]
+position = Vector2(960, 542)
+texture = SubResource("CompressedTexture2D_uhvjm")

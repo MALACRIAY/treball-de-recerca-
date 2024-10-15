@@ -17,7 +17,6 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 [autoload]
 
 GlobalScript="*res://scenes/scripts/Global_script.gd"
-GlobalScene="*res://scenes/Global_Scene.tscn"
 
 [display]
 

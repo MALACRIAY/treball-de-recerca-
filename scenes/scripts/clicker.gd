@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var area = $Area2D
-@onready var ball =  $Ball
+@onready var ball =  $"../Ball"
 @onready var loading = $LoadingProgressBar
 @onready var fake_light = $TextureRect
 
