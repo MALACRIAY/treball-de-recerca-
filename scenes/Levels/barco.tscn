@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://erbggyswxryi" path="res://images/propias/Tests/Tilemaps/tilemap2.png" id="1_k74gc"]
 [ext_resource type="Script" path="res://scenes/scripts/Rio_lvl.gd" id="1_vra2o"]
-[ext_resource type="PackedScene" uid="uid://3h1j8dxdcnd3" path="res://scenes/characters/Barco.tscn" id="2_qixgo"]
+[ext_resource type="PackedScene" uid="uid://3h1j8dxdcnd3" path="res://scenes/characters/barco.tscn" id="2_qixgo"]
 [ext_resource type="PackedScene" uid="uid://dj0atrm2o2f7f" path="res://scenes/Global_Scene.tscn" id="3_fdlul"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twe26"]
@@ -647,7 +647,7 @@ position = Vector2(-46, 367)
 rotation = 3.14159
 
 [node name="Camera" parent="Barco" instance=ExtResource("3_fdlul")]
-position = Vector2(7.24792e-05, -29)
+position = Vector2(594.999, 263.001)
 rotation = -3.14159
 
 [node name="obstacles" type="Marker2D" parent="."]

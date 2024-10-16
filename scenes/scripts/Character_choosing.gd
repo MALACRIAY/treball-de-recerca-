@@ -59,7 +59,7 @@ func _ready():
 	_set_colors()
 	_add_to_hover()
 	Camera.scale = Vector2(1.538,1.538)
-	Camera.global_position = Vector2(900,500)
+	Camera.global_position = Vector2(0,0)
 
 func _add_to_hover():
 	for color in colors_all:

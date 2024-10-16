@@ -133,20 +133,20 @@ animations = [{
 
 [node name="Camera" type="Camera2D"]
 unique_name_in_owner = true
+anchor_mode = 0
 position_smoothing_enabled = true
 script = ExtResource("1_dng5i")
 
 [node name="Ball" type="Area2D" parent="."]
 unique_name_in_owner = true
 z_index = 10
-position = Vector2(-575, -324)
 script = ExtResource("7_dox57")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 shape = SubResource("RectangleShape2D_oqr70")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ball"]
-scale = Vector2(4, 4)
+scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_8ecf5")
 autoplay = "default"
 frame_progress = 0.810973
@@ -154,7 +154,6 @@ offset = Vector2(1, -1)
 
 [node name="Node2D" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-575, -324)
 script = ExtResource("2_a4p6y")
 
 [node name="LoadingProgressBar" type="TextureProgressBar" parent="Node2D"]
@@ -182,6 +181,8 @@ shape = SubResource("RectangleShape2D_2hr1m")
 [node name="Scene_change" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 process_mode = 3
+visible = false
+position = Vector2(576, 324)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_c7ubm")
 

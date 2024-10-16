@@ -107,7 +107,6 @@ one_shot = true
 autostart = true
 
 [node name="Camera" parent="." instance=ExtResource("8_3f5dk")]
-position = Vector2(573, 324)
 
 [node name="Tutorial" type="Node2D" parent="."]
 

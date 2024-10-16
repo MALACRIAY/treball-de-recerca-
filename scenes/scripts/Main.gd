@@ -2,9 +2,10 @@ extends Node2D
  
 @onready var difficulties : Array = $Foreground/Difficulties.get_children()
 @onready var start : Object = $Foreground/Start
-@onready var clicker : Object  = %Camera.get_child(0)
+@onready var clicker : Object  = %Camera.get_child(1)
 @onready var tutorial_lights : Array = $Tutorial.get_children()
 @onready var diff_slider : Object = $Foreground/Difficulties/Loading_diff
+
 var first_time : bool = false
  
 
@@ -47,5 +48,5 @@ func _tutorial():
 	tutorial_lights[1].visible = true
 
 func _starting_positions():
-	%Camera.global_position = Vector2(576,325)
+	%Camera.global_position = Vector2(0,0)
 	pass

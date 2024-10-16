@@ -496,7 +496,7 @@ position = Vector2(-897, 1296)
 visible = false
 
 [node name="Camera" parent="." instance=ExtResource("11_axue8")]
-position = Vector2(187, -177)
+position = Vector2(-390, -509)
 
 [connection signal="body_entered" from="Zonas_3i4/ZONA_3" to="." method="_on_zonas_3_body_entered"]
 [connection signal="body_entered" from="Zonas_3i4/Zona_4" to="." method="_on_zona_4_body_entered"]

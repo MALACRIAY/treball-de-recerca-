@@ -158,7 +158,6 @@ libraries = {
 }
 
 [node name="Camera" parent="." instance=ExtResource("8_qrwyd")]
-position = Vector2(900, 500)
 
 [node name="Tutorial_lights" type="Node2D" parent="."]
 

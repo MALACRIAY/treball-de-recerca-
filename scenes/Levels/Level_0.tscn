@@ -305,9 +305,6 @@ offset_right = 810.0
 offset_bottom = 374.0
 texture = ExtResource("15_oifvu")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-z_index = 5
-
 [node name="Campo" type="Node2D" parent="."]
 script = ExtResource("1_gy6rq")
 
@@ -429,6 +426,7 @@ sprite_frames = SubResource("SpriteFrames_q61uo")
 animation = &"count"
 
 [node name="Camera" parent="." instance=ExtResource("32_bqao5")]
+position = Vector2(-566, -310)
 
 [connection signal="timeout" from="Timer_goal" to="Campo" method="_on_timer_goal_timeout"]
 [connection signal="animation_finished" from="countdown/countdown" to="Character_1" method="_on_countdown_animation_finished"]
