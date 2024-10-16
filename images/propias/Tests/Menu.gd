@@ -81,7 +81,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed():
-	var global_clicked = get_global_mouse_position()
+	var global_clicked = %Camera.ball.global_position
 	var pos_clicked = Vector2(local_to_map(to_local(global_clicked)))
 	var current_tile_alt = get_cell_alternative_tile(Layers.hidden, pos_clicked)
 	if current_tile_alt == 1 and revealed_spots.size() < 2:
@@ -91,7 +91,11 @@ func _on_button_pressed():
 			when_two_cards_revealed()
 
 func check_win():
-	if score == board_size:
+	if score == (board_size**2)/2:
 		await self.get_tree().create_timer(1.5).timeout
-		$"../fondo".z_index = 10
-		$"../fondo".play("default")
+		GlobalScript.level += 1
+		%Camera._change_scene("res://scenes/Levels/Principal.tscn")
+	$"../Label2".get_child(0).frame = score
+	$"../Label3".get_child(0).frame = turns_taken
+	if turns_taken >= 20:
+		get_tree().reload_current_scene()

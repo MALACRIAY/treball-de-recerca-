@@ -426,6 +426,7 @@ sprite_frames = SubResource("SpriteFrames_q61uo")
 animation = &"count"
 
 [node name="Camera" parent="." instance=ExtResource("32_bqao5")]
+visible = false
 position = Vector2(-566, -310)
 
 [connection signal="timeout" from="Timer_goal" to="Campo" method="_on_timer_goal_timeout"]

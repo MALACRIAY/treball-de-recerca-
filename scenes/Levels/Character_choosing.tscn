@@ -1,13 +1,17 @@
-[gd_scene load_steps=18 format=3 uid="uid://dcrddjcpo38op"]
+[gd_scene load_steps=22 format=3 uid="uid://dcrddjcpo38op"]
 
 [ext_resource type="Script" path="res://scenes/scripts/Character_choosing.gd" id="1_h887o"]
 [ext_resource type="Texture2D" uid="uid://7xsu3m81ehqx" path="res://images/propias/Mapa_assets/Principal/Escoger_personajepng.png" id="2_j7d2p"]
 [ext_resource type="Shader" path="res://resources/character_shader.gdshader" id="3_kx137"]
 [ext_resource type="Texture2D" uid="uid://d0p0mn2cg3lms" path="res://images/propias/Mapa_assets/extras/2/tio_rgb.png" id="4_dccvh"]
+[ext_resource type="Texture2D" uid="uid://dmtdqm1ab6i2a" path="res://images/propias/Mapa_assets/extras/2/tia.png" id="5_s0v76"]
 [ext_resource type="Texture2D" uid="uid://cg2n01qw56efs" path="res://images/propias/Mapa_assets/extras/2/tick.png" id="7_boptu"]
 [ext_resource type="Texture2D" uid="uid://k0glmjhh2h4q" path="res://images/propias/Mapa_assets/extras/2/white_color.png" id="8_g3d4k"]
 [ext_resource type="PackedScene" uid="uid://dj0atrm2o2f7f" path="res://scenes/Global_Scene.tscn" id="8_qrwyd"]
 [ext_resource type="Texture2D" uid="uid://tci8k655uckt" path="res://images/propias/Mapa_assets/extras/2/panel_colors.png" id="8_sfuj2"]
+[ext_resource type="Texture2D" uid="uid://rywtsmvpctee" path="res://images/propias/Mapa_assets/extras/2/randomizator_colors.png" id="9_vgoid"]
+[ext_resource type="Texture2D" uid="uid://cdh6yivtb1t8l" path="res://images/propias/Mapa_assets/extras/2/dona.png" id="10_2ny56"]
+[ext_resource type="Texture2D" uid="uid://bk8mc4x7xujjc" path="res://images/propias/Mapa_assets/extras/2/home.png" id="11_i2tsb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_isgd1"]
 shader = ExtResource("3_kx137")
@@ -93,11 +97,19 @@ texture = ExtResource("2_j7d2p")
 region_enabled = true
 region_rect = Rect2(24, 516, 660, 162)
 
-[node name="Character" type="Sprite2D" parent="."]
+[node name="Character_m" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_isgd1")
 position = Vector2(1421, 691)
 scale = Vector2(10, 10)
 texture = ExtResource("4_dccvh")
+flip_h = true
+
+[node name="Character_d" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_isgd1")
+position = Vector2(1421, 691)
+scale = Vector2(10, 10)
+texture = ExtResource("5_s0v76")
 flip_h = true
 
 [node name="ColorPickerButton" type="ColorPickerButton" parent="."]
@@ -122,6 +134,7 @@ scale = Vector2(8, 8)
 texture = ExtResource("8_sfuj2")
 
 [node name="Colors" type="CanvasGroup" parent="PanelColors"]
+visible = false
 position = Vector2(5, 10.375)
 scale = Vector2(0.5, 0.5)
 
@@ -160,39 +173,36 @@ libraries = {
 [node name="Camera" parent="." instance=ExtResource("8_qrwyd")]
 
 [node name="Tutorial_lights" type="Node2D" parent="."]
+position = Vector2(-6, -114)
 
 [node name="start_light" type="Node2D" parent="Tutorial_lights"]
 visible = false
-position = Vector2(111, 394)
+position = Vector2(99, 401)
 
 [node name="PointLight2D" type="PointLight2D" parent="Tutorial_lights/start_light"]
-position = Vector2(291, 285)
-scale = Vector2(2.25781, 526)
+position = Vector2(306.5, 361)
+scale = Vector2(2.54297, 656)
 texture = SubResource("GradientTexture1D_206yl")
 
 [node name="Label2" type="Label" parent="Tutorial_lights/start_light"]
-offset_left = 736.0
-offset_top = 17.0
-offset_right = 2098.0
-offset_bottom = 718.0
-scale = Vector2(0.5, 0.5)
+offset_left = -21.0
+offset_top = 20.0
+offset_right = 3139.0
+offset_bottom = 1425.0
+scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.345098, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 256
-text = "ESCOGE UN COLOR"
+text = "MANTEN PARA ESCOGER 
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="PointLight2D2" type="PointLight2D" parent="Tutorial_lights/start_light"]
-position = Vector2(1072, 189)
-scale = Vector2(2.80469, 303)
-texture = SubResource("GradientTexture1D_gbihj")
-
 [node name="start_light2" type="Node2D" parent="Tutorial_lights"]
 visible = false
-position = Vector2(111, 394)
+position = Vector2(111, 510)
 
 [node name="PointLight2D" type="PointLight2D" parent="Tutorial_lights/start_light2"]
 position = Vector2(903.5, 390.5)
@@ -225,3 +235,22 @@ color = Color(0.803922, 0.803922, 0.803922, 1)
 [node name="Border" type="Sprite2D" parent="."]
 position = Vector2(960, 542)
 texture = SubResource("CompressedTexture2D_uhvjm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["hover_click"]]
+position = Vector2(384, 610)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vgoid")
+
+[node name="Dona" type="Sprite2D" parent="." groups=["hover_click"]]
+position = Vector2(553, 879)
+scale = Vector2(8, 8)
+texture = ExtResource("10_2ny56")
+region_enabled = true
+region_rect = Rect2(0, 10, 40, 20)
+
+[node name="Home" type="Sprite2D" parent="." groups=["hover_click"]]
+position = Vector2(223, 882)
+scale = Vector2(8, 8)
+texture = ExtResource("11_i2tsb")
+region_enabled = true
+region_rect = Rect2(0, 10, 40, 20)

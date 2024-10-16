@@ -2248,3 +2248,18 @@ sprite_frames = SubResource("SpriteFrames_k7dwm")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_najgp")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 178.0
+offset_top = 385.0
+offset_right = 4203.0
+offset_bottom = 1790.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.345098, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 256
+text = "!!!FELICIDADES HAS GANADO!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

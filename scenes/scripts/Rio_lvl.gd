@@ -18,7 +18,7 @@ func _ready():
  
 func _on_SpawnTimer_timeout():
 	await self.get_tree().create_timer(spawn_interval).timeout
-	if Barco.Zona != 4:
+	if Barco.Zona < 3:
 		spawn_obstacle()
 		_on_SpawnTimer_timeout()
  
@@ -37,3 +37,9 @@ func spawn_obstacle():
 func _on_Obstacle_tree_exited(obstacle: Node):
 	obstacle.remove_from_group("obstacles")
  
+
+
+func _on_animation_finished(anim_name):
+	GlobalScript.level += 1
+	GlobalScript.just_won = true
+	%Camera._change_scene("res://scenes/Levels/Principal.tscn")

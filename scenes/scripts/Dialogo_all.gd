@@ -7,7 +7,7 @@ extends Node2D
 
 var current_text = 0
 var text_letters = 0
-var red_speed = 30 * GlobalScript.difficulty
+var red_speed = 10 * GlobalScript.difficulty
 var flag_num 
 
 func _ready():
@@ -27,6 +27,9 @@ func _set_texts():
  
 func _process(delta):
 	var current_level_texts = GlobalScript.texts_all[GlobalScript.level]
+	if GlobalScript.just_won:
+		text_label.text = "Muchas gracias!"
+		GlobalScript.just_won = false
 	if current_text < len(current_level_texts):
 		text_label.text = current_level_texts[current_text]
 		text_label.visible_characters = text_letters

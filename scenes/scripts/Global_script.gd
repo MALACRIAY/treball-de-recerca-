@@ -6,6 +6,7 @@ var difficulty := 1
 var Global_Scene_black : bool = false
 var Scene_to : String
 #personatje
+var home = true
 var character_colors = [
 	Color(0.706, 0.322, 0.227, 1.0),  # Face
 	Color(0.878, 0.804, 0.663, 1.0),  # Hair
@@ -15,13 +16,14 @@ var current_level : String
 #hockey
 var points_blue :int
 var points_red : int
-var hockey_won : bool
+var just_won : bool
+
 var texts_all : Array = [
 	#text_0 : hockey
 	["Sabias que los discos de hockey no pesan ni 200 gramos, aunque con la velocidad que alcanzan cuando se disparan a portería son muy veloces. ",
 	"¿No lo sabias?, como se nota que me gusta mucho el hockey, como habrás comprobado.",
 	"Ahora que has escuchado mi dato estas obligado a jugar un partido contra mí, sería un método de pago.",
-	 "El primero en meter "+str((difficulty)*2)+" goles gana. Buena suerte, amigo, porque contra mí la necesitarás."],
+	 "El primero en meter " + str((difficulty)*2) + " goles gana. Buena suerte, amigo, porque contra mí la necesitarás."],
 	#text_1 : Barco
 	["¿Quién vive en la piña debajo del mar? ",
 	"Que no sabes como continua? No hay problema grumete. Ahora mismo estaba a punto de partir a surcar los mares con mi barco, ¿quieres acompañarme?",
@@ -38,19 +40,8 @@ var texts_all : Array = [
 
 ] 
 
-
-	
-	
-
- 
 func _process(delta):
-	hockey()
-#Hockey_level
-func hockey():
-	if points_blue >= difficulty*2:
-		hockey_won = true
-	else:
-		hockey_won = false
+	pass
  
 func _input(event):
 	if OS.is_debug_build():

@@ -1,13 +1,14 @@
 extends Node2D
-@onready var timer_skip = $"../countdown/Timer_skip"
+
 @onready var timer = $"../Timer_goal"
 @onready var character = $"../Character_1"
+@onready var Camera = %Camera
+
 var goal : bool
 var disco : Object
 var porte : Object
 
 func _ready():
-	
 	for area in get_children():
 		area.body_entered.connect(_body_entered.bind(area))
 
@@ -25,7 +26,13 @@ func check_goal(porte,disco):
 			GlobalScript.points_red += 1
 		elif porte==$"porte_2":
 			GlobalScript.points_blue += 1
-
+		if GlobalScript.points_blue >= GlobalScript.difficulty * 2.0:
+			push_error("won")
+			GlobalScript.level += 1
+			GlobalScript.just_won = true
+			Camera._change_scene("res://scenes/Levels/Principal.tscn")
+		
+		
 func _process(delta):
 	if not timer.is_stopped():
 		disco.global_position.x = move_toward(disco.global_position.x,porte.global_position.x,100)

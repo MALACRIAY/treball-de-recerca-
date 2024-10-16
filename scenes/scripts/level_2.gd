@@ -65,6 +65,8 @@ func _on_countdown_animation_finished():
 func _on_points_animation_changed():
 	print(point_marker.frame)
 	print(flowers_max)
-	if point_marker.frame == flowers_max:
-		$Dialogo.won = true
+	if not flowers_left:
+		GlobalScript.level += 1
+		GlobalScript.just_won = true
+		%Camera._change_scene("res://scenes/Levels/Principal.tscn")
 		print("sad")

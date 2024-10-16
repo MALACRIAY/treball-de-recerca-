@@ -133,6 +133,7 @@ animations = [{
 
 [node name="Camera" type="Camera2D"]
 unique_name_in_owner = true
+z_index = 5
 anchor_mode = 0
 position_smoothing_enabled = true
 script = ExtResource("1_dng5i")
@@ -181,7 +182,6 @@ shape = SubResource("RectangleShape2D_2hr1m")
 [node name="Scene_change" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 process_mode = 3
-visible = false
 position = Vector2(576, 324)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_c7ubm")

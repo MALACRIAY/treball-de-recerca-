@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	pass 
+	$countdown.play("count")
 	
 func _process(delta):
 	$Goals_blue.frame = GlobalScript.points_blue

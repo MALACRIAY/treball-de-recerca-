@@ -1,11 +1,14 @@
 extends Node2D
 
-@onready var character : Object = $Character
+@onready var character : Object = $Character_m
 @onready var ok_button : Object = $Tick
 @onready var colors_all : Array = $PanelColors/Colors.get_children()
 @onready var animations : Object = $AnimationPlayer
 @onready var Camera : Object = %Camera
 @onready var tutorial_lights : Array = $Tutorial_lights.get_children()
+@onready var random_color : Object = $Sprite2D
+@onready var home : Object = $Home
+@onready var dona : Object = $Dona
 
 var first_time = true
 var y = 0
@@ -62,9 +65,12 @@ func _ready():
 	Camera.global_position = Vector2(0,0)
 
 func _add_to_hover():
-	for color in colors_all:
-		color.add_to_group("hover_click")
-		color.item_rect_changed.connect(self._clicked.bind(colors_all.find(color)))
+	#for color in colors_all:
+		#color.add_to_group("hover_click")
+		#color.item_rect_changed.connect(self._clicked.bind(colors_all.find(color)))
+	random_color.item_rect_changed.connect(self._clicked)
+	home.item_rect_changed.connect(self.male)
+	dona.item_rect_changed.connect(self.female)
 	ok_button.item_rect_changed.connect(self._ok_button_clicked)
 	pass
 
@@ -89,13 +95,20 @@ func _set_colors():
 		elif current_picking == 2:
 			color.set_modulate(body_colors_list[colors_all.find(color)]) 
 
-func _clicked(color_index):
-	if current_picking == 0: # face
-		character.material.set_shader_parameter("Face_color",face_colors_list[color_index])
-	elif current_picking == 1:
-		character.material.set_shader_parameter("Hair_color",hair_colors_list[color_index]) 
-	elif current_picking == 2:
-		character.material.set_shader_parameter("Body_color",body_colors_list[color_index]) 
+func male():
+	GlobalScript.home = true
+	$Character_m.visible = true
+	$Character_d.visible = false
+	character = $Character_m
+func female():
+	GlobalScript.home = false
+	$Character_d.visible = true
+	$Character_m.visible = false
+	character = $Character_d
+func _clicked(): # face
+	character.material.set_shader_parameter("Face_color",face_colors_list[randi_range(0,8)])
+	character.material.set_shader_parameter("Hair_color",hair_colors_list[randi_range(0,8)]) 
+	character.material.set_shader_parameter("Body_color",body_colors_list[randi_range(0,8)]) 
 	if first_time:
 		first_time = false
 		tutorial_lights[0].visible = false
@@ -103,15 +116,15 @@ func _clicked(color_index):
 		tutorial_lights[1].visible = true
 
 func _ok_button_clicked():
-	if current_picking <= 1 and not animations.is_playing(): #face or hair
-		current_picking += 1
-		animations.play("back_and_forth")
-		await get_tree().create_timer(.5).timeout
-		_set_colors()
-		tutorial_lights[1].visible = false
-	elif current_picking == 2 and not animations.is_playing():
-		GlobalScript.character_colors.append_array([character.material.get_shader_parameter("Face_color"),character.material.get_shader_parameter("Hair_color"),character.material.get_shader_parameter("Body_color")])
-		Camera._change_scene("res://scenes/Levels/Principal.tscn")
+	#if current_picking <= 1 and not animations.is_playing(): #face or hair
+		#current_picking += 1
+		#animations.play("back_and_forth")
+		#await get_tree().create_timer(.5).timeout
+		#_set_colors()
+		#tutorial_lights[1].visible = false
+	#if current_picking == 2 and not animations.is_playing():
+	GlobalScript.character_colors.append_array([character.material.get_shader_parameter("Face_color"),character.material.get_shader_parameter("Hair_color"),character.material.get_shader_parameter("Body_color")])
+	Camera._change_scene("res://scenes/Levels/Principal.tscn")
 
 func _tutorial():
 	await get_tree().create_timer(3).timeout
