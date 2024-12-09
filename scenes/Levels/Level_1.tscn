@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5hdfnqq3sr5g"]
+[gd_scene load_steps=19 format=3 uid="uid://c5hdfnqq3sr5g"]
 
-[ext_resource type="Texture2D" uid="uid://erbggyswxryi" path="res://images/propias/Tilemaps/tilemap2.png" id="1_f1wwo"]
+[ext_resource type="Texture2D" uid="uid://erbggyswxryi" path="res://images/Tilemaps/tilemap2.png" id="1_f1wwo"]
 [ext_resource type="Script" path="res://scenes/scripts/Rio_lvl.gd" id="1_tlxt6"]
+[ext_resource type="PackedScene" uid="uid://bqm3svxohewrc" path="res://scenes/objects/Tronco.tscn" id="2_miqey"]
 [ext_resource type="PackedScene" uid="uid://3h1j8dxdcnd3" path="res://scenes/characters/Barco.tscn" id="2_us8tc"]
-[ext_resource type="Texture2D" uid="uid://8xvh288eh3qi" path="res://images/propias/Personajes/Objetos/barco.png" id="4_25j4i"]
-[ext_resource type="Texture2D" uid="uid://nn4ex3jra5bk" path="res://images/propias/Mapa_assets/extras/fletxa_esquerra_valla.png" id="5_wr3h5"]
-[ext_resource type="PackedScene" uid="uid://dj0atrm2o2f7f" path="res://scenes/Global_Scene.tscn" id="6_juq73"]
-[ext_resource type="Texture2D" uid="uid://1hp38hor852k" path="res://images/propias/Mapa_assets/extras/fletxa_down_valla.png" id="6_l18gw"]
-[ext_resource type="Texture2D" uid="uid://bvv688uunk3jw" path="res://images/propias/Mapa_assets/extras/meta.png" id="7_ojiii"]
-[ext_resource type="Texture2D" uid="uid://bilinbn03baho" path="res://images/propias/Mapa_assets/Rio/muelle.png" id="9_pk3yw"]
+[ext_resource type="Texture2D" uid="uid://8xvh288eh3qi" path="res://images/Personajes/Objetos/barco.png" id="4_25j4i"]
+[ext_resource type="Texture2D" uid="uid://nn4ex3jra5bk" path="res://images/Mapa_assets/Decoración/fletxa_esquerra_valla.png" id="5_wr3h5"]
+[ext_resource type="PackedScene" uid="uid://dj0atrm2o2f7f" path="res://scenes/others/Global_Scene.tscn" id="6_juq73"]
+[ext_resource type="Texture2D" uid="uid://1hp38hor852k" path="res://images/Mapa_assets/Decoración/fletxa_down_valla.png" id="6_l18gw"]
+[ext_resource type="Texture2D" uid="uid://bvv688uunk3jw" path="res://images/Mapa_assets/Levels/level_1/meta.png" id="7_ojiii"]
+[ext_resource type="Texture2D" uid="uid://bilinbn03baho" path="res://images/Mapa_assets/Decoración/muelle.png" id="9_pk3yw"]
 [ext_resource type="PackedScene" uid="uid://drqgxmq8f0sas" path="res://scenes/characters/main_character.tscn" id="10_3h1vm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twe26"]
@@ -529,63 +530,15 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_twe26")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7sg82"]
+load_path = "res://.godot/imported/Casa.png-d253fa8da5abdcfeac4fa1ca5d4f4027.ctex"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77a2j"]
 size = Vector2(800, 5)
 
-[sub_resource type="Animation" id="Animation_wfj2s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Barco:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [3.14159]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Barco:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-46, 367)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Main_character:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Main_character:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2292, 3787)]
-}
-
-[sub_resource type="Animation" id="Animation_4nko2"]
+[sub_resource type="Animation" id="Animation_rfe5d"]
 resource_name = "final"
-length = 6.0
+length = 6.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -593,7 +546,7 @@ tracks/0/path = NodePath("../Barco:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 4, 4.7),
+"times": PackedFloat32Array(0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4.5, 5.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [3.14159, 3.01942, 2.91036, 2.53073, 2.42426, 2.26893, 2.0944, 1.85807, 1.56465]
@@ -605,7 +558,7 @@ tracks/1/path = NodePath("../Barco:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4, 4.7),
+"times": PackedFloat32Array(0.5, 1.5, 2.5, 3.5, 4.5, 5.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-2697, 3150), Vector2(-2674, 3292), Vector2(-2606, 3389), Vector2(-2528, 3465), Vector2(-2408, 3513), Vector2(-2287, 3534)]
@@ -617,7 +570,7 @@ tracks/2/path = NodePath("../Main_character:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 5, 6.5),
+"times": PackedFloat32Array(0, 5.5, 7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, true]
@@ -629,20 +582,24 @@ tracks/3/path = NodePath("../Main_character:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 5, 6.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(5.5, 6.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-2288, 3566), Vector2(-2288, 3566), Vector2(-2292, 3787)]
+"values": [Vector2(-2288, 3566), Vector2(-2292, 3787)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_x61mf"]
+[sub_resource type="Animation" id="Animation_csqih"]
+resource_name = "reset"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qybmq"]
 _data = {
-"RESET": SubResource("Animation_wfj2s"),
-"final": SubResource("Animation_4nko2")
+"final": SubResource("Animation_rfe5d"),
+"reset": SubResource("Animation_csqih")
 }
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tlxt6")
+obstacle_scene = ExtResource("2_miqey")
 
 [node name="Mapa" type="TileMap" parent="."]
 position = Vector2(-40, 274)
@@ -811,9 +768,15 @@ position = Vector2(-340, -315.5)
 scale = Vector2(0.7875, 0.46875)
 texture = ExtResource("7_ojiii")
 
+[node name="Casa" type="Sprite2D" parent="Decorations"]
+position = Vector2(1355, -1825.5)
+rotation = -0.0148613
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CompressedTexture2D_7sg82")
+
 [node name="Barco" parent="." instance=ExtResource("2_us8tc")]
 z_index = 1
-position = Vector2(-46, 367)
+position = Vector2(-83, 247)
 rotation = 3.14159
 
 [node name="obstacles" type="Marker2D" parent="."]
@@ -925,13 +888,13 @@ position = Vector2(-2697, 3150)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animations"]
 libraries = {
-"": SubResource("AnimationLibrary_x61mf")
+"": SubResource("AnimationLibrary_qybmq")
 }
 
 [node name="Main_character" parent="." instance=ExtResource("10_3h1vm")]
 visible = false
 z_index = 2
-position = Vector2(-2292, 3787)
+position = Vector2(-2288, 3566)
 scale = Vector2(0.7, 0.7)
 
 [connection signal="animation_finished" from="Animations/AnimationPlayer" to="." method="_on_animation_finished"]

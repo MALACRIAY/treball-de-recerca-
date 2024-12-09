@@ -12,7 +12,7 @@ var flowers_left : int
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	animations.speed_scale = (GlobalScript.difficulty)-.5
-	flowers_max = GlobalScript.difficulty * 3
+	flowers_max = GlobalScript.difficulty * 3 - 1
 	flowers_left = flowers_max
 func _process(delta):
 	side = sign(get_global_mouse_position().x - barra.global_position.x )
@@ -60,12 +60,14 @@ func _on_animation_finished(anim_name):
 
 func _on_countdown_animation_finished():
 	spawn_flower()
+	%Camera.visible = false
 
 
 func _on_points_animation_changed():
 	print(point_marker.frame)
 	print(flowers_max)
 	if not flowers_left:
+		%Camera.visible = true
 		GlobalScript.level += 1
 		GlobalScript.just_won = true
 		%Camera._change_scene("res://scenes/Levels/Principal.tscn")

@@ -1,38 +1,39 @@
-[gd_scene load_steps=72 format=3 uid="uid://brvlc7gprp6ia"]
+[gd_scene load_steps=73 format=3 uid="uid://brvlc7gprp6ia"]
 
 [ext_resource type="Script" path="res://scenes/scripts/level_2.gd" id="1_u46bd"]
-[ext_resource type="Texture2D" uid="uid://botpdj56wpbxt" path="res://images/propias/Mapa_assets/side_picker/mapa.png" id="1_wd05n"]
-[ext_resource type="Texture2D" uid="uid://by87d6idxb3kt" path="res://images/propias/Mapa_assets/Puntuacion/0.png" id="3_01jco"]
-[ext_resource type="Texture2D" uid="uid://d2jk6yh0sdt6v" path="res://images/propias/Mapa_assets/Puntuacion/1.png" id="4_50u5f"]
-[ext_resource type="Texture2D" uid="uid://hclkgxsvyfao" path="res://images/propias/Mapa_assets/Puntuacion/2.png" id="5_rymbh"]
-[ext_resource type="Texture2D" uid="uid://by74nf2tlcses" path="res://images/propias/Mapa_assets/Puntuacion/3.png" id="6_iv5jk"]
-[ext_resource type="Texture2D" uid="uid://bf85f3sjahhkd" path="res://images/propias/Mapa_assets/Puntuacion/2(1).png" id="7_2a76c"]
-[ext_resource type="Texture2D" uid="uid://dmqh18q0qj2y0" path="res://images/propias/Mapa_assets/Puntuacion/0(1).png" id="7_4dis5"]
-[ext_resource type="Texture2D" uid="uid://cxkxyunjgexrv" path="res://images/propias/Mapa_assets/Puntuacion/4.png" id="7_vvkyw"]
-[ext_resource type="Texture2D" uid="uid://c8w07ahay0ugm" path="res://images/propias/Mapa_assets/Puntuacion/1(1).png" id="8_0vneg"]
-[ext_resource type="Texture2D" uid="uid://br3colaaasukr" path="res://images/propias/Mapa_assets/Puntuacion/3(1).png" id="8_b1r4y"]
-[ext_resource type="Texture2D" uid="uid://dagytrx7oqedq" path="res://images/propias/Mapa_assets/side_picker/barra.png" id="9_ar73t"]
-[ext_resource type="Texture2D" uid="uid://b660q8ij0nmbp" path="res://images/propias/Mapa_assets/Puntuacion/5.png" id="10_6jv06"]
-[ext_resource type="Texture2D" uid="uid://d05f1km8wxs48" path="res://images/propias/Mapa_assets/Puntuacion/6.png" id="11_8puxg"]
-[ext_resource type="Texture2D" uid="uid://d2oykjcwovx28" path="res://images/propias/Mapa_assets/Puntuacion/7.png" id="14_8kdyu"]
-[ext_resource type="Texture2D" uid="uid://be3frcljko0xd" path="res://images/propias/Mapa_assets/Puntuacion/8.png" id="15_bpk4b"]
-[ext_resource type="PackedScene" uid="uid://c28g1ir66ceby" path="res://scenes/Levels/objects/flower.tscn" id="16_xb2xd"]
-[ext_resource type="Texture2D" uid="uid://xeudk2u38dcv" path="res://images/propias/Mapa_assets/Puntuacion/9.png" id="16_ymcnv"]
-[ext_resource type="Texture2D" uid="uid://dhxa727nt6pf4" path="res://images/propias/Mapa_assets/Puntuacion/10.png" id="17_0m87k"]
-[ext_resource type="Texture2D" uid="uid://w5j4an4e7x4a" path="res://images/propias/Mapa_assets/side_picker/cesta.png" id="17_ht834"]
-[ext_resource type="Texture2D" uid="uid://b4t7tf4fjll0s" path="res://images/propias/Mapa_assets/Puntuacion/11.png" id="18_hbfik"]
-[ext_resource type="Texture2D" uid="uid://nths2xqy56le" path="res://images/propias/Mapa_assets/side_picker/flowers/flor_red_1.png" id="18_wyub0"]
-[ext_resource type="Texture2D" uid="uid://4vqvbxhi4v34" path="res://images/propias/Mapa_assets/Puntuacion/12.png" id="19_0nadh"]
-[ext_resource type="Texture2D" uid="uid://cewhcupmw6dhu" path="res://images/propias/Mapa_assets/side_picker/flowers/flor_lila_1.png" id="19_bf1th"]
-[ext_resource type="Texture2D" uid="uid://u1go8x0apghn" path="res://images/propias/Mapa_assets/side_picker/+1.png" id="19_mkh8j"]
-[ext_resource type="Texture2D" uid="uid://crhtgilm8bvh3" path="res://images/propias/Mapa_assets/Puntuacion/13.png" id="20_3dnyi"]
-[ext_resource type="Texture2D" uid="uid://cmbjflrs3uwkm" path="res://images/propias/Mapa_assets/Puntuacion/14.png" id="21_ofton"]
-[ext_resource type="Texture2D" uid="uid://ddm7pxagju8sd" path="res://images/propias/Mapa_assets/Puntuacion/15.png" id="22_354ju"]
-[ext_resource type="Texture2D" uid="uid://bwta7raakdunt" path="res://images/propias/Mapa_assets/Puntuacion/16.png" id="23_a4wo1"]
+[ext_resource type="Texture2D" uid="uid://botpdj56wpbxt" path="res://images/Mapa_assets/Levels/level_2/mapa.png" id="1_wd05n"]
+[ext_resource type="Texture2D" uid="uid://by87d6idxb3kt" path="res://images/Mapa_assets/Others/Puntuacion/0.png" id="3_01jco"]
+[ext_resource type="Texture2D" uid="uid://d2jk6yh0sdt6v" path="res://images/Mapa_assets/Others/Puntuacion/1.png" id="4_50u5f"]
+[ext_resource type="Texture2D" uid="uid://hclkgxsvyfao" path="res://images/Mapa_assets/Others/Puntuacion/2.png" id="5_rymbh"]
+[ext_resource type="Texture2D" uid="uid://by74nf2tlcses" path="res://images/Mapa_assets/Others/Puntuacion/3.png" id="6_iv5jk"]
+[ext_resource type="Texture2D" uid="uid://bf85f3sjahhkd" path="res://images/Mapa_assets/Others/Puntuacion/2(1).png" id="7_2a76c"]
+[ext_resource type="Texture2D" uid="uid://dmqh18q0qj2y0" path="res://images/Mapa_assets/Others/Puntuacion/0(1).png" id="7_4dis5"]
+[ext_resource type="Texture2D" uid="uid://cxkxyunjgexrv" path="res://images/Mapa_assets/Others/Puntuacion/4.png" id="7_vvkyw"]
+[ext_resource type="Texture2D" uid="uid://c8w07ahay0ugm" path="res://images/Mapa_assets/Others/Puntuacion/1(1).png" id="8_0vneg"]
+[ext_resource type="Texture2D" uid="uid://br3colaaasukr" path="res://images/Mapa_assets/Others/Puntuacion/3(1).png" id="8_b1r4y"]
+[ext_resource type="Texture2D" uid="uid://dagytrx7oqedq" path="res://images/Mapa_assets/Levels/level_2/barra.png" id="9_ar73t"]
+[ext_resource type="Texture2D" uid="uid://b660q8ij0nmbp" path="res://images/Mapa_assets/Others/Puntuacion/5.png" id="10_6jv06"]
+[ext_resource type="Texture2D" uid="uid://d05f1km8wxs48" path="res://images/Mapa_assets/Others/Puntuacion/6.png" id="11_8puxg"]
+[ext_resource type="Texture2D" uid="uid://d2oykjcwovx28" path="res://images/Mapa_assets/Others/Puntuacion/7.png" id="14_8kdyu"]
+[ext_resource type="Texture2D" uid="uid://be3frcljko0xd" path="res://images/Mapa_assets/Others/Puntuacion/8.png" id="15_bpk4b"]
+[ext_resource type="PackedScene" uid="uid://c28g1ir66ceby" path="res://scenes/objects/flower.tscn" id="16_xb2xd"]
+[ext_resource type="Texture2D" uid="uid://xeudk2u38dcv" path="res://images/Mapa_assets/Others/Puntuacion/9.png" id="16_ymcnv"]
+[ext_resource type="Texture2D" uid="uid://dhxa727nt6pf4" path="res://images/Mapa_assets/Others/Puntuacion/10.png" id="17_0m87k"]
+[ext_resource type="Texture2D" uid="uid://w5j4an4e7x4a" path="res://images/Mapa_assets/Levels/level_2/cesta.png" id="17_ht834"]
+[ext_resource type="Texture2D" uid="uid://b4t7tf4fjll0s" path="res://images/Mapa_assets/Others/Puntuacion/11.png" id="18_hbfik"]
+[ext_resource type="Texture2D" uid="uid://nths2xqy56le" path="res://images/Mapa_assets/Levels/level_2/flowers/flor_red_1.png" id="18_wyub0"]
+[ext_resource type="Texture2D" uid="uid://4vqvbxhi4v34" path="res://images/Mapa_assets/Others/Puntuacion/12.png" id="19_0nadh"]
+[ext_resource type="Texture2D" uid="uid://cewhcupmw6dhu" path="res://images/Mapa_assets/Levels/level_2/flowers/flor_lila_1.png" id="19_bf1th"]
+[ext_resource type="Texture2D" uid="uid://u1go8x0apghn" path="res://images/Mapa_assets/Levels/level_2/+1.png" id="19_mkh8j"]
+[ext_resource type="Texture2D" uid="uid://crhtgilm8bvh3" path="res://images/Mapa_assets/Others/Puntuacion/13.png" id="20_3dnyi"]
+[ext_resource type="Texture2D" uid="uid://cmbjflrs3uwkm" path="res://images/Mapa_assets/Others/Puntuacion/14.png" id="21_ofton"]
+[ext_resource type="Texture2D" uid="uid://ddm7pxagju8sd" path="res://images/Mapa_assets/Others/Puntuacion/15.png" id="22_354ju"]
+[ext_resource type="Texture2D" uid="uid://bwta7raakdunt" path="res://images/Mapa_assets/Others/Puntuacion/16.png" id="23_a4wo1"]
 [ext_resource type="Shader" path="res://resources/character_shader.gdshader" id="24_bqyy2"]
-[ext_resource type="Texture2D" uid="uid://d0p0mn2cg3lms" path="res://images/propias/Mapa_assets/extras/2/tio_rgb.png" id="25_2pi03"]
+[ext_resource type="Texture2D" uid="uid://d0p0mn2cg3lms" path="res://images/Personajes/Personas/Choose/tio_rgb.png" id="25_2pi03"]
 [ext_resource type="Script" path="res://scenes/scripts/Character_colors.gd" id="26_4g61n"]
-[ext_resource type="PackedScene" uid="uid://dj0atrm2o2f7f" path="res://scenes/Global_Scene.tscn" id="33_mo3ri"]
+[ext_resource type="Texture2D" uid="uid://cxhl0iam5e52w" path="res://images/Personajes/Personas/Choose/tia_rgb.png" id="27_5ry7o"]
+[ext_resource type="PackedScene" uid="uid://dj0atrm2o2f7f" path="res://scenes/others/Global_Scene.tscn" id="33_mo3ri"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bf52x"]
 atlas = ExtResource("6_iv5jk")
@@ -215,7 +216,7 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xnsg0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i0sf5"]
 shader = ExtResource("24_bqyy2")
 shader_parameter/Face_color = Color(0.706, 0.322, 0.227, 1)
 shader_parameter/Body_color = Color(0.878, 0.804, 0.663, 1)
@@ -536,13 +537,21 @@ position = Vector2(571, 87)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_mraxs")
 
-[node name="Character" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_xnsg0")
-position = Vector2(577, 454)
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(578, 442)
 scale = Vector2(5, 5)
+script = ExtResource("26_4g61n")
+
+[node name="Character_m" type="Sprite2D" parent="Node2D"]
+material = SubResource("ShaderMaterial_i0sf5")
 texture = ExtResource("25_2pi03")
 flip_h = true
-script = ExtResource("26_4g61n")
+
+[node name="Character_d" type="Sprite2D" parent="Node2D"]
+visible = false
+material = SubResource("ShaderMaterial_i0sf5")
+texture = ExtResource("27_5ry7o")
+flip_h = true
 
 [node name="barra" type="Area2D" parent="."]
 position = Vector2(574, 466.67)
@@ -633,6 +642,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("19_bf1th")
 
 [node name="Camera" parent="." instance=ExtResource("33_mo3ri")]
+visible = false
 
 [connection signal="animation_finished" from="countdown/countdown" to="." method="_on_countdown_animation_finished"]
 [connection signal="frame_changed" from="countdown/Points" to="." method="_on_points_animation_changed"]

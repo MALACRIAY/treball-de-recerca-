@@ -18,7 +18,7 @@ func _set_initials():
 		Anim.frame = 0
 	#ball.visible = true
 
-func _process(delta):
+func _process(_delta):
 	camera.zoom = Vector2(1/self.scale.x,1/self.scale.y)
 	
 func _change_scene(scene):

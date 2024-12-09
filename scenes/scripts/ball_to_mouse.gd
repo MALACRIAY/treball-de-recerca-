@@ -17,7 +17,7 @@ func _ready():
 	# Initialize the last position of the object
 	check_for_updates()
 	pass
-func _process(delta):
+func _process(_delta):
 	# Check for updates at each frame
 	#check_for_updates()
 	global_position = get_global_mouse_position()

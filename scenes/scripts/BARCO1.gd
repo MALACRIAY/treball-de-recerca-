@@ -19,7 +19,6 @@ var move := false
 
 func _ready():
 	camera.get_child(1).visible = false
-	print(%Camera)
 	for box in $boxes.get_children():
 		animations.append(box.get_child(0))
 	for area in Zones.get_children():
@@ -34,7 +33,6 @@ func _process(delta):
 		_set_obstacles()
 		look_at_mouse(delta)
 		if Zona == 4:
-			print(global_position," + ", anim_start)
 			global_position.x = move_toward(global_position.x,anim_start.x,3)
 			global_position.y = move_toward(global_position.y,anim_start.y,3)
 			

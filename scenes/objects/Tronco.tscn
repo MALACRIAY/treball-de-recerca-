@@ -1,0 +1,140 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqm3svxohewrc"]
+
+[ext_resource type="Script" path="res://scenes/scripts/Tronco.gd" id="1_roj68"]
+[ext_resource type="Texture2D" uid="uid://b82a5t1tkiaid" path="res://images/Mapa_assets/Levels/level_1/Tronco.png" id="2_ixpgl"]
+
+[sub_resource type="Animation" id="Animation_6tcdj"]
+resource_name = "Disapear"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -4.07534]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.165, 0.165), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fillm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fdp0o"]
+_data = {
+"Disapear": SubResource("Animation_6tcdj"),
+"RESET": SubResource("Animation_fillm")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s4v81"]
+lifetime_randomness = 0.2
+particle_flag_rotate_y = true
+emission_shape = 3
+emission_box_extents = Vector3(80, 20, 1)
+angle_min = -673.4
+angle_max = 697.1
+gravity = Vector3(0, 98, 0)
+turbulence_enabled = true
+turbulence_influence_max = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnxds"]
+region = Rect2(288, 102, 7, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5vke"]
+size = Vector2(82, 25)
+
+[node name="Area2D" type="Area2D"]
+z_index = 2
+script = ExtResource("1_roj68")
+
+[node name="Animacion" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fdp0o")
+}
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_s4v81")
+texture = SubResource("AtlasTexture_tnxds")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ixpgl")
+region_enabled = true
+region_rect = Rect2(30, 91, 127, 56)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_b5vke")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 20
+emission_shape = 1
+emission_sphere_radius = 65.0
+direction = Vector2(19, 19)
+spread = 99.22
+gravity = Vector2(0, 0)
+color = Color(0, 0, 1, 1)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

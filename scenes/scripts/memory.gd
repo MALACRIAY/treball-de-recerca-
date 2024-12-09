@@ -5,7 +5,7 @@ var sprites = []
 
 # Desplaçament per centrar el tauler de 2x2
 var offset = Vector2(16,19)
-
+var num_tiles : int
 func _ready():
 	sprites = get_children()  # Assumim que ja tens 16 fills que són els teus sprites.
 	place_sprites_on_tiles()
@@ -13,7 +13,10 @@ func _ready():
 func place_sprites_on_tiles():
 	var tilemap = $"../TileMap"  # Obtenim referència al TileMap
 	var board_size = tilemap.board_size  # Obtenim la mida del tauler
-	var num_tiles = board_size * board_size  # Total de "tiles" visibles
+	if GlobalScript.difficulty >= 2:
+		num_tiles = 16
+	else:
+		num_tiles = 4
 	
 	for i in range(sprites.size()):
 		var sprite = sprites[i]
@@ -22,11 +25,11 @@ func place_sprites_on_tiles():
 			var tile_pos = tilemap.map_to_local(Vector2(i % board_size, int(i / board_size)))
 			
 			# Si el tauler és de 2x2, afegim l'offset per centrar
-			if board_size == 2:
-				sprite.position = tile_pos + offset
+			if GlobalScript.difficulty >= 2:
+				sprite.position = tile_pos 
 			else:
-				sprite.position = tile_pos  # Sense offset per a 4x4
-				
+				sprite.position = tile_pos + offset# Sense offset per a 4x4
+			print(sprite.position)
 			sprite.show()  # Mostrem els sprites visibles
 		else:
 			sprite.hide()  # Amaguem els sprites que no estan dins del taulell

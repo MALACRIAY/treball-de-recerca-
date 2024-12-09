@@ -7,13 +7,13 @@ extends CharacterBody2D
 @onready var diff = GlobalScript.difficulty
 
 var speed : float = 100
-var Bullet = preload("res://scenes/Levels/objects/Disco.tscn")
+var Bullet = preload("res://scenes/objects/Disco.tscn")
 var move = false
 	
 func _ready():
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if move:
 		velocity = (get_global_mouse_position()-global_position) * 3
 	move_and_slide()

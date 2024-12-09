@@ -36,7 +36,7 @@ func _area_entered(mouse,area):
 		nodes_in.append(area)
 	pass # Replace with function body.
 
-func _area_exited(mouse,area):
+func _area_exited(_mouse,area):
 	if area in nodes_in:
 		nodes_in.erase(area)
 	pass

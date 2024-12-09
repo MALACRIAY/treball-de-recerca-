@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var character : Object = $Character_m
 @onready var ok_button : Object = $Tick
-@onready var colors_all : Array = $PanelColors/Colors.get_children()
 @onready var animations : Object = $AnimationPlayer
 @onready var Camera : Object = %Camera
 @onready var tutorial_lights : Array = $Tutorial_lights.get_children()
@@ -57,12 +56,9 @@ var body_colors_list : Array = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_tutorial()
-	_set_colors_positions()
-	_set_colors()
+	#_set_colors_positions()
+	#_set_colors()
 	_add_to_hover()
-	Camera.scale = Vector2(1.538,1.538)
-	Camera.global_position = Vector2(0,0)
 
 func _add_to_hover():
 	#for color in colors_all:
@@ -73,27 +69,27 @@ func _add_to_hover():
 	dona.item_rect_changed.connect(self.female)
 	ok_button.item_rect_changed.connect(self._ok_button_clicked)
 	pass
-
-func _set_colors_positions():
-	var x = -1
-	var y = -1
-	var margin = 39
-	for sprite in colors_all:
-		sprite.position =Vector2(x * margin, y * margin)
-		x += 1
-		if x == 2:
-			x = -1
-			y += 1
-
-func _set_colors():
-
-	for color in colors_all:
-		if current_picking == 0: # face
-			color.set_modulate(face_colors_list[colors_all.find(color)]) 
-		elif current_picking == 1:
-			color.set_modulate(hair_colors_list[colors_all.find(color)]) 
-		elif current_picking == 2:
-			color.set_modulate(body_colors_list[colors_all.find(color)]) 
+#Aixo es per quan esta la quadricula de colors
+#func _set_colors_positions():
+	#var x = -1
+	#var y = -1
+	#var margin = 39
+	#for sprite in colors_all:
+		#sprite.position =Vector2(x * margin, y * margin)
+		#x += 1
+		#if x == 2:
+			#x = -1
+			#y += 1
+#
+#func _set_colors():
+#
+	#for color in colors_all:
+		#if current_picking == 0: # face
+			#color.set_modulate(face_colors_list[colors_all.find(color)]) 
+		#elif current_picking == 1:
+			#color.set_modulate(hair_colors_list[colors_all.find(color)]) 
+		#elif current_picking == 2:
+			#color.set_modulate(body_colors_list[colors_all.find(color)]) 
 
 func male():
 	GlobalScript.home = true
@@ -109,11 +105,6 @@ func _clicked(): # face
 	character.material.set_shader_parameter("Face_color",face_colors_list[randi_range(0,8)])
 	character.material.set_shader_parameter("Hair_color",hair_colors_list[randi_range(0,8)]) 
 	character.material.set_shader_parameter("Body_color",body_colors_list[randi_range(0,8)]) 
-	if first_time:
-		first_time = false
-		tutorial_lights[0].visible = false
-		await get_tree().create_timer(1).timeout
-		tutorial_lights[1].visible = true
 
 func _ok_button_clicked():
 	#if current_picking <= 1 and not animations.is_playing(): #face or hair
@@ -125,8 +116,4 @@ func _ok_button_clicked():
 	#if current_picking == 2 and not animations.is_playing():
 	GlobalScript.character_colors.append_array([character.material.get_shader_parameter("Face_color"),character.material.get_shader_parameter("Hair_color"),character.material.get_shader_parameter("Body_color")])
 	Camera._change_scene("res://scenes/Levels/Principal.tscn")
-
-func _tutorial():
-	await get_tree().create_timer(3).timeout
-	tutorial_lights[0].visible = true
 

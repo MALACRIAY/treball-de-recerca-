@@ -1,12 +1,12 @@
 [gd_scene load_steps=112 format=3 uid="uid://cfyod2bfe1mue"]
 
-[ext_resource type="Texture2D" uid="uid://cu3l48pesfco6" path="res://images/propias/Mapa_assets/final/podio.png" id="1_8k5hx"]
-[ext_resource type="Texture2D" uid="uid://beky0bglnmyxn" path="res://images/propias/Mapa_assets/extras/degre_extras/copa.png" id="2_7vh6p"]
-[ext_resource type="Texture2D" uid="uid://cm3qv5fertof6" path="res://images/propias/Mapa_assets/final/nuvol.png" id="2_dpl5j"]
-[ext_resource type="Texture2D" uid="uid://brccgmgbofcry" path="res://images/propias/Mapa_assets/extras/degre_extras/rocket_1.png" id="2_oado5"]
-[ext_resource type="Texture2D" uid="uid://bf7topnhy70yy" path="res://images/propias/Mapa_assets/final/nuvol2.png" id="3_ehxuk"]
-[ext_resource type="Texture2D" uid="uid://ccwqrcq42pkrg" path="res://images/propias/Mapa_assets/extras/degre_extras/rocket_2.png" id="3_i683j"]
-[ext_resource type="Texture2D" uid="uid://bk0kljxwaplgu" path="res://images/propias/Mapa_assets/extras/degre_extras/rocket_3.png" id="4_xbgir"]
+[ext_resource type="Texture2D" uid="uid://cu3l48pesfco6" path="res://images/Mapa_assets/Levels/final/podio.png" id="1_8k5hx"]
+[ext_resource type="Texture2D" uid="uid://beky0bglnmyxn" path="res://images/Mapa_assets/Levels/final/copa.png" id="2_7vh6p"]
+[ext_resource type="Texture2D" uid="uid://cm3qv5fertof6" path="res://images/Mapa_assets/Levels/final/nuvol.png" id="2_dpl5j"]
+[ext_resource type="Texture2D" uid="uid://brccgmgbofcry" path="res://images/Mapa_assets/Levels/final/rocket_1.png" id="2_oado5"]
+[ext_resource type="Texture2D" uid="uid://bf7topnhy70yy" path="res://images/Mapa_assets/Levels/final/nuvol2.png" id="3_ehxuk"]
+[ext_resource type="Texture2D" uid="uid://ccwqrcq42pkrg" path="res://images/Mapa_assets/Levels/final/rocket_2.png" id="3_i683j"]
+[ext_resource type="Texture2D" uid="uid://bk0kljxwaplgu" path="res://images/Mapa_assets/Levels/final/rocket_3.png" id="4_xbgir"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bqnuo"]
 atlas = ExtResource("2_oado5")
@@ -2250,6 +2250,7 @@ sprite_frames = SubResource("SpriteFrames_k7dwm")
 sprite_frames = SubResource("SpriteFrames_najgp")
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 178.0
 offset_top = 385.0
 offset_right = 4203.0

@@ -8,31 +8,33 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_set_flags()
+	if GlobalScript.level== 0:
+		$Label.visible = true
+	else:
+		$Label.visible = false
 	dialogo.visible = false
 	camera.clock.visible = false
+	character.start = $starting_points
 	await self.get_tree().create_timer(2).timeout
 	character.move = true
-	if GlobalScript.level == 1:
-		$banderas/Area2D2.get_child(1).disabled = false
-		$banderas/Area2D.get_child(1).disabled = true
-	if GlobalScript.level == 3:
-		$banderas/Area2D4.get_child(1).disabled = false
-		$banderas/Area2D3.get_child(1).disabled = true
+	
 func _set_flags():
 	for area in $banderas.get_children():
+		if area.get_index() < GlobalScript.level:
+			area.get_child(2).visible = true
+			area.get_child(0).disabled = true
+		elif area.get_index() == GlobalScript.level:
+			area.get_child(0).disabled = false
+		elif area.get_index() > GlobalScript.level:
+			area.get_child(2).visible = false
+			area.get_child(0).disabled = true
 		area.body_entered.connect(_body_entered.bind(area))
+
 
 func _body_entered(body,area):
 	if body == character:
-		dialogo.visible = true
 		dialogo.flag_num = area.get_index()
+		dialogo._open()
 		character.move = false
 		camera.clock.visible = true
 
-func _process(delta):
-	pass
-
-func _on_zona_4_body_entered(body):
-	if body == character:
-		if not animations.is_playing():
-			animations.play_backwards("bridge")

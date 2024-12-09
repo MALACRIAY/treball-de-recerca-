@@ -1,39 +1,47 @@
-extends Node2D
+extends Node2D																																
  
 @onready var button_ok : Object = $Foreground/OK
 @onready var text_label : Object = $Foreground/squares/Label
 @onready var square_anim : Object = $Foreground/squares
 @onready var face_anim : Object = $Foreground/faces
+@onready var backgrounds : Array = $Background.get_children()
 
+var texts = [
+	#Hockey
+	"Te reto a una partida de hockey hielo, el primero en meter " + str(GlobalScript.difficulty*2) + " goles gana, preparado?",
+	#Barco
+	"Buenas grumete, me podrias llevar estas cajas al otro lado del río? Te dejo a cargo del timón.",
+	#Flores
+	"¿Crees que serias capaz de ayudarme? Se me han caído las flores, y las tengo que separar por colores, solo me faltan " + str(GlobalScript.difficulty * 3),
+	#Memory
+	"Mira he descubierto un nuevo juego de cartas muy divertido, quieres jugar conmigo?"
+]
 var current_text = 0
 var text_letters = 0
 var red_speed = 30 * GlobalScript.difficulty
-var flag_num 
+var flag_num = 0
 
 func _ready():
-	_config_images()
 	button_ok.add_to_group("hover_click")
 	button_ok.item_rect_changed.connect(self._clicked)
-	pass
-
-func _config_images():
-	square_anim.frame = randi_range(0,3)
-	face_anim.frame = randi_range(0,3)
-
-func _set_texts():
-	current_text += 1
 	text_letters = 0
-	pass
- 
+
+func _open():
+	
+	square_anim.frame = flag_num
+	face_anim.frame = flag_num
+	visible = true
+
+
 func _process(delta):
-	var current_level_texts = GlobalScript.texts_all[GlobalScript.level]
-	if current_text < len(current_level_texts):
-		text_label.text = current_level_texts[current_text]
+	if self.visible:
+		
+		text_label.text = texts[flag_num]
 		text_label.visible_characters = text_letters
 		text_letters += delta * red_speed
-	else:
-		%Camera._change_scene("res://scenes/Levels/Level_"+str(flag_num)+".tscn")
+	
 
 func _clicked():
-	_set_texts()
+	%Camera._change_scene("res://scenes/Levels/Level_"+str(flag_num)+".tscn")
+
 	

@@ -1,8 +1,8 @@
 extends CharacterBody2D
-@onready var animation = $"../AnimationPlayer"
+
 @onready var anim : Object
 @onready var Camera = %Camera
-@onready var start = $"../starting_points"
+@onready var start : Object 
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
@@ -19,16 +19,15 @@ func _ready():
 	anim.visible = true
 	if Camera:
 		if start:
-			if GlobalScript.level == 3:
+			if GlobalScript.level == 4:
 				Camera._change_scene("res://scenes/Levels/final.tscn")
 			else:
 				global_position = start.get_child(GlobalScript.level).global_position
-		_set_camera()
 	_set_colors()
 	
 	
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if move:
@@ -45,11 +44,6 @@ func _physics_process(delta):
 		anim.stop()
 	
 	move_and_slide()
-
-func _set_camera():
-	Camera.position_smoothing_enabled = false
-	Camera.global_position = global_position + Vector2(-600,-300)
-	Camera.scale = Vector2(1,1)
 
 func _set_colors():
 	var list = GlobalScript.character_colors

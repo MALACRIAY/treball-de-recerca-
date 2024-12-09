@@ -1,36 +1,38 @@
 [gd_scene load_steps=64 format=3 uid="uid://b7jtkjuj8mc1v"]
 
 [ext_resource type="Script" path="res://scenes/scripts/porte.gd" id="1_gy6rq"]
-[ext_resource type="Texture2D" uid="uid://du51jxasbphto" path="res://images/propias/Mapa_assets/Puntuacion/guion.png" id="2_iun0h"]
-[ext_resource type="Texture2D" uid="uid://dubfmt5fwkxv1" path="res://images/propias/Mapa_assets/Hockey/campo hockey.png" id="3_nvie4"]
-[ext_resource type="PackedScene" uid="uid://dlj210fekbvhg" path="res://scenes/Levels/objects/Disco.tscn" id="4_6y8ti"]
+[ext_resource type="Texture2D" uid="uid://du51jxasbphto" path="res://images/Mapa_assets/Others/Puntuacion/guion.png" id="2_iun0h"]
+[ext_resource type="Texture2D" uid="uid://dubfmt5fwkxv1" path="res://images/Mapa_assets/Levels/level_0/campo hockey.png" id="3_nvie4"]
+[ext_resource type="PackedScene" uid="uid://dlj210fekbvhg" path="res://scenes/objects/Disco.tscn" id="4_6y8ti"]
 [ext_resource type="Script" path="res://scenes/scripts/Character_1.gd" id="4_mjq13"]
-[ext_resource type="Texture2D" uid="uid://bthytufmxegd5" path="res://images/propias/Personajes/Objetos/hockey_player1.png" id="5_ar8a7"]
-[ext_resource type="Texture2D" uid="uid://b1eb08v7joeoh" path="res://images/propias/Personajes/Objetos/hockey_player2.png" id="6_wnr45"]
+[ext_resource type="Texture2D" uid="uid://bthytufmxegd5" path="res://images/Personajes/Objetos/hockey_player1.png" id="5_ar8a7"]
+[ext_resource type="Texture2D" uid="uid://b1eb08v7joeoh" path="res://images/Personajes/Objetos/hockey_player2.png" id="6_wnr45"]
 [ext_resource type="Script" path="res://scenes/scripts/countdown_hockey.gd" id="7_tmmuo"]
-[ext_resource type="Texture2D" uid="uid://by74nf2tlcses" path="res://images/propias/Mapa_assets/Puntuacion/3.png" id="9_1jhwb"]
-[ext_resource type="Texture2D" uid="uid://hclkgxsvyfao" path="res://images/propias/Mapa_assets/Puntuacion/2.png" id="10_h3grm"]
-[ext_resource type="Texture2D" uid="uid://dmqh18q0qj2y0" path="res://images/propias/Mapa_assets/Puntuacion/0(1).png" id="10_ti68u"]
-[ext_resource type="Texture2D" uid="uid://bf85f3sjahhkd" path="res://images/propias/Mapa_assets/Puntuacion/2(1).png" id="10_yhv6y"]
-[ext_resource type="Texture2D" uid="uid://d2jk6yh0sdt6v" path="res://images/propias/Mapa_assets/Puntuacion/1.png" id="11_1jggn"]
-[ext_resource type="Texture2D" uid="uid://c8w07ahay0ugm" path="res://images/propias/Mapa_assets/Puntuacion/1(1).png" id="11_d36pu"]
-[ext_resource type="Texture2D" uid="uid://br3colaaasukr" path="res://images/propias/Mapa_assets/Puntuacion/3(1).png" id="11_s7g8a"]
-[ext_resource type="Texture2D" uid="uid://by87d6idxb3kt" path="res://images/propias/Mapa_assets/Puntuacion/0.png" id="12_ihshw"]
-[ext_resource type="Texture2D" uid="uid://b660q8ij0nmbp" path="res://images/propias/Mapa_assets/Puntuacion/5.png" id="13_e2kdd"]
-[ext_resource type="Texture2D" uid="uid://cxkxyunjgexrv" path="res://images/propias/Mapa_assets/Puntuacion/4.png" id="13_eo8o2"]
-[ext_resource type="Texture2D" uid="uid://d05f1km8wxs48" path="res://images/propias/Mapa_assets/Puntuacion/6.png" id="14_sjein"]
-[ext_resource type="Texture2D" uid="uid://p7qtrqo1nnyh" path="res://images/propias/Mapa_assets/extras/dialogo/bakground.png" id="15_oifvu"]
-[ext_resource type="Texture2D" uid="uid://d2oykjcwovx28" path="res://images/propias/Mapa_assets/Puntuacion/7.png" id="17_fitnu"]
-[ext_resource type="Texture2D" uid="uid://be3frcljko0xd" path="res://images/propias/Mapa_assets/Puntuacion/8.png" id="18_idq6l"]
-[ext_resource type="Texture2D" uid="uid://xeudk2u38dcv" path="res://images/propias/Mapa_assets/Puntuacion/9.png" id="19_ca2xl"]
-[ext_resource type="Texture2D" uid="uid://dhxa727nt6pf4" path="res://images/propias/Mapa_assets/Puntuacion/10.png" id="20_twscc"]
-[ext_resource type="Texture2D" uid="uid://b4t7tf4fjll0s" path="res://images/propias/Mapa_assets/Puntuacion/11.png" id="21_e0ha2"]
-[ext_resource type="Texture2D" uid="uid://4vqvbxhi4v34" path="res://images/propias/Mapa_assets/Puntuacion/12.png" id="22_hj7k5"]
-[ext_resource type="Texture2D" uid="uid://crhtgilm8bvh3" path="res://images/propias/Mapa_assets/Puntuacion/13.png" id="23_qdyov"]
-[ext_resource type="Texture2D" uid="uid://cmbjflrs3uwkm" path="res://images/propias/Mapa_assets/Puntuacion/14.png" id="24_j4cax"]
-[ext_resource type="Texture2D" uid="uid://ddm7pxagju8sd" path="res://images/propias/Mapa_assets/Puntuacion/15.png" id="25_xjdjh"]
-[ext_resource type="Texture2D" uid="uid://bwta7raakdunt" path="res://images/propias/Mapa_assets/Puntuacion/16.png" id="26_r2sda"]
-[ext_resource type="PackedScene" uid="uid://dj0atrm2o2f7f" path="res://scenes/Global_Scene.tscn" id="32_bqao5"]
+[ext_resource type="Texture2D" uid="uid://by74nf2tlcses" path="res://images/Mapa_assets/Others/Puntuacion/3.png" id="9_1jhwb"]
+[ext_resource type="Texture2D" uid="uid://hclkgxsvyfao" path="res://images/Mapa_assets/Others/Puntuacion/2.png" id="10_h3grm"]
+[ext_resource type="Texture2D" uid="uid://dmqh18q0qj2y0" path="res://images/Mapa_assets/Others/Puntuacion/0(1).png" id="10_ti68u"]
+[ext_resource type="Texture2D" uid="uid://bf85f3sjahhkd" path="res://images/Mapa_assets/Others/Puntuacion/2(1).png" id="10_yhv6y"]
+[ext_resource type="Texture2D" uid="uid://d2jk6yh0sdt6v" path="res://images/Mapa_assets/Others/Puntuacion/1.png" id="11_1jggn"]
+[ext_resource type="Texture2D" uid="uid://c8w07ahay0ugm" path="res://images/Mapa_assets/Others/Puntuacion/1(1).png" id="11_d36pu"]
+[ext_resource type="Texture2D" uid="uid://br3colaaasukr" path="res://images/Mapa_assets/Others/Puntuacion/3(1).png" id="11_s7g8a"]
+[ext_resource type="Texture2D" uid="uid://by87d6idxb3kt" path="res://images/Mapa_assets/Others/Puntuacion/0.png" id="12_ihshw"]
+[ext_resource type="Texture2D" uid="uid://b660q8ij0nmbp" path="res://images/Mapa_assets/Others/Puntuacion/5.png" id="13_e2kdd"]
+[ext_resource type="Texture2D" uid="uid://cxkxyunjgexrv" path="res://images/Mapa_assets/Others/Puntuacion/4.png" id="13_eo8o2"]
+[ext_resource type="Texture2D" uid="uid://d05f1km8wxs48" path="res://images/Mapa_assets/Others/Puntuacion/6.png" id="14_sjein"]
+[ext_resource type="Texture2D" uid="uid://d2oykjcwovx28" path="res://images/Mapa_assets/Others/Puntuacion/7.png" id="17_fitnu"]
+[ext_resource type="Texture2D" uid="uid://be3frcljko0xd" path="res://images/Mapa_assets/Others/Puntuacion/8.png" id="18_idq6l"]
+[ext_resource type="Texture2D" uid="uid://xeudk2u38dcv" path="res://images/Mapa_assets/Others/Puntuacion/9.png" id="19_ca2xl"]
+[ext_resource type="Texture2D" uid="uid://dhxa727nt6pf4" path="res://images/Mapa_assets/Others/Puntuacion/10.png" id="20_twscc"]
+[ext_resource type="Texture2D" uid="uid://b4t7tf4fjll0s" path="res://images/Mapa_assets/Others/Puntuacion/11.png" id="21_e0ha2"]
+[ext_resource type="Texture2D" uid="uid://4vqvbxhi4v34" path="res://images/Mapa_assets/Others/Puntuacion/12.png" id="22_hj7k5"]
+[ext_resource type="Texture2D" uid="uid://crhtgilm8bvh3" path="res://images/Mapa_assets/Others/Puntuacion/13.png" id="23_qdyov"]
+[ext_resource type="Texture2D" uid="uid://cmbjflrs3uwkm" path="res://images/Mapa_assets/Others/Puntuacion/14.png" id="24_j4cax"]
+[ext_resource type="Texture2D" uid="uid://ddm7pxagju8sd" path="res://images/Mapa_assets/Others/Puntuacion/15.png" id="25_xjdjh"]
+[ext_resource type="Texture2D" uid="uid://bwta7raakdunt" path="res://images/Mapa_assets/Others/Puntuacion/16.png" id="26_r2sda"]
+[ext_resource type="PackedScene" uid="uid://dj0atrm2o2f7f" path="res://scenes/others/Global_Scene.tscn" id="32_bqao5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_71xe4"]
+load_path = "res://.godot/imported/table.png-d0599a31df85c5e66d5f3df923fbee8a.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iooyf"]
 size = Vector2(53, 123)
@@ -61,7 +63,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_gue6g"]
 resource_name = "dif_1"
-length = 4.0
+length = 4.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -70,7 +72,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 1, 1.7, 2, 2.3, 3, 3.7, 4),
+"times": PackedFloat32Array(0.5, 0.8, 1.5, 2.2, 2.5, 2.8, 3.5, 4, 4.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(326, 0), Vector2(327.2, -90), Vector2(328, -190), Vector2(327.2, -90), Vector2(326, 0), Vector2(324.2, 99.6), Vector2(323, 190), Vector2(324.2, 99.6), Vector2(326, 0)]
@@ -298,14 +300,15 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -731.0
-offset_top = -923.0
-offset_right = 810.0
-offset_bottom = 374.0
-texture = ExtResource("15_oifvu")
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(-62, -94)
+scale = Vector2(1.7, 1.7)
+texture = SubResource("CompressedTexture2D_71xe4")
+region_enabled = true
+region_rect = Rect2(14, 114, 805, 531)
 
 [node name="Campo" type="Node2D" parent="."]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_gy6rq")
 
 [node name="porte_1" type="Area2D" parent="Campo"]
@@ -336,6 +339,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="paredes" type="Node2D" parent="."]
+scale = Vector2(0.8, 0.8)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="paredes"]
 
@@ -370,7 +374,7 @@ position = Vector2(-100, 0)
 
 [node name="Character_1" type="CharacterBody2D" parent="."]
 position = Vector2(-340, 0)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.2, 1.2)
 collision_layer = 3
 collision_mask = 3
 collision_priority = 2.0
@@ -388,6 +392,7 @@ shape = SubResource("CircleShape2D_2w4dl")
 
 [node name="Character_2" type="AnimatableBody2D" parent="."]
 position = Vector2(326, 0)
+scale = Vector2(0.8, 0.8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Character_2"]
 scale = Vector2(2.25, 2.25)
@@ -403,6 +408,7 @@ process_physics_priority = 1
 libraries = {
 "": SubResource("AnimationLibrary_piu85")
 }
+speed_scale = 1.15
 
 [node name="starter_disco" type="Marker2D" parent="."]
 position = Vector2(-101, 0)
@@ -411,12 +417,12 @@ position = Vector2(-101, 0)
 script = ExtResource("7_tmmuo")
 
 [node name="Goals_blue" type="AnimatedSprite2D" parent="countdown"]
-position = Vector2(-211, -290)
+position = Vector2(-209, -254)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2f6hq")
 
 [node name="Goals_red" type="AnimatedSprite2D" parent="countdown"]
-position = Vector2(197, -283)
+position = Vector2(173, -258)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2f6hq")
 

@@ -19,21 +19,21 @@ func _body_entered(body,area):
 		goal = true
 		check_goal(area,body)
 
-func check_goal(porte,disco):
+func check_goal(_porte,_disco):
 	if goal == true:
 		timer.start()
 		if porte == $porte_1:
 			GlobalScript.points_red += 1
 		elif porte==$"porte_2":
 			GlobalScript.points_blue += 1
-		if GlobalScript.points_blue >= GlobalScript.difficulty * 2.0:
+		if GlobalScript.points_blue >= GlobalScript.difficulty * 2:
 			push_error("won")
 			GlobalScript.level += 1
 			GlobalScript.just_won = true
 			Camera._change_scene("res://scenes/Levels/Principal.tscn")
 		
 		
-func _process(delta):
+func _process(_delta):
 	if not timer.is_stopped():
 		disco.global_position.x = move_toward(disco.global_position.x,porte.global_position.x,100)
 	
