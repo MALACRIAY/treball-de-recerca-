@@ -1,8 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://o4dpm441xlkf"]
+[gd_scene load_steps=40 format=3 uid="uid://o4dpm441xlkf"]
 
 [ext_resource type="Script" path="res://scenes/scripts/mapa.gd" id="1_eyk7i"]
 [ext_resource type="Texture2D" uid="uid://80ebwpxktnpd" path="res://images/Tilemaps/tilemap final.png" id="2_2eioc"]
 [ext_resource type="Texture2D" uid="uid://h6nauffguilr" path="res://images/Mapa_assets/Levels/Principal/bandera_roja.png" id="2_wjo60"]
+[ext_resource type="Texture2D" uid="uid://u6gybwkdcevy" path="res://images/Mapa_assets/Levels/Principal/casa_2.png" id="3_snuyh"]
+[ext_resource type="Texture2D" uid="uid://dwoi62nng48y6" path="res://images/Mapa_assets/Levels/Principal/casa_1.png" id="4_xg8lo"]
+[ext_resource type="Texture2D" uid="uid://bmn5fxrec67gw" path="res://images/Mapa_assets/Levels/Principal/casa_3.png" id="5_oldq6"]
 [ext_resource type="PackedScene" uid="uid://bknpkx4kc6hnm" path="res://scenes/others/dialogo.tscn" id="12_85ux0"]
 [ext_resource type="Texture2D" uid="uid://bilinbn03baho" path="res://images/Mapa_assets/Decoración/muelle.png" id="12_n28ok"]
 [ext_resource type="Texture2D" uid="uid://dyw2fka5738yx" path="res://images/Mapa_assets/Decoración/dog.png" id="13_evgfu"]
@@ -188,15 +191,6 @@ sources/3 = SubResource("TileSetAtlasSource_vbpda")
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5k8q1"]
 b = Vector2(143.34, 0)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rnlf0"]
-load_path = "res://.godot/imported/Casa1.png-ae6a52d0a6316a2ee6e9b72b73310b76.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k6isd"]
-load_path = "res://.godot/imported/Casa2.png-335909b85d9ece675fa77cb3c1e340cf.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h23vj"]
-load_path = "res://.godot/imported/CASA_MERDA.png-c39e837976607d362451f3d81d7f87e4.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ie1ue"]
 atlas = ExtResource("13_evgfu")
 region = Rect2(0, 0, 60, 60)
@@ -276,6 +270,9 @@ animations = [{
 "name": &"default",
 "speed": 10.0
 }]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h23vj"]
+load_path = "res://.godot/imported/CASA_MERDA.png-c39e837976607d362451f3d81d7f87e4.ctex"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1h1fa"]
 radius = 17.0
@@ -375,7 +372,7 @@ shape = SubResource("SegmentShape2D_5k8q1")
 [node name="Casa" type="Sprite2D" parent="Decorations_and_collisions/Casita_start"]
 position = Vector2(-956, 106)
 scale = Vector2(5, 5)
-texture = SubResource("CompressedTexture2D_rnlf0")
+texture = ExtResource("3_snuyh")
 
 [node name="Casita_start4" type="StaticBody2D" parent="Decorations_and_collisions"]
 position = Vector2(508, 50)
@@ -402,7 +399,7 @@ shape = SubResource("SegmentShape2D_5k8q1")
 [node name="Casa" type="Sprite2D" parent="Decorations_and_collisions/Casita_start4"]
 position = Vector2(-956, 106)
 scale = Vector2(5, 5)
-texture = SubResource("CompressedTexture2D_rnlf0")
+texture = ExtResource("3_snuyh")
 flip_h = true
 
 [node name="Casita_start7" type="StaticBody2D" parent="Decorations_and_collisions"]
@@ -430,7 +427,7 @@ shape = SubResource("SegmentShape2D_5k8q1")
 [node name="Casa" type="Sprite2D" parent="Decorations_and_collisions/Casita_start7"]
 position = Vector2(-956, 106)
 scale = Vector2(5, 5)
-texture = SubResource("CompressedTexture2D_rnlf0")
+texture = ExtResource("3_snuyh")
 flip_h = true
 
 [node name="Casita_start2" type="StaticBody2D" parent="Decorations_and_collisions"]
@@ -458,7 +455,7 @@ shape = SubResource("SegmentShape2D_5k8q1")
 [node name="Casa" type="Sprite2D" parent="Decorations_and_collisions/Casita_start2"]
 position = Vector2(-956, 106)
 scale = Vector2(5, 5)
-texture = SubResource("CompressedTexture2D_k6isd")
+texture = ExtResource("4_xg8lo")
 flip_h = true
 
 [node name="Casita_start3" type="StaticBody2D" parent="Decorations_and_collisions"]
@@ -486,7 +483,7 @@ shape = SubResource("SegmentShape2D_5k8q1")
 [node name="Casa" type="Sprite2D" parent="Decorations_and_collisions/Casita_start3"]
 position = Vector2(-956, 106)
 scale = Vector2(5, 5)
-texture = SubResource("CompressedTexture2D_h23vj")
+texture = ExtResource("4_xg8lo")
 
 [node name="Casita_start9" type="StaticBody2D" parent="Decorations_and_collisions"]
 position = Vector2(1098, 406)
@@ -513,7 +510,7 @@ shape = SubResource("SegmentShape2D_5k8q1")
 [node name="Casa" type="Sprite2D" parent="Decorations_and_collisions/Casita_start9"]
 position = Vector2(-956, 106)
 scale = Vector2(5, 5)
-texture = SubResource("CompressedTexture2D_h23vj")
+texture = ExtResource("5_oldq6")
 flip_h = true
 
 [node name="Casita_start5" type="StaticBody2D" parent="Decorations_and_collisions"]
@@ -541,7 +538,7 @@ shape = SubResource("SegmentShape2D_5k8q1")
 [node name="Casa" type="Sprite2D" parent="Decorations_and_collisions/Casita_start5"]
 position = Vector2(-956, 106)
 scale = Vector2(5, 5)
-texture = SubResource("CompressedTexture2D_h23vj")
+texture = ExtResource("4_xg8lo")
 flip_h = true
 
 [node name="Casita_start6" type="StaticBody2D" parent="Decorations_and_collisions"]
@@ -569,7 +566,7 @@ shape = SubResource("SegmentShape2D_5k8q1")
 [node name="Casa" type="Sprite2D" parent="Decorations_and_collisions/Casita_start6"]
 position = Vector2(-956, 106)
 scale = Vector2(5, 5)
-texture = SubResource("CompressedTexture2D_h23vj")
+texture = ExtResource("4_xg8lo")
 
 [node name="Casita_start8" type="StaticBody2D" parent="Decorations_and_collisions"]
 position = Vector2(-1227, -370)
@@ -596,7 +593,7 @@ shape = SubResource("SegmentShape2D_5k8q1")
 [node name="Casa" type="Sprite2D" parent="Decorations_and_collisions/Casita_start8"]
 position = Vector2(-956, 106)
 scale = Vector2(5, 5)
-texture = SubResource("CompressedTexture2D_k6isd")
+texture = ExtResource("5_oldq6")
 
 [node name="Decorations" type="CanvasGroup" parent="."]
 
@@ -699,12 +696,12 @@ texture = ExtResource("23_xg7uv")
 [node name="Casa1" type="Sprite2D" parent="Decorations"]
 position = Vector2(-1357, -365)
 scale = Vector2(5, 5)
-texture = SubResource("CompressedTexture2D_rnlf0")
+texture = ExtResource("3_snuyh")
 
 [node name="Casa2" type="Sprite2D" parent="Decorations"]
 position = Vector2(-1191, -450)
 scale = Vector2(5, 5)
-texture = SubResource("CompressedTexture2D_h23vj")
+texture = ExtResource("4_xg8lo")
 
 [node name="Casa4" type="Sprite2D" parent="Decorations"]
 position = Vector2(-651, -188)
@@ -715,7 +712,7 @@ flip_h = true
 [node name="Casa3" type="Sprite2D" parent="Decorations"]
 position = Vector2(-1025, -532)
 scale = Vector2(5, 5)
-texture = SubResource("CompressedTexture2D_k6isd")
+texture = ExtResource("5_oldq6")
 
 [node name="banderas" type="Node2D" parent="."]
 position = Vector2(-299, 141)

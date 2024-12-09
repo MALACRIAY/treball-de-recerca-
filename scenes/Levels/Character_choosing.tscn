@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7xsu3m81ehqx" path="res://images/Mapa_assets/Levels/Character_choosing/Escoger_personajepng.png" id="2_j7d2p"]
 [ext_resource type="Shader" path="res://resources/character_shader.gdshader" id="3_kx137"]
 [ext_resource type="Texture2D" uid="uid://d0p0mn2cg3lms" path="res://images/Personajes/Personas/Choose/tio_rgb.png" id="4_dccvh"]
-[ext_resource type="Texture2D" path="res://images/propias/Mapa_assets/extras/2/tia.png" id="5_s0v76"]
+[ext_resource type="Texture2D" uid="uid://cxhl0iam5e52w" path="res://images/Personajes/Personas/Choose/tia_rgb.png" id="5_qtjce"]
 [ext_resource type="Texture2D" uid="uid://cg2n01qw56efs" path="res://images/Mapa_assets/Levels/Character_choosing/tick.png" id="7_boptu"]
 [ext_resource type="PackedScene" uid="uid://dj0atrm2o2f7f" path="res://scenes/others/Global_Scene.tscn" id="8_qrwyd"]
 [ext_resource type="Texture2D" uid="uid://tci8k655uckt" path="res://images/Mapa_assets/Levels/Character_choosing/panel_colors.png" id="8_sfuj2"]
@@ -93,7 +93,7 @@ visible = false
 material = SubResource("ShaderMaterial_isgd1")
 position = Vector2(1421, 691)
 scale = Vector2(10, 10)
-texture = ExtResource("5_s0v76")
+texture = ExtResource("5_qtjce")
 flip_h = true
 
 [node name="Tick" type="Sprite2D" parent="." groups=["hover_click"]]
